@@ -1,0 +1,9 @@
+node_js:
+v10.16.0
+
+language: 
+node_js ''
+
+
+script: cd client  && npm i
+
