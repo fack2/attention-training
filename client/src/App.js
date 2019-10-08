@@ -1,8 +1,8 @@
-import React from 'react'
-import './App.css'
-import Router from './components'
+import React from "react"
+import "./App.css"
+import Router from "./components"
 
-function App() {
+function App () {
   return (
     <div>
       <Router />
