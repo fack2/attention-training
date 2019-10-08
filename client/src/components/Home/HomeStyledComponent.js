@@ -11,7 +11,6 @@ const StyledImg = styled.img`
   margin: 0px;
   z-index: 2;
   clip-path: ellipse(564px 200px at -34% 24%);
-}
 `
 
 const StyledLogo = styled.img`
