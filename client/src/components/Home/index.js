@@ -1,11 +1,13 @@
-import React from "react"
-import Button from "../sharedComponent/Button"
+import React from 'react'
+import StyledLink from '../sharedComponent/Button'
 
 const Home = () => {
   return (
     <div>
       <p>in home</p>
-      <Button color="white"> Hello </Button>
+      <StyledLink margin="5em" width="60px" to="/ss">
+        Hello
+      </StyledLink>
     </div>
   )
 }
