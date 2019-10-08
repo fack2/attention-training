@@ -1,18 +1,19 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const Button = styled.button`
-  background: ${props => (props.primary ? 'orange' : 'blue')};
-  font-size: 16px;
-  border-radius: 12px;
-  color: ${({ color }) => color || 'blue'};
-  margin: 0 1em;
-  width: ${({ width }) => width};
-  padding: 0.25em 1em;
+const StyledLink = styled(Link)`
+  background: ${props => (props.primary ? '#ED6237' : '#378BED')};
+  font-size: ${({ font_size }) => font_size || '16px'};
+  
+  color: ${({ color }) => color || 'white'};
+  margin: ${({ margin }) => margin || '1em'};
+  box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
+  border-radius: ${({ border_radius }) => border_radius || '15px'};
+  padding:5%;
+  display: inline-block;
+  text-align: center;
+  width:${({ width }) => width || '40px'}
   border-style: none;
-  &:hover {
-    background-color: palevioletred;
-    color: white;
-  }
 `
 
-export default Button
+export default StyledLink
