@@ -1,6 +1,7 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './Home'
+/* eslint-disable no-unused-vars */
+import React from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Home from "./Home"
 
 const Routes = () => {
   return (
