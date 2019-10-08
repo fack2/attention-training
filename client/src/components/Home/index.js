@@ -24,8 +24,7 @@ const Home = ({ history }) => {
       </TextStyled>
 
       <StyledLink
-        margin="3em"
-        width="133px "
+        width="133px"
         fontSize="34px"
         hoverColor="#00FF00"
         to="/quiz-instructions"
