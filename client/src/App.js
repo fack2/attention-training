@@ -1,12 +1,14 @@
 import React from "react"
 import "./App.css"
 import Router from "./components"
+import GlobalStyle from "./components/GlobalComponent"
 
-function App () {
+function App() {
   return (
-    <div>
+    <React.Fragment>
+      <GlobalStyle />
       <Router />
-    </div>
+    </React.Fragment>
   )
 }
 
