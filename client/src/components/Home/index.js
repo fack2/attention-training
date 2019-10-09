@@ -9,7 +9,7 @@ import {
   BackgroundDiv
 } from "./HomeStyledComponent"
 
-const Home = ({ history }) => {
+const Home = () => {
   return (
     <>
       <BackgroundDiv>

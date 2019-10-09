@@ -26,14 +26,13 @@ const StyledLogo = styled.img`
   @media only screen and (min-width: 600px) {
     z-index: 1;
     position: absolute;
-    margin-left: -603px;
+    margin-left: -742px;
     margin-top: 94px;
   }
 `
 
 const TextStyled = styled.p`
   text-align: center;
-  font-family: HKGrotesk, Bold;
   color: rgb(0, 0, 0);
   font-size: 25px;
   line-height: 1.3;
