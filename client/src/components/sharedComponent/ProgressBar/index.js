@@ -21,13 +21,9 @@ class ProgressBar extends Component {
 
   };
 
-
-
   render() {
     return (
       <div>
-
-
         <ProgressBarStyle>
           <Counter>
             {this.state.counter} of 18
@@ -45,19 +41,14 @@ class ProgressBar extends Component {
           />
 
 
-
           <Button onClick={this.increase} >next </Button>
 
 
         </ProgressBarStyle>
 
-
-
       </div>
     )
-
   }
-
 }
 
 

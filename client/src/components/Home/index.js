@@ -1,5 +1,5 @@
-import React from 'react'
-import StyledLink from '../sharedComponent/Button'
+import React from "react"
+import StyledLink from "../sharedComponent/Button"
 
 const Home = () => {
   return (
@@ -8,6 +8,7 @@ const Home = () => {
       <StyledLink margin="5em" width="60px" to="/ss">
         Hello
       </StyledLink>
+
     </div>
   )
 }
