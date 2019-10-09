@@ -2,11 +2,14 @@ import styled from "styled-components"
 
 const BackgroundDiv = styled.div`
   position: relative;
+  margin: 0;
 `
 const StyledImg = styled.img`
+  background-size: cover;
   padding: 0px;
   margin: 0px;
   z-index: 2;
+  width: 100%;
   clip-path: ellipse(564px 200px at -34% 24%);
   @media only screen and (min-width: 600px) {
     width: 100%;
@@ -23,16 +26,27 @@ const StyledLogo = styled.img`
   @media only screen and (min-width: 600px) {
     z-index: 1;
     position: absolute;
-    margin-left: -774px;
+    margin-left: -603px;
     margin-top: 94px;
   }
 `
 
 const TextStyled = styled.p`
   text-align: center;
+  font-family: HKGrotesk, Bold;
+  color: rgb(0, 0, 0);
   font-size: 25px;
-  font-family: hk grotesk, serif;
-  font-weight: 700;
+  line-height: 1.3;
+  font-weight: bold;
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+  margin: 2rem;
+  letter-spacing: normal;
+  @media only screen and (min-width: 600px) {
+    line-height: 13.3;
+    margin: 2rem;
+  }
 `
 
 export { StyledImg, TextStyled, StyledLogo, BackgroundDiv }

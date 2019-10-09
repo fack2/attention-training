@@ -8,12 +8,10 @@ import {
   StyledLogo,
   BackgroundDiv
 } from "./HomeStyledComponent"
-import BackButton from "../sharedComponent/BackButton"
 
 const Home = ({ history }) => {
   return (
     <>
-      <BackButton history={history}></BackButton>
       <BackgroundDiv>
         <StyledImg alt="home" src={homeBackgroud} />
         <StyledLogo alt="logo" src={logo} />
@@ -24,6 +22,7 @@ const Home = ({ history }) => {
       </TextStyled>
 
       <StyledLink
+        margin="2.8em"
         width="133px"
         fontSize="34px"
         hoverColor="#00FF00"
