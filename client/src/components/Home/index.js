@@ -22,9 +22,9 @@ const Home = () => {
       </TextStyled>
 
       <StyledLink
-        margin="2.8em"
-        width="133px"
-        fontSize="34px"
+        margin="30px 0px 0px 85px"
+        width="100px"
+        fontSize="20px"
         hoverColor="#00FF00"
         to="/quiz-instructions"
       >

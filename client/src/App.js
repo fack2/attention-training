@@ -5,10 +5,10 @@ import GlobalStyle from "./components/GlobalComponent"
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <GlobalStyle />
       <Router />
-    </React.Fragment>
+    </>
   )
 }
 
