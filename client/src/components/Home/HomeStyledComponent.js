@@ -15,7 +15,7 @@ const StyledImg = styled.img`
   @media only screen and (min-width: 600px) {
     width: 100%;
     height: 320px;
-    clip-path: ellipse(602px 175px at -55% 18%);
+    clip-path: none;
   }
 `
 
