@@ -29,7 +29,12 @@ const Dashboard = ({ history }) => {
             <Title>Superpower subtype</Title>
           </TitleDiv>
           <Text>Revisit your ADHD subtype</Text>
-          <StyledLink width="172px" fontSize="20px" to="/result">
+          <StyledLink
+            background="#800080"
+            width="172px"
+            fontSize="20px"
+            to="/result"
+          >
             SEE RESULT
           </StyledLink>
         </DashboardDiv>
@@ -41,7 +46,12 @@ const Dashboard = ({ history }) => {
             <Title>The Basics</Title>
           </TitleDiv>
           <Text>Find Basics information about ADHD</Text>
-          <StyledLink primary width="172px" fontSize="20px" to="/basic-info">
+          <StyledLink
+            background="#ED6237"
+            width="172px"
+            fontSize="20px"
+            to="/basic-info"
+          >
             SEE BASICS
           </StyledLink>
         </DashboardDiv>
@@ -60,7 +70,7 @@ const Dashboard = ({ history }) => {
         {/*buttons*/}
         <Buttuns>
           <StyledLink
-            primary
+            background="#800080"
             width="173px"
             fontSize="20px"
             Desktopmargin="5rem 27rem 26rem"
@@ -70,6 +80,7 @@ const Dashboard = ({ history }) => {
             RESTART TEST
           </StyledLink>
           <StyledLink
+            background="#ED6237"
             width="172px"
             fontSize="20px"
             Desktopmargin="-20rem 27rem 26rem"

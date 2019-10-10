@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 const StyledLink = styled(Link)`
-  background: ${props => (props.primary ? "#ED6237" : "#378BED")};
+  background: ${({ background }) => background || "#378BED"};
   font-size: ${({ fontSize }) => fontSize || "16px"};
   color: ${({ color }) => color || "white"};
   margin: ${({ margin }) => margin || "1em"};
