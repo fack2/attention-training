@@ -24,7 +24,7 @@ const Home = () => {
         </TextStyled>
 
         <StyledLink
-          margin="30px 0px 0px 85px"
+          margin="30px auto"
           width="100px"
           fontSize="20px"
           hoverColor="#00FF00"
