@@ -3,6 +3,11 @@ import styled from "styled-components"
 const PageDiv = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 800px;
+
+  @media only screen and (min-width: 800px) {
+    margin: auto;
+  }
 `
 
 const DashboardDiv = styled.div`
@@ -12,6 +17,10 @@ const DashboardDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 57vh;
+  @media only screen and (min-width: 800px) {
+    max-height: 57vh;
+  }
 `
 
 const TitleDiv = styled.div`
@@ -39,12 +48,31 @@ const Title = styled.h3`
 const Text = styled.p`
   font-size: 20px;
   text-align: center;
+  @media only screen and (min-width: 800px) {
+    padding: 20px;
+  }
 `
 
 const Buttuns = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (min-width: 800px) {
+  }
 `
 
-export { Header, DashboardDiv, Title, Text, Icon, TitleDiv, PageDiv, Buttuns }
+const RestartImg = styled.img`
+  margin-bottom: -6px;
+`
+
+export {
+  Header,
+  DashboardDiv,
+  Title,
+  Text,
+  Icon,
+  TitleDiv,
+  PageDiv,
+  Buttuns,
+  RestartImg
+}
