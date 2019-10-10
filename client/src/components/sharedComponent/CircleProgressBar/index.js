@@ -3,6 +3,9 @@ import { ProgressBarStyle, Percent, ProgressPage, Description } from './style.Ci
 import Button from '../Button'
 import BackButton from '../BackButton'
 
+
+
+
 class CircleProgressBar extends React.Component {
   state = {
     percent: 0,
