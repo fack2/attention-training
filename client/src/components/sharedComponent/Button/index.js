@@ -9,7 +9,7 @@ const StyledLink = styled(Link)`
   box-shadow: 0px 10px 25px #737C7D
 ;
   border-radius: ${({ borderRadius }) => borderRadius || "15px"};
-  padding:${({ padding }) => padding || "5%"};
+  padding:${({ padding }) => padding || "14px"};
   display: inline-block;
   text-align: center;
   width:${({ width }) => width || "40px"}
