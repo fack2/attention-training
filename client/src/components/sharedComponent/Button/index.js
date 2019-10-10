@@ -6,7 +6,8 @@ const StyledLink = styled(Link)`
   font-size: ${({ fontSize }) => fontSize || "16px"};
   color: ${({ color }) => color || "white"};
   margin: ${({ margin }) => margin || "1em"};
-  box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
+  box-shadow: 0px 10px 25px #737C7D
+;
   border-radius: ${({ borderRadius }) => borderRadius || "15px"};
   padding:${({ padding }) => padding || "5%"};
   display: inline-block;
@@ -17,9 +18,9 @@ const StyledLink = styled(Link)`
     background:${({ hoverColor }) => hoverColor || "#ED6237"};
     color:black;
 }
-@media only screen and (min-width: 600px) {
-margin: ${({ Desktopmargin }) => Desktopmargin || "0rem 1rem 13rem 31rem"};
- padding:${({ Desktoppadding }) => Desktoppadding || "3%"};
+@media only screen and (min-width: 800px) {
+margin: ${({ Desktopmargin }) => Desktopmargin || "-1rem 27rem 26rem"};
+ padding:${({ Desktoppadding }) => Desktoppadding || "19px"};
 }
 `
 
