@@ -2,7 +2,7 @@ import React from "react"
 import BackButton from "../sharedComponent/BackButton"
 import Card from "../sharedComponent/Card"
 
-const Quize = ({ history }) => {
+const Quiz = ({ history }) => {
   return (
     <div>
       <BackButton history={history}></BackButton>
@@ -10,4 +10,4 @@ const Quize = ({ history }) => {
     </div>
   )
 }
-export default Quize
+export default Quiz
