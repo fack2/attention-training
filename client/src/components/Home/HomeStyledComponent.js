@@ -1,5 +1,14 @@
 import styled from "styled-components"
 
+const Homediv = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  @media only screen and (min-width: 600px) {
+    margin: auto;
+  }
+`
+
 const BackgroundDiv = styled.div`
   position: relative;
   margin: 0;
@@ -12,7 +21,7 @@ const StyledImg = styled.img`
   z-index: 1;
   width: 100%;
   clip-path: ellipse(564px 200px at -34% 24%);
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 800px) {
     width: 100%;
     height: 320px;
     clip-path: none;
@@ -24,11 +33,10 @@ const StyledLogo = styled.img`
   position: absolute;
   margin-left: -273px;
   margin-top: 94px;
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 800px) {
     z-index: 1;
     position: absolute;
-    margin-left: -742px;
-    margin-top: 94px;
+    margin: 100px 0px 0px -516px;
   }
 `
 
@@ -45,8 +53,8 @@ const TextStyled = styled.p`
   letter-spacing: normal;
   @media only screen and (min-width: 600px) {
     line-height: 13.3;
-    margin: 2rem;
+    margin: 1rem;
   }
 `
 
-export { StyledImg, TextStyled, StyledLogo, BackgroundDiv }
+export { StyledImg, TextStyled, StyledLogo, BackgroundDiv, Homediv }
