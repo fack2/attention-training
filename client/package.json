@@ -12,7 +12,7 @@
     "styled-components": "^4.4.0"
   },
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint src/* --fix",
+    "eslint": "./node_modules/.bin/eslint src/*.js --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

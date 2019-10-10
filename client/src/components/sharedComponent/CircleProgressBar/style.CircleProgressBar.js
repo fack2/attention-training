@@ -7,7 +7,6 @@ display: flex;
  flex-direction: column;
  position: relative;
  top: 22vh;
-
 `
 const ProgressBarStyle = styled(Progress)`
 border: grey 1px red;
@@ -16,7 +15,6 @@ border: grey 1px red;
   border: solid red;
 }
 `
-
 const Percent = styled.h2`
 position: absolute;
 top: 5vh;
@@ -26,7 +24,6 @@ width: 48px;
 margin: 2px;
 text-align: center;
 `
-
 const Description = styled.p`
 margin-top: 40px;
 text-align: center;

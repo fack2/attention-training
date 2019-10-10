@@ -1,42 +1,42 @@
 import React from 'react'
 import { ProgressBarStyle, Percent, ProgressPage, Description } from './style.CircleProgressBar'
 import Button from '../Button'
+import BackButton from '../BackButton'
 
-class styled extends React.Component {
+class CircleProgressBar extends React.Component {
   state = {
     percent: 0,
   };
 
   componentDidMount() {
-
     if (this.state.percent < 50) {
-      let barInterval =
-        setInterval(
-          () => {
-            if (this.state.percent < 50) {
-              this.setState({ percent: this.state.percent + 1 })
-            }
+      setInterval(
+        () => {
+          if (this.state.percent < 50) {
+            this.setState({ percent: this.state.percent + 1 })
           }
-          , 20)
+        }
+        , 20)
     }
-
   }
-
 
   render() {
     return (
-      <ProgressPage>
-        <Percent>50%</Percent>
-        <ProgressBarStyle type="circle" percent={this.state.percent} showInfo={false} />
-        <Description>
-          <h3>Good Job!</h3>
-          <p>you are half way there.</p>
-        </Description>
-        <Button width='245px'>Let's keep going</Button>
-      </ProgressPage>
+      <div>
+        <BackButton />
+        <ProgressPage>
+          <Percent>{this.props.percent}</Percent>
+          <ProgressBarStyle type="circle" percent={this.state.percent} showInfo={false} />
+          <Description>
+            <h3>{this.props.title}</h3>
+            <p>{this.props.description}</p>
+          </Description>
+          <Button width='245px'>{this.props.button}</Button>
+        </ProgressPage>
+      </div>
     );
   }
 }
 
 
-export default styled;
+export default CircleProgressBar;

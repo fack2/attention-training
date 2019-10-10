@@ -1,16 +1,39 @@
 import React from "react"
-import BackButton from "../sharedComponent/BackButton"
 import StyledLink from "../sharedComponent/Button"
+import homeBackgroud from "../../assets/homeBackground.png"
+import logo from "../../assets/logoWeb.png"
+import {
+  StyledImg,
+  TextStyled,
+  StyledLogo,
+  BackgroundDiv,
+  Homediv
+} from "./HomeStyledComponent"
 
-const Home = ({ history }) => {
+const Home = () => {
   return (
-    <div>
-      <BackButton history={history}></BackButton>
-      <p>in home</p>
-      <StyledLink margin="5em" width="60px" to="/ss">
-        Hello
-      </StyledLink>
-    </div>
+    <>
+      <Homediv>
+        <BackgroundDiv>
+          <StyledImg alt="home" src={homeBackgroud} />
+          <StyledLogo alt="logo" src={logo} />
+        </BackgroundDiv>
+        <TextStyled>
+          The key to thriving is knowledge. Learn to make use of your ADHD
+          superpowers
+        </TextStyled>
+
+        <StyledLink
+          margin="30px auto"
+          width="100px"
+          fontSize="20px"
+          hoverColor="#00FF00"
+          to="/quiz-instructions"
+        >
+          Let's Go
+        </StyledLink>
+      </Homediv>
+    </>
   )
 }
 export default Home
