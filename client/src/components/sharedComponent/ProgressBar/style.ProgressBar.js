@@ -25,7 +25,7 @@ const ProgressBarStyle = styled(Progress)`
   .ant-progress-bg{
   border-radius:6px;
   height: 15px !important
-  background-image: linear-gradient(to right, rgb(112, 177, 250) 0%, rgb(112, 177, 250) 100%) !important
+  background-image: linear-gradient(to right, #70B1FA 0%, #70B1FA 100%) !important
 }         
 `
 

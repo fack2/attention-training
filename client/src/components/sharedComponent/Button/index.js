@@ -14,6 +14,10 @@ const StyledLink = styled(Link)`
   text-align: center;
   width:${({ width }) => width || "40px"}
   border-style: none;
+&:hover{
+    background:${({ hoverColor }) => hoverColor || "#ED6237"};
+    color:black;
+}
 `
 
 export default StyledLink
