@@ -16,10 +16,10 @@ const StyledCard = styled(Card)`
   height: 70vh;
   overflow-y: ${({ scroll }) => (scroll ? "scroll" : "unset")};
 `
-const Div = styled.div`
+const CardWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 `
 
-export { StyledCard, Div }
+export { StyledCard, CardWrapper }
