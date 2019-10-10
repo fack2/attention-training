@@ -10,6 +10,7 @@ const Home = ({ history }) => {
       <StyledLink margin="5em" width="60px" to="/ss">
         Hello
       </StyledLink>
+
     </div>
   )
 }
