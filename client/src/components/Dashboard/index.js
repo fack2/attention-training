@@ -8,11 +8,13 @@ import {
   Text,
   TitleDiv,
   PageDiv,
-  Buttuns
+  Buttuns,
+  RestartImg
 } from "./DashboardStyledComponent"
 import cardLogo from "../../assets/icon.png"
 import secondLogo from "../../assets/icon2.png"
 import StyledLink from "../sharedComponent/Button"
+import restartVector from "../../assets/Vector.png"
 
 const Dashboard = ({ history }) => {
   return (
@@ -27,7 +29,7 @@ const Dashboard = ({ history }) => {
             <Title>Superpower subtype</Title>
           </TitleDiv>
           <Text>Revisit your ADHD subtype</Text>
-          <StyledLink width="116px" fontSize="20px">
+          <StyledLink width="172px" fontSize="20px" to="/result">
             SEE RESULT
           </StyledLink>
         </DashboardDiv>
@@ -39,8 +41,8 @@ const Dashboard = ({ history }) => {
             <Title>The Basics</Title>
           </TitleDiv>
           <Text>Find Basics information about ADHD</Text>
-          <StyledLink primary width="116px" fontSize="20px">
-            SEE RESULT
+          <StyledLink primary width="172px" fontSize="20px" to="/basic-info">
+            SEE BASICS
           </StyledLink>
         </DashboardDiv>
 
@@ -51,16 +53,28 @@ const Dashboard = ({ history }) => {
             <Title>Superpower Skills</Title>
           </TitleDiv>
           <Text>Find and harness your own superpowers’</Text>
-          <StyledLink width="116px" fontSize="20px">
-            SEE RESULT
+          <StyledLink width="172px" fontSize="19px" to="/skills">
+            SEE SUPERPOWER
           </StyledLink>
         </DashboardDiv>
         {/*buttons*/}
         <Buttuns>
-          <StyledLink primary width="144px" fontSize="20px">
+          <StyledLink
+            primary
+            width="173px"
+            fontSize="20px"
+            Desktopmargin="5rem 27rem 26rem"
+            to="/quiz"
+          >
+            <RestartImg src={restartVector} />
             RESTART TEST
           </StyledLink>
-          <StyledLink width="116px" fontSize="20px">
+          <StyledLink
+            width="172px"
+            fontSize="20px"
+            Desktopmargin="-20rem 27rem 26rem"
+            to="/about"
+          >
             ABOUT US
           </StyledLink>
         </Buttuns>
