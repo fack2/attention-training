@@ -1,20 +1,38 @@
 import React from "react"
-import BackButton from "../sharedComponent/BackButton"
-import Card from "../sharedComponent/Card"
 import StyledLink from "../sharedComponent/Button"
+import homeBackgroud from "../../assets/homeBackground.png"
+import logo from "../../assets/logoWeb.png"
+import {
+  StyledImg,
+  TextStyled,
+  StyledLogo,
+  BackgroundDiv,
+  Homediv
+} from "./HomeStyledComponent"
 
-const Home = ({ history }) => {
+const Home = () => {
   return (
     <>
-      <BackButton margin="15%" history={history}></BackButton>
-      <Card info={<pre>0102201</pre>}></Card>
-      <Card></Card>
-      <div>
-        <p>in home</p>
-        <StyledLink margin="5em" width="60px" to="/ss">
-          Hello
+      <Homediv>
+        <BackgroundDiv>
+          <StyledImg alt="home" src={homeBackgroud} />
+          <StyledLogo alt="logo" src={logo} />
+        </BackgroundDiv>
+        <TextStyled>
+          The key to thriving is knowledge. Learn to make use of your ADHD
+          superpowers
+        </TextStyled>
+
+        <StyledLink
+          margin="30px auto"
+          width="100px"
+          fontSize="20px"
+          hoverColor="#00FF00"
+          to="/quiz-instructions"
+        >
+          Let's Go
         </StyledLink>
-      </div>
+      </Homediv>
     </>
   )
 }
