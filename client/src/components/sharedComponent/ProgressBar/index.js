@@ -1,6 +1,6 @@
 import { Button } from 'antd';
 import React, { Component } from 'react';
-import { ProgressBarStyle, Counter, Progressstyle } from './ProgressBar'
+import { ProgressBarStyle, Counter, ProgressBarContainer } from './style.ProgressBar'
 
 class ProgressBar extends Component {
 
@@ -23,30 +23,30 @@ class ProgressBar extends Component {
 
   render() {
     return (
-      <div>
-        <ProgressBarStyle>
-          <Counter>
-            {this.state.counter} of 18
+
+      <ProgressBarContainer>
+        <Counter>
+          {this.state.counter} of 18
           </Counter>
 
-          <Progressstyle
-            strokeColor={{
-              '0%': '#108ee9',
-              '100%': '#87d068',
-            }}
+        <ProgressBarStyle
+          strokeColor={{
+            '0%': '#108ee9',
+            '100%': '#87d068',
+          }}
 
-            Color={'red'}
-            percent={this.state.percent}
-            showInfo={false}
-          />
-
-
-          <Button onClick={this.increase} >next </Button>
+          Color={'red'}
+          percent={this.state.percent}
+          showInfo={false}
+        />
 
 
-        </ProgressBarStyle>
+        <Button onClick={this.increase} >next </Button>
 
-      </div>
+
+      </ProgressBarContainer>
+
+
     )
   }
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Progress } from "antd"
 
-const ProgressBarStyle = styled.div`
+const ProgressBarContainer = styled.div`
  width: 500px ;
  display: flex;
  align-items: center;
@@ -14,16 +14,16 @@ const Counter = styled.div`
  text-align : center
 `
 
-const Progressstyle = styled(Progress)`
+const ProgressBarStyle = styled(Progress)`
  
 border: grey 1px solid;
   border-radius:6px;
   width: 231px ;
   margin:5px;
-.ant-progress-bg{
+  .ant-progress-bg{
   border-radius:6px;
   height: 15px !important
 }         
 `
 
-export { ProgressBarStyle, Counter, Progressstyle }
+export { ProgressBarContainer, Counter, ProgressBarStyle }
