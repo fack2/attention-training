@@ -5,7 +5,7 @@ const StyledLink = styled(Link)`
   background: ${props => (props.primary ? "#ED6237" : "#378BED")};
   font-size: ${({ fontSize }) => fontSize || "16px"};
   color: ${({ color }) => color || "white"};
-  margin: ${({ margin }) => margin || "1em"};
+  margin: ${({ margin }) => margin || "0.5em 1em"};
   box-shadow: 0px 10px 25px #737C7D
 ;
   border-radius: ${({ borderRadius }) => borderRadius || "15px"};
