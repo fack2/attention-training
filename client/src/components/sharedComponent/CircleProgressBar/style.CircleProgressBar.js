@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Progress, Icon } from 'antd'
+import styled from "styled-components"
+import { Progress, Icon } from "antd"
 
 const ProgressPage = styled.div`
   display: flex;

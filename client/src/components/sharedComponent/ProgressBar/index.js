@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import {
   ProgressBarStyle,
   Counter,
   ProgressBarContainer
-} from './style.ProgressBar'
+} from "./style.ProgressBar"
 
 class ProgressBar extends Component {
   state = {
@@ -27,10 +27,10 @@ class ProgressBar extends Component {
         <Counter>{this.state.counter} of 18</Counter>
         <ProgressBarStyle
           strokeColor={{
-            '0%': '#108ee9',
-            '100%': '#87d068'
+            "0%": "#108ee9",
+            "100%": "#87d068"
           }}
-          Color={'red'}
+          Color={"red"}
           percent={this.state.percent}
           showInfo={false}
         />

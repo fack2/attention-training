@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   ProgressBarDiv,
   ProgressBarStyle,
@@ -7,9 +7,9 @@ import {
   Description,
   TrueIcon,
   TreuIconBackground
-} from './style.CircleProgressBar'
-import Button from '../Button'
-import BackButton from '../BackButton'
+} from "./style.CircleProgressBar"
+import Button from "../Button"
+import BackButton from "../BackButton"
 
 class CircleProgressBar extends React.Component {
   state = {
