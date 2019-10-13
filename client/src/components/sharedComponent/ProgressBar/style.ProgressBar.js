@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Progress } from "antd"
+import styled from 'styled-components'
+import { Progress } from 'antd'
 
 const ProgressBarContainer = styled.div`
   margin: auto;
@@ -12,7 +12,7 @@ const ProgressBarContainer = styled.div`
   position: relative;
 `
 const Counter = styled.div`
-  color: grey;
+  color: #484848;
   text-align: center;
 `
 const ProgressBarStyle = styled(Progress)`

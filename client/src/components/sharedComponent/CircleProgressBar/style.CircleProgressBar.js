@@ -5,7 +5,6 @@ const ProgressPage = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: relative;
 `
 const ProgressBarDiv = styled.div`
   background-color: white;
@@ -21,14 +20,14 @@ const ProgressBarStyle = styled(Progress)`
 
 const Percent = styled.h2`
   position: absolute;
-  top: 5vh;
+  top: 47px;
   margin: auto;
   width: 120px;
   margin: 2px;
   text-align: center;
 `
 
-const Description = styled.p`
+const Description = styled.div`
   margin-top: 40px;
   text-align: center;
   font-size: 20px;
