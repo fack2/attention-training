@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Home from "./Home"
 import ProgressBar from "./sharedComponent/ProgressBar"
 import Dashboard from "../components/Dashboard"
+import Skills from "./Skills"
 
 const Routes = () => {
   return (
@@ -11,6 +12,7 @@ const Routes = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/quiz-instructions" component={ProgressBar} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/skills" component={Skills} />
       </Switch>
     </Router>
   )
