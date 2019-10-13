@@ -41,7 +41,7 @@ const StyledLogo = styled.img`
 `
 
 const TextStyled = styled.p`
-  text-align: center;
+  textalign: center;
   color: rgb(0, 0, 0);
   font-size: 20px;
   line-height: 1.3;
