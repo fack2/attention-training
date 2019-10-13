@@ -7,7 +7,7 @@ import {
   Title,
   Text,
   Titlewrap,
-  PageDiv,
+  PageWrapper,
   Buttuns,
   RestartImg
 } from "./DashboardStyledComponent"
@@ -19,7 +19,7 @@ import restartVector from "../../assets/Vector.png"
 const Dashboard = ({ history }) => {
   return (
     <>
-      <PageDiv>
+      <PageWrapper>
         <BackButton margin="9px 14px 3px -150px" history={history}></BackButton>
         <Header>Dashboard</Header>
         {/* card1 */}
@@ -89,7 +89,7 @@ const Dashboard = ({ history }) => {
             ABOUT US
           </StyledLink>
         </Buttuns>
-      </PageDiv>
+      </PageWrapper>
     </>
   )
 }

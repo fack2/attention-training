@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const PageDiv = styled.div`
+const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 800px;
@@ -72,7 +72,7 @@ export {
   Text,
   Icon,
   Titlewrap,
-  PageDiv,
+  PageWrapper,
   Buttuns,
   RestartImg
 }
