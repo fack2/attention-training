@@ -3,12 +3,14 @@ import Button from "../sharedComponent/Button"
 import BackButton from "../sharedComponent/BackButton"
 import Card from "../Card"
 import ProgressBar from "../sharedComponent/ProgressBar"
+import CircleProgressBar from "../sharedComponent/CircleProgressBar/"
 import qustions from "../../Questions"
 class Quiz extends Component {
   state = {
     counter: 1,
     options: "",
-    score: []
+    score: [],
+    percent: 0
   }
   clicked = ({ target }) => {
     const { name } = target
@@ -18,7 +20,9 @@ class Quiz extends Component {
       score: score,
       counter: this.state.counter + 1
     })
-    // if (this.state.counter === 9) {}
+    if (this.state.counter === 9) {
+      this.setState({ percent: 50 })
+    }
     if (this.state.counter === 18) {
       window.location.href = `/dd${this.state.score}`
     }
@@ -76,7 +80,23 @@ class Quiz extends Component {
     })
   }
   render() {
-    return (
+    return this.state.percent === 50 ? (
+      <CircleProgressBar
+        percent="50%"
+        title="Good job!"
+        description=" you are half way there."
+        button="LET’S KEEP GOING!"
+        onClick={() => {
+          this.setState({ percent: 51 })
+        }}
+        history={this.props.history}
+        onClickBackButton={() => {
+          this.setState({ percent: 49 })
+          localStorage.setItem("scrore", this.state.score)
+          this.setState({ counter: this.state.counter - 1 })
+        }}
+      />
+    ) : (
       <div style={{ textAlign: "center" }}>
         <div>
           <BackButton
