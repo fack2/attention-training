@@ -10,20 +10,20 @@ const PageDiv = styled.div`
   }
 `
 
-const DashboardDiv = styled.div`
+const DashboardCard = styled.div`
   background: white;
   border-radius: 21px;
   margin: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 57vh;
+
   @media only screen and (min-width: 800px) {
-    max-height: 57vh;
+    max-height: 281px;
   }
 `
 
-const TitleDiv = styled.div`
+const Titlewrap = styled.div`
   display: flex;
   flex-direction: row;
 `
@@ -67,11 +67,11 @@ const RestartImg = styled.img`
 
 export {
   Header,
-  DashboardDiv,
+  DashboardCard,
   Title,
   Text,
   Icon,
-  TitleDiv,
+  Titlewrap,
   PageDiv,
   Buttuns,
   RestartImg

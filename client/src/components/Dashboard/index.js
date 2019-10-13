@@ -2,11 +2,11 @@ import React from "react"
 import BackButton from "../sharedComponent/BackButton"
 import {
   Header,
-  DashboardDiv,
+  DashboardCard,
   Icon,
   Title,
   Text,
-  TitleDiv,
+  Titlewrap,
   PageDiv,
   Buttuns,
   RestartImg
@@ -22,12 +22,12 @@ const Dashboard = ({ history }) => {
       <PageDiv>
         <BackButton margin="9px 14px 3px -150px" history={history}></BackButton>
         <Header>Dashboard</Header>
-        {/*card1*/}
-        <DashboardDiv>
-          <TitleDiv>
+        {/* card1 */}
+        <DashboardCard>
+          <Titlewrap>
             <Icon alt="cardlogo" src={cardLogo} />
             <Title>Superpower subtype</Title>
-          </TitleDiv>
+          </Titlewrap>
           <Text>Revisit your ADHD subtype</Text>
           <StyledLink
             background="#800080"
@@ -37,14 +37,14 @@ const Dashboard = ({ history }) => {
           >
             SEE RESULT
           </StyledLink>
-        </DashboardDiv>
+        </DashboardCard>
 
-        {/*card2*/}
-        <DashboardDiv>
-          <TitleDiv>
+        {/* card2 */}
+        <DashboardCard>
+          <Titlewrap>
             <Icon alt="cardlogo" src={secondLogo} />
             <Title>The Basics</Title>
-          </TitleDiv>
+          </Titlewrap>
           <Text>Find Basics information about ADHD</Text>
           <StyledLink
             background="#ED6237"
@@ -54,26 +54,26 @@ const Dashboard = ({ history }) => {
           >
             SEE BASICS
           </StyledLink>
-        </DashboardDiv>
+        </DashboardCard>
 
-        {/*card3*/}
-        <DashboardDiv>
-          <TitleDiv>
+        {/* card3 */}
+        <DashboardCard>
+          <Titlewrap>
             <Icon alt="cardlogo" src={cardLogo} />
             <Title>Superpower Skills</Title>
-          </TitleDiv>
-          <Text>Find and harness your own superpowers’</Text>
+          </Titlewrap>
+          <Text>Find and harness your own superpowers</Text>
           <StyledLink width="172px" fontSize="19px" to="/skills">
             SEE SUPERPOWER
           </StyledLink>
-        </DashboardDiv>
-        {/*buttons*/}
+        </DashboardCard>
+        {/* buttons */}
         <Buttuns>
           <StyledLink
             background="#800080"
             width="173px"
             fontSize="20px"
-            Desktopmargin="5rem 27rem 26rem"
+            desktopmargin="5rem 27rem 26rem"
             to="/quiz"
           >
             <RestartImg src={restartVector} />
@@ -83,7 +83,7 @@ const Dashboard = ({ history }) => {
             background="#ED6237"
             width="172px"
             fontSize="20px"
-            Desktopmargin="-20rem 27rem 26rem"
+            desktopmargin="-20rem 27rem 26rem"
             to="/about"
           >
             ABOUT US
