@@ -17,6 +17,7 @@ const DashboardCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  list-style-type: none;
 
   @media only screen and (min-width: 800px) {
     max-height: 281px;
