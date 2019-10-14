@@ -4,9 +4,7 @@
     "es6": true,
     "node": true
   },
-  "extends": [
-    "standard"
-  ],
+  "extends": ["standard"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -15,9 +13,6 @@
     "ecmaVersion": 2018
   },
   "rules": {
-    "quotes": [
-      "error",
-      "double"
-    ]
+    "quotes": ["error", "double"]
   }
 }
