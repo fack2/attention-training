@@ -1,79 +1,58 @@
 import React from "react"
-import { FilterButton, DivStyled, FilterStyled } from "./FilterStyledComponent"
 import BackButton from "../sharedComponent/BackButton"
-import SkillImg1 from "../../assets/SkillImg1.png"
-import SkillImg2 from "../../assets/SkillImg2.png"
-import SkillImg from "./SkillsStyledComponent"
 import { Link } from "react-router-dom"
-
+import data from "../../data"
 import {
   Header,
-  DashboardCard,
+  DashboardCard as SkillsCard,
   Text,
   PageWrapper
 } from "../Dashboard/DashboardStyledComponent"
+import { FilterButton, DivStyled, FilterStyled } from "./FilterStyledComponent"
+import SkillImg from "./SkillsStyledComponent"
 
 class Skills extends React.Component {
-  state = { cardType: false }
-
-  ShowDisplayBio = () => {
-    this.setState({ cardType: true })
+  state = {
+    FilteredData: data
   }
 
-  displayShorterBio = () => {
-    this.setState({ cardType: false })
+  onClick = ({ target }) => {
+    const { value } = target
+    const FilteredData = data.filter(e => e.type === value)
+    this.setState({ FilteredData })
   }
 
   render() {
+    console.log(this.state)
     return (
-      <>
-        <PageWrapper>
-          <BackButton history={this.props.history}></BackButton>
+      <PageWrapper>
+        <BackButton history={this.props.history}></BackButton>
+        <Header>Trainning Skills</Header>
 
-          <Header>Trainning Skills</Header>
-          {/*Filter */}
-          <DivStyled>
-            <FilterStyled>
-              <FilterButton
-                background="white"
-                color="black"
-                borderRadius="11px"
-                width="111px"
-                onClick={this.displayShorterBio}
-              >
-                Everday
-              </FilterButton>
+        {/*filter*/}
+        <DivStyled>
+          <FilterStyled>
+            <FilterButton value="everyday" onClick={this.onClick}>
+              Everyday
+            </FilterButton>
+            <FilterButton value="superpower" onClick={this.onClick}>
+              Superpower
+            </FilterButton>
+          </FilterStyled>
+        </DivStyled>
 
-              <FilterButton
-                background="white"
-                color="black"
-                borderRadius="11px"
-                width="111px"
-                onClick={this.ShowDisplayBio}
-              >
-                Superpowers
-              </FilterButton>
-            </FilterStyled>
-          </DivStyled>
-
-          {/* card1 */}
-          {this.state.cardType ? (
-            <Link to="/skills/${id}`">
-              <DashboardCard>
-                <SkillImg src={SkillImg1} />
-                <Text>What is Hyper focus?</Text>
-              </DashboardCard>
-            </Link>
-          ) : (
-            <Link to="/skills/${id}`">
-              <DashboardCard>
-                <SkillImg src={SkillImg2} />
-                <Text>What are pomodoros?</Text>
-              </DashboardCard>
-            </Link>
-          )}
-        </PageWrapper>
-      </>
+        {this.state.FilteredData.map(e => {
+          console.log(e)
+          return (
+            <SkillsCard key={e.id}>
+              <Link to={`/skills/${e.id}`}>
+                <SkillImg src={e.image} />
+                <Text>{e.name} </Text>
+              </Link>
+            </SkillsCard>
+          )
+        })}
+      </PageWrapper>
     )
   }
 }
