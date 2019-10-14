@@ -1,10 +1,8 @@
 import styled from "styled-components"
 
 const Container = styled.div`
-  height: 200vh;
   display: flex;
   flex-direction: column;
-  text-align: cneter;
   align-items: center;
 `
 
