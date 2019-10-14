@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import resultsImg from "../../assets/results.png"
-import resutlsData from "../resultsData"
-import Button from "../sharedComponent/Button"
+import React, { Component } from 'react'
+import resultsImg from '../../assets/results.png'
+import resutlsData from '../resultsData'
+import Button from '../sharedComponent/Button'
 import {
   Container,
   Header,
@@ -9,16 +9,15 @@ import {
   Img,
   Type,
   Description
-} from "./style.Results"
+} from './style.Results'
 
 class Results extends Component {
-  render () {
+  render() {
     const { id } = this.props.match.params
     return (
       <Container>
         <Header>Results</Header>
         <Img src={resultsImg} atl="results" />
-        {console.log("2222", resutlsData)}
         {resutlsData.map(result =>
           result.id === parseInt(id) ? (
             <TypeContainer>
@@ -29,11 +28,9 @@ class Results extends Component {
             <p></p>
           )
         )}
-        {console.log(
-          "2222",
-          resutlsData.filter(result => result.id === parseInt(id))
-        )}
-        <Button width="180px">Dashboard</Button>
+        <Button to="/dashboard" width="180px">
+          Dashboard
+        </Button>
       </Container>
     )
   }
