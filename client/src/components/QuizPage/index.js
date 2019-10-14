@@ -146,7 +146,7 @@ class Quiz extends Component {
         <Card
           info={
             <div>
-              <p style={{ textAlign: "justify", marginTop: "10px", height: "100px", padding: "0 12px" }}>
+              <p style={{ textAlign: "justify", marginTop: "10px", height: "90px", padding: "8px 20px" }}>
                 {qustions[this.state.counter - 1]}
               </p>
               <br />
