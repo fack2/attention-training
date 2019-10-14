@@ -13,7 +13,7 @@ const StyledCard = styled(Card)`
   padding-top: 10px;
   textalign: -webkit-center;
   width: ${({ width }) => width || "80%"};
-  height: 80vh;
+  height: 84vh;
   overflow-y: ${({ scroll }) => (scroll ? "scroll" : "unset")};
 `
 const CardWrapper = styled.div`

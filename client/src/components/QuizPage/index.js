@@ -41,49 +41,73 @@ class Quiz extends Component {
       options: (
         <>
           <Button
-            margin="10px"
-            padding="10px"
-            borderRadius="30px"
-            fontSize="28px"
-            width="45%"
+            color="#344356"
+            color_hover="#fff"
+            text_align="left"
+            background="#fff"
+            box_shadow="unset"
+            border="3px solid #E8EEF4"
+            // margin="10px"
+            // padding="10px"
+            border_radius="20px"
+            fontSize="20px"
+            width="70%"
             name={0}
             value={"111111"}
             onClick={this.clicked}
           >
-            Never
+            A&nbsp; Never
           </Button>
           <Button
-            margin="10px"
-            padding="10px"
-            borderRadius="30px"
-            fontSize="28px"
-            width="45%"
+            color="#344356"
+            color_hover="#fff"
+            text_align="left"
+            background="#fff"
+            box_shadow="unset"
+            border="3px solid #E8EEF4"
+            // margin="10px"
+            // padding="10px"
+            border_radius="20px"
+            fontSize="20px"
+            width="70%"
             name={1}
             onClick={this.clicked}
           >
-            Rarely
+            B&nbsp; Rarely
           </Button>
           <Button
-            margin="10px"
-            padding="10px"
-            borderRadius="30px"
-            fontSize="28px"
-            width="45%"
+            color="#344356"
+            color_hover="#fff"
+            text_align="left"
+            background="#fff"
+            box_shadow="unset"
+            border="3px solid #E8EEF4"
+            // margin="10px"
+            // padding="10px"
+            border_radius="20px"
+            fontSize="20px"
+            width="70%"
             name={2}
             onClick={this.clicked}
           >
-            Sometimes
+            C&nbsp; Sometimes
           </Button>
           <Button
-            margin="10px"
-            padding="10px"
-            borderRadius="30px"
-            fontSize="28px"
-            width="45%"
+            color="#344356"
+            color_hover="#fff"
+            text_align="left"
+            background="#fff"
+            box_shadow="unset"
+            border="3px solid #E8EEF4"
+            // margin="10px"
+            // padding="10px"
+            border_radius="20px"
+            fontSize="20px"
+            width="70%"
             name={3}
             onClick={this.clicked}
           >
-            Often
+            D&nbsp; Often
           </Button>
         </>
       )
@@ -95,7 +119,7 @@ class Quiz extends Component {
         percent="50%"
         title="Good job!"
         description=" you are half way there."
-        button="LET’S KEEP GOING!"
+        buttonName="LET’S KEEP GOING!"
         onClick={() => {
           this.setState({ percent: 51 })
         }}
@@ -122,9 +146,9 @@ class Quiz extends Component {
         <Card
           info={
             <div>
-              <h3 style={{ textAlign: "justify", marginTop: "10px", height: "100px", padding: "0 12px" }}>
+              <p style={{ textAlign: "justify", marginTop: "10px", height: "100px", padding: "0 12px" }}>
                 {qustions[this.state.counter - 1]}
-              </h3>
+              </p>
               <br />
               <br />
               {this.state.options}
