@@ -13,6 +13,7 @@ const Routes = () => {
         <Route exact path="/quiz-instructions" component={ProgressBar} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/skills" component={Skills} />
+        <Route exact path="/skills/:id" />
       </Switch>
     </Router>
   )
