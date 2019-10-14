@@ -1,22 +1,30 @@
 import React, { Component } from "react"
 import resultsImg from "../../assets/results.png"
-import resutlsData from "../results"
+import resutlsData from "../resultsData"
 import Button from "../sharedComponent/Button"
+import {
+  Container,
+  Header,
+  TypeContainer,
+  Img,
+  Type,
+  Description
+} from "./style.Results"
 
 class Results extends Component {
   render () {
     const { id } = this.props.match.params
     return (
-      <div>
-        <h1>Results</h1>
-        <img src={resultsImg} atl="results" />
+      <Container>
+        <Header>Results</Header>
+        <Img src={resultsImg} atl="results" />
         {console.log("2222", resutlsData)}
         {resutlsData.map(result =>
           result.id === parseInt(id) ? (
-            <div>
-              <h3>You scored highly in: {result.type}</h3>
-              <p>{result.descritption}</p>
-            </div>
+            <TypeContainer>
+              <Type>You scored highly in: {result.type}</Type>
+              <Description>{result.descritption}</Description>
+            </TypeContainer>
           ) : (
             <p></p>
           )
@@ -25,8 +33,8 @@ class Results extends Component {
           "2222",
           resutlsData.filter(result => result.id === parseInt(id))
         )}
-        <Button>Dashboard</Button>
-      </div>
+        <Button width="180px">Dashboard</Button>
+      </Container>
     )
   }
 }

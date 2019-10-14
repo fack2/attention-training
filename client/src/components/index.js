@@ -1,10 +1,10 @@
-import React from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Home from "./Home"
-import ProgressBar from "./sharedComponent/ProgressBar"
-import CircleProgressBar from "./sharedComponent/CircleProgressBar"
-import Dashboard from "../components/Dashboard"
-import Results from "./Results"
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './Home'
+import ProgressBar from './sharedComponent/ProgressBar'
+import CircleProgressBar from './sharedComponent/CircleProgressBar'
+import Dashboard from '../components/Dashboard'
+import Results from './Results'
 
 const Routes = () => {
   return (
