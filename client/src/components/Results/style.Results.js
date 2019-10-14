@@ -13,8 +13,11 @@ const Header = styled.h3`
 `
 
 const TypeContainer = styled.div`
-  width: 100%;
-  max-width: 275px;
+  width: 90%;
+  max-width: 332px;
+  min-width: 275px;
+  hyphens: auto;
+  margin: 0 auto;
 `
 
 const Img = styled.img`
