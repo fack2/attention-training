@@ -21,6 +21,7 @@ const Routes = () => {
               percent="50%"
               title="Good job!"
               description=" you are half way there."
+              // pass button name as a props
               button="LET’S KEEP GOING!"
             />
           )}

@@ -43,6 +43,7 @@ class CircleProgressBar extends React.Component {
             <p>{this.props.description}</p>
           </Description>
           <Button width="245px" onClick={this.props.onClick}>
+            {/* name of button as a props {button} */}
             {this.props.button}
           </Button>
         </ProgressPage>
