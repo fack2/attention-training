@@ -12,8 +12,16 @@ class Quiz extends Component {
     score: [],
     percent: 0
   }
+  /**
+   * @param string value of choice
+   * get value of choise to calclate score from {event.target,name}
+   * push value to score array
+   * increase counter 1
+   * check half question and last question to show circle progress bar
+   */
   clicked = ({ target }) => {
     const { name } = target
+
     const { score } = this.state
     score[this.state.counter - 1] = parseInt(name)
     this.setState({
@@ -24,6 +32,7 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
+      // the line is temp
       window.location.href = `/dd${this.state.score}`
     }
   }
@@ -32,44 +41,45 @@ class Quiz extends Component {
       options: (
         <>
           <Button
+            margin="10px"
+            padding="10px"
             borderRadius="30px"
-            Desktopmargin="1%"
-            Desktoppadding="28px 15px"
             fontSize="28px"
-            width={"45%"}
+            width="45%"
             name={0}
+            value={"111111"}
             onClick={this.clicked}
           >
             Never
           </Button>
           <Button
+            margin="10px"
+            padding="10px"
             borderRadius="30px"
-            Desktopmargin="1%"
-            Desktoppadding="28px 15px"
             fontSize="28px"
-            width={"45%"}
+            width="45%"
             name={1}
             onClick={this.clicked}
           >
-            Reraly
+            Rarely
           </Button>
           <Button
+            margin="10px"
+            padding="10px"
             borderRadius="30px"
-            Desktopmargin="1%"
-            Desktoppadding="28px 15px"
             fontSize="28px"
-            width={"45%"}
+            width="45%"
             name={2}
             onClick={this.clicked}
           >
             Sometimes
           </Button>
           <Button
+            margin="10px"
+            padding="10px"
             borderRadius="30px"
-            Desktopmargin="1%"
-            Desktoppadding="28px 15px"
             fontSize="28px"
-            width={"45%"}
+            width="45%"
             name={3}
             onClick={this.clicked}
           >
@@ -112,9 +122,9 @@ class Quiz extends Component {
         <Card
           info={
             <div>
-              <h2 style={{ textAlign: "justify", height: "130px", padding: "12px" }}>
+              <h3 style={{ textAlign: "justify", marginTop: "10px", height: "100px", padding: "0 12px" }}>
                 {qustions[this.state.counter - 1]}
-              </h2>
+              </h3>
               <br />
               <br />
               {this.state.options}

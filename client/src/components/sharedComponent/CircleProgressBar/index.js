@@ -6,7 +6,7 @@ import {
   ProgressPage,
   Description,
   TrueIcon,
-  TreuIconBackground
+  TrueIconBackground
 } from "./style.CircleProgressBar"
 import Button from "../Button"
 import BackButton from "../BackButton"
@@ -31,9 +31,9 @@ class CircleProgressBar extends React.Component {
       <div>
         <BackButton history={this.props.history} onClick={this.props.onClickBackButton} />
         <ProgressPage>
-          <TreuIconBackground>
+          <TrueIconBackground>
             <TrueIcon type="check-circle" theme="filled" twoToneColor="#70B1FA" />
-          </TreuIconBackground>
+          </TrueIconBackground>
           <ProgressBarDiv>
             <Percent>{this.props.percent}</Percent>
             <ProgressBarStyle type="circle" percent={this.state.percent} showInfo={false} fill="green" />

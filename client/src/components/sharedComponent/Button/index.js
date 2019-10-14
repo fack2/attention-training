@@ -19,8 +19,8 @@ const StyledLink = styled(Link)`
     color:black;
 }
 @media only screen and (min-width: 800px) {
-margin: ${({ desktopmargin }) => desktopmargin || "-1rem 27rem 26rem"};
- padding:${({ desktoppadding }) => desktoppadding || "19px"};
+margin: ${({ desktopmargin }) => desktopmargin || "13px"};
+padding:${({ desktoppadding }) => desktoppadding || "28px 15px"};
 }
 `
 

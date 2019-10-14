@@ -4,6 +4,7 @@ const Homediv = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 800px;
+  text-align: -webkit-center;
   @media only screen and (min-width: 600px) {
     margin: auto;
   }
@@ -41,7 +42,7 @@ const StyledLogo = styled.img`
 `
 
 const TextStyled = styled.p`
-  textalign: center;
+  text-align: center;
   color: rgb(0, 0, 0);
   font-size: 20px;
   line-height: 1.3;

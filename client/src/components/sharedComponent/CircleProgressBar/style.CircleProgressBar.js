@@ -33,7 +33,7 @@ const Description = styled.div`
   font-size: 20px;
 `
 
-const TreuIconBackground = styled.div`
+const TrueIconBackground = styled.div`
   background-color: white;
   padding: 12px;
   border-radius: 30px;
@@ -66,12 +66,4 @@ const TrueIcon = styled(Icon)`
   }
 `
 
-export {
-  ProgressBarStyle,
-  Percent,
-  ProgressPage,
-  Description,
-  ProgressBarDiv,
-  TrueIcon,
-  TreuIconBackground
-}
+export { ProgressBarStyle, Percent, ProgressPage, Description, ProgressBarDiv, TrueIcon, TrueIconBackground }
