@@ -1,9 +1,10 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './Home'
-import ProgressBar from './sharedComponent/ProgressBar'
-import CircleProgressBar from './sharedComponent/CircleProgressBar'
-import Dashboard from '../components/Dashboard'
+import React from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Home from "./Home"
+import ProgressBar from "./sharedComponent/ProgressBar"
+import CircleProgressBar from "./sharedComponent/CircleProgressBar"
+import Dashboard from "../components/Dashboard"
+import NotFound from "../components/404NotFound"
 
 const Routes = () => {
   return (
@@ -24,6 +25,7 @@ const Routes = () => {
           )}
         />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   )
