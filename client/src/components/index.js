@@ -26,7 +26,6 @@ const Routes = () => {
         />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/skills" component={Skills} />
-        <Route exact path="/skills/:id" />
       </Switch>
     </Router>
   )
