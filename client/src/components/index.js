@@ -1,7 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Home from "./Home"
-import CircleProgressBar from "./sharedComponent/CircleProgressBar"
 import QuizInstructions from "./QuizInstructions"
 import Quiz from "./QuizPage"
 import Dashboard from "./Dashboard"
