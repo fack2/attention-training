@@ -4,9 +4,7 @@ const DivStyled = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin: auto;
+  margin: 5px auto 10px;
 `
 const FilterStyled = styled.div`
   display: flex;
@@ -16,7 +14,7 @@ const FilterStyled = styled.div`
 `
 
 const FilterButton = styled.button`
-  background: ${({ background }) => background || "white"};
+  background: ${({ background }) => background || "#fff"};
   display: inline-block;
   box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
   width: ${({ width }) => width || "111px"};

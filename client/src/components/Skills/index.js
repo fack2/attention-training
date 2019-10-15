@@ -41,16 +41,17 @@ class Skills extends React.Component {
           </FilterStyled>
         </DivStyled>
 
-        {this.state.FilteredData.map(e => {
-          return (
-            <SkillsCard key={e.id}>
-              <Link to={`/skills/${e.id}`}>
-                <SkillImg src={e.image} />
-                <Text>{e.name} </Text>
-              </Link>
-            </SkillsCard>
-          )
-        })}
+        {this.state.FilteredData &&
+          this.state.FilteredData.map(e => {
+            return (
+              <SkillsCard key={e.id}>
+                <Link to={`/skills/${e.id}`}>
+                  <SkillImg src={e.image} />
+                  <Text>{e.name} </Text>
+                </Link>
+              </SkillsCard>
+            )
+          })}
       </PageWrapper>
     )
   }
