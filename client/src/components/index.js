@@ -1,10 +1,11 @@
-import React from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Home from "./Home"
-import CircleProgressBar from "./sharedComponent/CircleProgressBar"
-import ProgressBar from "./sharedComponent/ProgressBar"
-import Quiz from "./QuizPage"
-import Dashboard from "./Dashboard"
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './Home'
+import CircleProgressBar from './sharedComponent/CircleProgressBar'
+import ProgressBar from './sharedComponent/ProgressBar'
+import Quiz from './QuizPage'
+import Dashboard from './Dashboard'
+import Results from './Results'
 
 const Routes = () => {
   return (
@@ -27,6 +28,7 @@ const Routes = () => {
           )}
         />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/results/:id" component={Results} />
       </Switch>
     </Router>
   )
