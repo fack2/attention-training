@@ -42,7 +42,7 @@ class Quiz extends Component {
         <>
           <Button
             color="#344356"
-            color_hover="#fff"
+            colorhover="#fff"
             text_align="left"
             background="#fff"
             box_shadow="unset"
@@ -58,7 +58,7 @@ class Quiz extends Component {
           </Button>
           <Button
             color="#344356"
-            color_hover="#fff"
+            colorhover="#fff"
             text_align="left"
             background="#fff"
             box_shadow="unset"
@@ -73,7 +73,7 @@ class Quiz extends Component {
           </Button>
           <Button
             color="#344356"
-            color_hover="#fff"
+            colorhover="#fff"
             text_align="left"
             background="#fff"
             box_shadow="unset"
@@ -88,7 +88,7 @@ class Quiz extends Component {
           </Button>
           <Button
             color="#344356"
-            color_hover="#fff"
+            colorhover="#fff"
             text_align="left"
             background="#fff"
             box_shadow="unset"

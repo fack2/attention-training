@@ -21,7 +21,7 @@ const StyledLink = styled(Link)`
   border-style: ${({ border_style }) => border_style || ""};
 &:hover{
     background:${({ hoverColor }) => hoverColor || "#ED6237"};
-    color:${({ color_hover }) => color_hover || "black"};
+    color:${({ colorhover }) => colorhover || "black"};
 }
 @media only screen and (min-width: 800px) {
 margin: ${({ desktopmargin }) => desktopmargin || "13px"};
