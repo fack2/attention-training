@@ -18,16 +18,15 @@ class Results extends Component {
       <Container>
         <Header>Results</Header>
         <Img src={resultsImg} atl="results" />
-        {resutlsData.map(result =>
-          result.id === parseInt(id) ? (
-            <TypeContainer>
-              <Type>You scored highly in: {result.type}</Type>
-              <Description>{result.descritption}</Description>
-            </TypeContainer>
-          ) : (
-            <p></p>
-          )
-        )}
+        {resutlsData &&
+          resutlsData.map(result =>
+            result.id === parseInt(id) ? (
+              <TypeContainer key={result.id}>
+                <Type>You scored highly in: {result.type}</Type>
+                <Description>{result.descritption}</Description>
+              </TypeContainer>
+            ) : null
+          )}
         <Button to="/dashboard" width="180px">
           Dashboard
         </Button>
