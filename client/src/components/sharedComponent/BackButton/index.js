@@ -1,5 +1,5 @@
-import React from 'react'
-import BackIcon from './BackIcon'
+import React from "react"
+import BackIcon from "./BackIcon"
 
 const BackButton = ({ history, onClick, position }) => {
   return (

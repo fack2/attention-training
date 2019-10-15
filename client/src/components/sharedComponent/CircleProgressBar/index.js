@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   ProgressBarDiv,
   ProgressBarStyle,
@@ -8,9 +8,9 @@ import {
   TrueIcon,
   TrueIconBackground,
   Counter
-} from './style.CircleProgressBar'
-import Button from '../Button'
-import BackButton from '../BackButton'
+} from "./style.CircleProgressBar"
+import Button from "../Button"
+import BackButton from "../BackButton"
 
 class CircleProgressBar extends React.Component {
   state = {
@@ -19,7 +19,7 @@ class CircleProgressBar extends React.Component {
 
   componentDidMount() {
     if (this.state.percent < 50 && this.props.percentRate == 50) {
-      console.log('1')
+      console.log("1")
       setInterval(() => {
         if (this.state.percent < 50) {
           this.setState({ percent: this.state.percent + 1 })
@@ -61,7 +61,7 @@ class CircleProgressBar extends React.Component {
           </TrueIconBackground>
           <ProgressBarDiv>
             <Percent>{this.props.percent}</Percent>
-            {console.log('coutter', this.props.counter)}
+            {console.log("coutter", this.props.counter)}
             <Counter>{this.props.counter} of 18</Counter>
             <ProgressBarStyle
               type="circle"
