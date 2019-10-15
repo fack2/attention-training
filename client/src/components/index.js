@@ -6,6 +6,7 @@ import ProgressBar from './sharedComponent/ProgressBar'
 import Quiz from './QuizPage'
 import Dashboard from './Dashboard'
 import Results from './Results'
+import Skills from './Skills'
 
 const Routes = () => {
   return (
@@ -27,6 +28,7 @@ const Routes = () => {
           )}
         />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/skills" component={Skills} />
         <Route exact path="/results/:id" component={Results} />
       </Switch>
     </Router>
