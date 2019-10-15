@@ -1,14 +1,14 @@
-import React, { Component } from "react"
-import Button from "../sharedComponent/Button"
-import BackButton from "../sharedComponent/BackButton"
-import Card from "../Card"
-import ProgressBar from "../sharedComponent/ProgressBar"
-import CircleProgressBar from "../sharedComponent/CircleProgressBar/"
-import qustions from "../../Questions"
+import React, { Component } from 'react'
+import Button from '../sharedComponent/Button'
+import BackButton from '../sharedComponent/BackButton'
+import Card from '../Card'
+import ProgressBar from '../sharedComponent/ProgressBar'
+import CircleProgressBar from '../sharedComponent/CircleProgressBar/'
+import qustions from '../../Questions'
 class Quiz extends Component {
   state = {
     counter: 1,
-    options: "",
+    options: '',
     score: [],
     percent: 0
   }
@@ -50,7 +50,7 @@ class Quiz extends Component {
             fontSize="20px"
             width="70%"
             name={0}
-            value={"111111"}
+            value={'111111'}
             onClick={this.clicked}
           >
             A&nbsp; Never
@@ -105,8 +105,11 @@ class Quiz extends Component {
     })
   }
   render() {
+    let { counter } = this.state
     return this.state.percent === 50 ? (
       <CircleProgressBar
+        counter={counter - 1}
+        percentRate="50"
         percent="50%"
         title="Good job!"
         description=" you are half way there."
@@ -117,16 +120,18 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 49 })
-          localStorage.setItem("scrore", this.state.score)
-          this.setState({ counter: this.state.counter - 1 })
+          localStorage.setItem('scrore', this.state.score)
+          this.setState({ counter: counter - 1 })
         }}
       />
     ) : this.state.percent === 100 ? (
       <CircleProgressBar
+        counter={counter - 1}
+        percentRate="100"
         percent="100%"
         title="You are awesome!"
         description="We’re completing your profile now."
-        to={`/results/${3}`}
+        to={`/results/${2}`}
         buttonName="See result"
         onClick={() => {
           this.setState({ percent: 101 })
@@ -134,16 +139,17 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 98 })
-          localStorage.setItem("scrore", this.state.score)
-          this.setState({ counter: this.state.counter - 1 })
+          localStorage.setItem('scrore', this.state.score)
+          this.setState({ counter: counter - 1 })
         }}
       />
     ) : (
-      <div style={{ textAlign: "center" }}>
+      <div style={{ textAlign: 'center' }}>
         <div>
           <BackButton
+            position="absolute"
             onClick={() => {
-              localStorage.setItem("scrore", this.state.score)
+              localStorage.setItem('scrore', this.state.score)
               if (this.state.counter > 1)
                 this.setState({ counter: this.state.counter - 1 })
               else window.location.href = `/quiz-instructions`
@@ -157,10 +163,10 @@ class Quiz extends Component {
             <div>
               <p
                 style={{
-                  textAlign: "justify",
-                  marginTop: "10px",
-                  height: "90px",
-                  padding: "8px 20px"
+                  textAlign: 'justify',
+                  marginTop: '10px',
+                  height: '90px',
+                  padding: '8px 20px'
                 }}
               >
                 {qustions[this.state.counter - 1]}
