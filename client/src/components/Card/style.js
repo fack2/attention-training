@@ -2,6 +2,7 @@ import { Card } from "antd"
 import styled from "styled-components"
 
 const StyledCard = styled(Card)`
+  background-size: cover !important;
   background: ${({ bg }) => bg || "#fff"};
   font-size: ${({ fontSize }) => fontSize || "16px"};
   color: ${({ color }) => color || "#000"};
@@ -13,7 +14,7 @@ const StyledCard = styled(Card)`
   padding-top: 10px;
   text-align: center;
   width: ${({ width }) => width || "80%"};
-  height: 84vh;
+  height: 79vh;
   overflow-y: ${({ scroll }) => (scroll ? "scroll" : "unset")};
 `
 const CardWrapper = styled.div`
