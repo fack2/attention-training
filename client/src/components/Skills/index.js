@@ -42,7 +42,6 @@ class Skills extends React.Component {
         </DivStyled>
 
         {this.state.FilteredData.map(e => {
-          console.log(e)
           return (
             <SkillsCard key={e.id}>
               <Link to={`/skills/${e.id}`}>
