@@ -18,14 +18,17 @@ class CircleProgressBar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.state.percent < 100 && this.props.percentRate == parseInt(50)) {
+    if (this.state.percent < 100 && this.props.percentRate === parseInt(50)) {
       setInterval(() => {
         if (this.state.percent < 50) {
           this.setState({ percent: this.state.percent + 1 })
         }
       }, 20)
     } else {
-      if (this.state.percent < 100 && this.props.percentRate == parseInt(100)) {
+      if (
+        this.state.percent < 100 &&
+        this.props.percentRate === parseInt(100)
+      ) {
         setInterval(() => {
           if (this.state.percent < 100) {
             this.setState({ percent: this.state.percent + 1 })
