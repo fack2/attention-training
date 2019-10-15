@@ -10,12 +10,13 @@ const StyledLink = styled(Link)`
   box-shadow: ${({ box_shadow }) => box_shadow || "0px 10px 25px #737C7D"}
 ;
   border-radius: ${({ border_radius }) => border_radius || "15px"};
-  padding:${({ padding }) => padding || "14px"};
+  padding:${({ padding }) => padding || "12px"};
   display: inline-block;
   text-align:${({ text_align }) => text_align || "center"};
   text-decoration-line: none;
 
   border:${({ border }) => border || ""}; 
+  position:${({ position }) => position || "unset"}; 
 
   width:${({ width }) => width || "40px"}
   border-style: ${({ border_style }) => border_style || ""};
