@@ -18,7 +18,7 @@ class CircleProgressBar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.state.percent < 50 && this.props.percentRate == 50) {
+    if (this.state.percent < 50 && this.props.percentRate === ParseInt(50)) {
       console.log("1")
       setInterval(() => {
         if (this.state.percent < 50) {
@@ -26,7 +26,7 @@ class CircleProgressBar extends React.Component {
         }
       }, 20)
     } else {
-      if (this.state.percent < 100 && this.props.percentRate == 100) {
+      if (this.state.percent < 100 && this.props.percentRate == ParseInt(100)) {
         setInterval(() => {
           if (this.state.percent < 100) {
             this.setState({ percent: this.state.percent + 1 })
