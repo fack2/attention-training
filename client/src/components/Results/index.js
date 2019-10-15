@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import resultsImg from '../../assets/results.png'
-import resutlsData from '../resultsData'
-import Button from '../sharedComponent/Button'
+import React, { Component } from "react"
+import resultsImg from "../../assets/results.png"
+import resutlsData from "../resultsData"
+import Button from "../sharedComponent/Button"
 import {
   Container,
   Header,
@@ -9,7 +9,7 @@ import {
   Img,
   Type,
   Description
-} from './style.Results'
+} from "./style.Results"
 
 class Results extends Component {
   render() {
