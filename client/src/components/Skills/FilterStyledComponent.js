@@ -19,10 +19,11 @@ const FilterButton = styled.button`
   box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
   width: ${({ width }) => width || "111px"};
   height: ${({ height }) => height || "34px"};
-  border-radius: ${({ borderRadius }) => borderRadius || "6px"};
+  border-radius: ${({ borderRadius }) => borderRadius || " 15px 0px 0px 15px"};
+  outline: none;
   &:hover {
-    background: ${({ hoverColor }) => hoverColor || "#696969"};
-    color: ${({ hoverColor }) => hoverColor || "white"};
+    color: ${({ hoverColor }) => hoverColor || "#2F4F4F"};
+    text-shadow: 1px 1px #c0c0c0;
   }
 `
 

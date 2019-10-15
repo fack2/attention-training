@@ -35,7 +35,11 @@ class Skills extends React.Component {
             <FilterButton value="everyday" onClick={this.onClick}>
               Everyday
             </FilterButton>
-            <FilterButton value="superpower" onClick={this.onClick}>
+            <FilterButton
+              borderRadius="0px 15px 15px 0px"
+              value="superpower"
+              onClick={this.onClick}
+            >
               Superpower
             </FilterButton>
           </FilterStyled>
