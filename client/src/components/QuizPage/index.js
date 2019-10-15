@@ -172,7 +172,6 @@ class Quiz extends Component {
                 {qustions[this.state.counter - 1]}
               </p>
               <br />
-              <br />
               {this.state.options}
             </div>
           }
