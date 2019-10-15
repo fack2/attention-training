@@ -32,14 +32,13 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
-      // the line is temp
-      window.location.href = `/dd${this.state.score}`
+      this.setState({ percent: 100 })
     }
   }
   componentDidMount() {
     this.setState({
       options: (
-        <>
+        <div>
           <Button
             color="#344356"
             colorhover="#fff"
@@ -101,7 +100,7 @@ class Quiz extends Component {
           >
             D&nbsp; Often
           </Button>
-        </>
+        </div>
       )
     })
   }
@@ -122,13 +121,31 @@ class Quiz extends Component {
           this.setState({ counter: this.state.counter - 1 })
         }}
       />
+    ) : this.state.percent === 100 ? (
+      <CircleProgressBar
+        percent="100%"
+        title="You are awesome!"
+        description="We’re completing your profile now."
+        to={`/results/${3}`}
+        buttonName="See result"
+        onClick={() => {
+          this.setState({ percent: 101 })
+        }}
+        history={this.props.history}
+        onClickBackButton={() => {
+          this.setState({ percent: 98 })
+          localStorage.setItem("scrore", this.state.score)
+          this.setState({ counter: this.state.counter - 1 })
+        }}
+      />
     ) : (
       <div style={{ textAlign: "center" }}>
         <div>
           <BackButton
             onClick={() => {
               localStorage.setItem("scrore", this.state.score)
-              if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
+              if (this.state.counter > 1)
+                this.setState({ counter: this.state.counter - 1 })
               else window.location.href = `/quiz-instructions`
             }}
             history={this.props.history}
@@ -138,7 +155,14 @@ class Quiz extends Component {
         <Card
           info={
             <div>
-              <p style={{ textAlign: "justify", marginTop: "10px", height: "90px", padding: "8px 20px" }}>
+              <p
+                style={{
+                  textAlign: "justify",
+                  marginTop: "10px",
+                  height: "90px",
+                  padding: "8px 20px"
+                }}
+              >
                 {qustions[this.state.counter - 1]}
               </p>
               <br />
