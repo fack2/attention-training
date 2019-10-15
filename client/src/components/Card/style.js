@@ -11,9 +11,9 @@ const StyledCard = styled(Card)`
   border: solid 0.1em #ddd;
   border-radius: 15px;
   padding-top: 10px;
-  text-align: -webkit-center;
+  text-align: center;
   width: ${({ width }) => width || "80%"};
-  height: 70vh;
+  height: 84vh;
   overflow-y: ${({ scroll }) => (scroll ? "scroll" : "unset")};
 `
 const CardWrapper = styled.div`
