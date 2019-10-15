@@ -32,11 +32,15 @@ class Skills extends React.Component {
         {/*filter*/}
         <DivStyled>
           <FilterStyled>
-            <FilterButton value="everyday" onClick={this.onClick}>
+            <FilterButton
+              borderRaduis="left"
+              value="everyday"
+              onClick={this.onClick}
+            >
               Everyday
             </FilterButton>
             <FilterButton
-              borderRadius="0px 15px 15px 0px"
+              borderRaduis="right"
               value="superpower"
               onClick={this.onClick}
             >

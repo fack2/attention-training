@@ -19,7 +19,8 @@ const FilterButton = styled.button`
   box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
   width: ${({ width }) => width || "111px"};
   height: ${({ height }) => height || "34px"};
-  border-radius: ${({ borderRadius }) => borderRadius || " 15px 0px 0px 15px"};
+  border-radius: ${props =>
+    props.borderRaduis === "left" ? "15px 0px 0px 15px" : "0px 15px 15px 0px"};
   outline: none;
   &:hover {
     color: ${({ hoverColor }) => hoverColor || "#2F4F4F"};
