@@ -16,16 +16,12 @@ const Skilldiv = styled.div`
   display: flex;
   flex-direction: column;
   list-style-type: none;
-
-  @media only screen and (min-width: 800px) {
-  }
 `
 
 const Header = styled.h1`
   font-size: 25px;
   color: black;
   text-align: center;
-  padding-top: 29px;
 `
 
 const TextDiv = styled.div`
@@ -49,8 +45,6 @@ const Type = styled.p`
 
 const SkillImg = styled.img`
   align-items: center;
-  @media only screen and (min-width: 800px) {
-  }
 `
 
 const List = styled.div`
