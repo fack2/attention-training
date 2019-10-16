@@ -1,17 +1,17 @@
-import React from 'react'
-import img from '../../assets/page-not-found.jpg'
-import Button from '../sharedComponent/Button'
-import { Status, StatusMessage } from './style.NotFound'
+import React from "react"
+import img from "../../assets/page-not-found.jpg"
+import StyledLink from "../sharedComponent/Button"
+import { Status, StatusMessage, NotFoundContainer } from "./style.NotFound"
 
 const NotFound = () => {
   return (
-    <div>
+    <NotFoundContainer>
       <Status>404</Status>
       <StatusMessage>Oops! Page not found</StatusMessage>
-      <Button width="150px" margin="auto">
+      <StyledLink width="111px" font-size="" margin="30px auto" to="/dashboard">
         Dashboard
-      </Button>
-    </div>
+      </StyledLink>
+    </NotFoundContainer>
   )
 }
 
