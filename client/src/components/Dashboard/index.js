@@ -16,7 +16,7 @@ import cardLogo from "../../assets/icon.png"
 import secondLogo from "../../assets/icon2.png"
 import StyledLink from "../sharedComponent/Button"
 import restartVector from "../../assets/restart.png"
-import AboutUs from "../../assets/AboutUs.png"
+import aboutUs from "../../assets/AboutUs.png"
 
 const Dashboard = ({ history }) => {
   return (
@@ -93,7 +93,7 @@ const Dashboard = ({ history }) => {
             desktopmargin="-20rem 27rem 26rem"
             to="/about"
           >
-            <AboutImg src={AboutUs} />
+            <AboutImg src={aboutUs} />
             ABOUT US
           </StyledLink>
         </Buttuns>
