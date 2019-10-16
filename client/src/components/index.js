@@ -7,6 +7,7 @@ import Dashboard from "./Dashboard"
 import Results from "./Results"
 import Skills from "./Skills"
 import IndividualSkill from "./IndividualSkill"
+import NotFound from "../components/404NotFound"
 
 const Routes = () => {
   return (
@@ -19,6 +20,7 @@ const Routes = () => {
         <Route exact path="/skills" component={Skills} />
         <Route exact path="/results/:id" component={Results} />
         <Route exact path="/skills/:id" component={IndividualSkill} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   )
