@@ -26,7 +26,7 @@ class IndividualSkill extends React.Component {
                   <Header>{e.name}</Header>
                   <Type>{e.type}</Type>
                   <li>
-                    <img src={e.image} />
+                    <img alt="skill" src={e.image} />
                   </li>
                   <TextDiv>
                     <Text>{e.description}</Text>
