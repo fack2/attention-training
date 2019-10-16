@@ -4,7 +4,11 @@ import BackButton from "../sharedComponent/BackButton"
 import Card from "../Card"
 import ProgressBar from "../sharedComponent/ProgressBar"
 import CircleProgressBar from "../sharedComponent/CircleProgressBar/"
+import Close from "./closeButton"
 import qustions from "../../Questions"
+import Swal from "sweetalert2"
+import StyleSwal from "./swalStyle"
+
 class Quiz extends Component {
   state = {
     counter: 1,
@@ -34,6 +38,22 @@ class Quiz extends Component {
     if (this.state.counter === 18) {
       this.setState({ percent: 100 })
     }
+  }
+  close = () => {
+    Swal.fire({
+      title: "Are you sure you want to exit?",
+      text: "your answers will be lost, you will not be able to know your ADHD type!",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes!"
+    }).then(result => {
+      if (result.value) {
+        // this.props.close()
+        this.props.history.push("/dashboard")
+      } else {
+      }
+    })
   }
   componentDidMount() {
     this.setState({
@@ -145,13 +165,14 @@ class Quiz extends Component {
       />
     ) : (
       <div style={{ textAlign: "center" }}>
+        <Close type="close" onClick={this.close} />
+        <StyleSwal />
         <div>
           <BackButton
             position="absolute"
             onClick={() => {
               localStorage.setItem("scrore", this.state.score)
-              if (this.state.counter > 1)
-                this.setState({ counter: this.state.counter - 1 })
+              if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
               else window.location.href = `/quiz-instructions`
             }}
             history={this.props.history}
