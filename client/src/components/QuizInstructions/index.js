@@ -23,7 +23,7 @@ class QuizInstructions extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <div style={{ height: "42px", display: "flex" }}>
           <Button
             margin="18px 0px 4px 8px"
@@ -56,10 +56,18 @@ class QuizInstructions extends Component {
             </p>
           }
         ></Card>
-        <p style={{ margin: "30px 0 0 0", display: "flex", "justify-content": "center" }}>
-          {this.state.counter < 3 ? "Tap the card to next" : "Tap the card to start"}
+        <p
+          style={{
+            margin: "30px 0 0 0",
+            display: "flex",
+            "justify-content": "center"
+          }}
+        >
+          {this.state.counter < 3
+            ? "Tap the card to next"
+            : "Tap the card to start"}
         </p>
-      </>
+      </div>
     )
   }
 }

@@ -16,6 +16,8 @@ const StyledCard = styled(Card)`
   width: ${({ width }) => width || "80%"};
   height: 79vh;
   overflow-y: ${({ scroll }) => (scroll ? "scroll" : "unset")};
+ 
+  }
 `
 const CardWrapper = styled.div`
   display: flex;

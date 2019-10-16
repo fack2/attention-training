@@ -10,7 +10,8 @@ class Quiz extends Component {
     counter: 1,
     options: "",
     score: [],
-    percent: 0
+    percent: 0,
+    flag: 0
   }
   /**
    * @param string value of choice
@@ -26,8 +27,12 @@ class Quiz extends Component {
     score[this.state.counter - 1] = parseInt(name)
     this.setState({
       score: score,
+      flag: 1,
       counter: this.state.counter + 1
     })
+    setTimeout(() => {
+      this.setState({ flag: 0 })
+    }, 0)
     if (this.state.counter === 9) {
       this.setState({ percent: 50 })
     }
@@ -106,7 +111,9 @@ class Quiz extends Component {
   }
   render() {
     let { counter } = this.state
-    return this.state.percent === 50 ? (
+    return this.state.flag ? (
+      <div></div>
+    ) : this.state.percent === 50 ? (
       <CircleProgressBar
         counter={counter - 1}
         percentRate="50"
@@ -159,8 +166,25 @@ class Quiz extends Component {
           <ProgressBar counter={this.state.counter}></ProgressBar>
         </div>
         <Card
+          c="aaa"
           info={
             <div>
+              <style>
+                {`
+.aaa {
+  
+  animation: mymove
+5s ; 
+}
+
+
+@keyframes mymove {
+ 0% {right: 0px;}
+ 30% {right: 350px;}
+
+}
+  `}
+              </style>
               <p
                 style={{
                   textAlign: "justify",
