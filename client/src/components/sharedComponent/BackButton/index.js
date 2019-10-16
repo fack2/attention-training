@@ -8,7 +8,7 @@ const BackButton = ({ history, onClick, position }) => {
       type="arrow-left"
       onClick={() => {
         history.goBack()
-        onClick()
+        if (onClick) onClick()
       }}
     />
   )

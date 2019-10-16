@@ -4,10 +4,11 @@ import BackButton from "../sharedComponent/BackButton"
 import Card from "../Card"
 import ProgressBar from "../sharedComponent/ProgressBar"
 import CircleProgressBar from "../sharedComponent/CircleProgressBar/"
-import { Icon } from "antd"
 import Close from "./closeButton"
-// import Close from "../sharedComponent/BackButton/BackIcon"
 import qustions from "../../Questions"
+import Swal from "sweetalert2"
+import StyleSwal from "./swalStyle"
+
 class Quiz extends Component {
   state = {
     counter: 1,
@@ -31,12 +32,28 @@ class Quiz extends Component {
       score: score,
       counter: this.state.counter + 1
     })
-    if (this.state.counter == 9) {
+    if (this.state.counter === 9) {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
       this.setState({ percent: 100 })
     }
+  }
+  close = () => {
+    Swal.fire({
+      title: "Are you sure you want to exit?",
+      text: "your answers will be lost, you will not be able to know your ADHD type!",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes!"
+    }).then(result => {
+      if (result.value) {
+        // this.props.close()
+        this.props.history.push("/dashboard")
+      } else {
+      }
+    })
   }
   componentDidMount() {
     this.setState({
@@ -148,7 +165,8 @@ class Quiz extends Component {
       />
     ) : (
       <div style={{ textAlign: "center" }}>
-        <Close type="close" />
+        <Close type="close" onClick={this.close} />
+        <StyleSwal />
         <div>
           <BackButton
             position="absolute"
