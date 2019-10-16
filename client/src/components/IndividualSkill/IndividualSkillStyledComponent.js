@@ -8,7 +8,6 @@ const PageWrapper = styled.div`
 
   @media only screen and (min-width: 800px) {
     margin: auto;
-    text-align: center;
   }
 `
 
@@ -19,7 +18,6 @@ const Skilldiv = styled.div`
   list-style-type: none;
 
   @media only screen and (min-width: 800px) {
-    max-height: 281px;
   }
 `
 
@@ -49,4 +47,19 @@ const Type = styled.p`
   color: silver;
 `
 
-export { PageWrapper, Skilldiv, Header, Text, TextDiv, Type }
+const SkillImg = styled.img`
+  align-items: center;
+  @media only screen and (min-width: 800px) {
+  }
+`
+
+const List = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 800px) {
+    align-items: center;
+  }
+`
+
+export { PageWrapper, Skilldiv, Header, Text, TextDiv, Type, SkillImg, List }

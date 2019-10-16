@@ -8,7 +8,9 @@ import {
   Text,
   Skilldiv,
   TextDiv,
-  Type
+  Type,
+  SkillImg,
+  List
 } from "./IndividualSkillStyledComponent"
 
 class IndividualSkill extends React.Component {
@@ -25,9 +27,9 @@ class IndividualSkill extends React.Component {
                 <Skilldiv key={e.id}>
                   <Header>{e.name}</Header>
                   <Type>{e.type}</Type>
-                  <li>
-                    <img alt="skill" src={e.image} />
-                  </li>
+                  <List>
+                    <SkillImg alt="skill" src={e.image} />
+                  </List>
                   <TextDiv>
                     <Text>{e.description}</Text>
                   </TextDiv>
@@ -39,7 +41,7 @@ class IndividualSkill extends React.Component {
             margin="30px auto"
             width="100px"
             fontSize="20px"
-            desktopmargin="664px auto"
+            desktopmargin="auto"
             to="/dashboard"
           >
             Dashboard
