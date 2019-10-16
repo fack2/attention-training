@@ -4,6 +4,9 @@ import BackButton from "../sharedComponent/BackButton"
 import Card from "../Card"
 import ProgressBar from "../sharedComponent/ProgressBar"
 import CircleProgressBar from "../sharedComponent/CircleProgressBar/"
+import { Icon } from "antd"
+import Close from "./closeButton"
+// import Close from "../sharedComponent/BackButton/BackIcon"
 import qustions from "../../Questions"
 class Quiz extends Component {
   state = {
@@ -28,7 +31,7 @@ class Quiz extends Component {
       score: score,
       counter: this.state.counter + 1
     })
-    if (this.state.counter === 9) {
+    if (this.state.counter == 9) {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
@@ -145,13 +148,13 @@ class Quiz extends Component {
       />
     ) : (
       <div style={{ textAlign: "center" }}>
+        <Close type="close" />
         <div>
           <BackButton
             position="absolute"
             onClick={() => {
               localStorage.setItem("scrore", this.state.score)
-              if (this.state.counter > 1)
-                this.setState({ counter: this.state.counter - 1 })
+              if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
               else window.location.href = `/quiz-instructions`
             }}
             history={this.props.history}
