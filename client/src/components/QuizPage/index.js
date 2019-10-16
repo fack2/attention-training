@@ -25,7 +25,6 @@ class Quiz extends Component {
    */
   clicked = ({ target }) => {
     const { name } = target
-
     const { score } = this.state
     score[this.state.counter - 1] = parseInt(name)
     this.setState({
@@ -36,6 +35,7 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
+      localStorage.setItem("scrore", this.state.score)
       this.setState({ percent: 100 })
     }
   }
@@ -171,9 +171,8 @@ class Quiz extends Component {
           <BackButton
             position="absolute"
             onClick={() => {
-              localStorage.setItem("scrore", this.state.score)
               if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
-              else window.location.href = `/quiz-instructions`
+              else this.props.history.push("/quiz-instructions")
             }}
             history={this.props.history}
           ></BackButton>
