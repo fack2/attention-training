@@ -6,6 +6,7 @@ import Quiz from "./QuizPage"
 import Dashboard from "./Dashboard"
 import Results from "./Results"
 import Skills from "./Skills"
+import IndividualSkill from "./IndividualSkill"
 import NotFound from "../components/404NotFound"
 
 const Routes = () => {
@@ -16,9 +17,10 @@ const Routes = () => {
         <Route exact path="/quiz-instructions" component={QuizInstructions} />
         <Route exact path="/quiz" component={Quiz} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route component={NotFound} />
         <Route exact path="/skills" component={Skills} />
         <Route exact path="/results/:id" component={Results} />
+        <Route exact path="/skills/:id" component={IndividualSkill} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   )
