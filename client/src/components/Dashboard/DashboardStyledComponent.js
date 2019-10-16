@@ -57,12 +57,24 @@ const Buttuns = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 38px;
   @media only screen and (min-width: 800px) {
+    align-items: center;
   }
 `
 
 const RestartImg = styled.img`
-  margin-bottom: -6px;
+  margin-bottom: -9px;
+  width: 28px;
+  height: 30px;
+  margin-right: 4px;
+`
+
+const AboutImg = styled.img`
+  margin-bottom: -9px;
+  width: 30px;
+  height: 30px;
+  margin-right: 9px;
 `
 
 export {
@@ -74,5 +86,6 @@ export {
   Titlewrap,
   PageWrapper,
   Buttuns,
-  RestartImg
+  RestartImg,
+  AboutImg
 }
