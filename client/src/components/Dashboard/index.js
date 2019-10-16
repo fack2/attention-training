@@ -9,12 +9,14 @@ import {
   Titlewrap,
   PageWrapper,
   Buttuns,
-  RestartImg
+  RestartImg,
+  AboutImg
 } from "./DashboardStyledComponent"
 import cardLogo from "../../assets/icon.png"
 import secondLogo from "../../assets/icon2.png"
 import StyledLink from "../sharedComponent/Button"
-import restartVector from "../../assets/Vector.png"
+import restartVector from "../../assets/restart.png"
+import aboutUs from "../../assets/AboutUs.png"
 
 const Dashboard = ({ history }) => {
   return (
@@ -30,7 +32,7 @@ const Dashboard = ({ history }) => {
           </Titlewrap>
           <Text>Revisit your ADHD subtype</Text>
           <StyledLink
-            background="#800080"
+            background="#70B1FA"
             width="172px"
             fontSize="20px"
             to="/result"
@@ -47,7 +49,7 @@ const Dashboard = ({ history }) => {
           </Titlewrap>
           <Text>Find Basics information about ADHD</Text>
           <StyledLink
-            background="#ED6237"
+            background="#70B1FA"
             width="172px"
             fontSize="20px"
             to="/basic-info"
@@ -63,14 +65,19 @@ const Dashboard = ({ history }) => {
             <Title>Superpower Skills</Title>
           </Titlewrap>
           <Text>Find and harness your own superpowers</Text>
-          <StyledLink width="172px" fontSize="19px" to="/skills">
+          <StyledLink
+            width="172px"
+            fontSize="19px"
+            to="/skills"
+            background="#70B1FA"
+          >
             SEE SUPERPOWER
           </StyledLink>
         </DashboardCard>
         {/* buttons */}
         <Buttuns>
           <StyledLink
-            background="#800080"
+            background="#AA27D6"
             width="173px"
             fontSize="20px"
             desktopmargin="5rem 27rem 26rem"
@@ -86,6 +93,7 @@ const Dashboard = ({ history }) => {
             desktopmargin="-20rem 27rem 26rem"
             to="/about"
           >
+            <AboutImg src={aboutUs} />
             ABOUT US
           </StyledLink>
         </Buttuns>
