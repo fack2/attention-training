@@ -1,5 +1,4 @@
 import React from "react"
-import img from "../../assets/page-not-found.jpg"
 import StyledLink from "../sharedComponent/Button"
 import { Status, StatusMessage, NotFoundContainer } from "./style.NotFound"
 
