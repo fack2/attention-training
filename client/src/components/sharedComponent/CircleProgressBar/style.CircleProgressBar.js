@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Progress, Icon } from "antd"
 
 const ProgressPage = styled.div`
+  margin-top: 125px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -20,10 +21,11 @@ const ProgressBarStyle = styled(Progress)`
 
 const Percent = styled.h2`
   position: absolute;
-  top: 47px;
+  font-size: 31px;
   margin: auto;
   width: 120px;
   margin: 2px;
+  margin-top: 24px;
   text-align: center;
 `
 
@@ -33,7 +35,7 @@ const Description = styled.div`
   font-size: 20px;
 `
 
-const TreuIconBackground = styled.div`
+const TrueIconBackground = styled.div`
   background-color: white;
   padding: 12px;
   border-radius: 30px;
@@ -65,6 +67,12 @@ const TrueIcon = styled(Icon)`
     background-color: red;
   }
 `
+const Counter = styled.p`
+  position: absolute;
+  top: 215px;
+  left: 137px;
+  color: #737373;
+`
 
 export {
   ProgressBarStyle,
@@ -73,5 +81,6 @@ export {
   Description,
   ProgressBarDiv,
   TrueIcon,
-  TreuIconBackground
+  TrueIconBackground,
+  Counter
 }

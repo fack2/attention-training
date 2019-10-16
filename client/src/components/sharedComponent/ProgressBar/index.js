@@ -1,9 +1,5 @@
 import React, { Component } from "react"
-import {
-  ProgressBarStyle,
-  Counter,
-  ProgressBarContainer
-} from "./style.ProgressBar"
+import { ProgressBarStyle, Counter, ProgressBarContainer } from "./style.ProgressBar"
 
 class ProgressBar extends Component {
   state = {
@@ -24,17 +20,15 @@ class ProgressBar extends Component {
   render() {
     return (
       <ProgressBarContainer>
-        <Counter>{this.state.counter} of 18</Counter>
+        <Counter>{this.props.counter || 0} of 18</Counter>
         <ProgressBarStyle
           strokeColor={{
             "0%": "#108ee9",
             "100%": "#87d068"
           }}
-          Color={"red"}
-          percent={this.state.percent}
+          percent={(this.props.counter / 18.0) * 100}
           showInfo={false}
         />
-        <button onClick={this.increase}>next </button>
       </ProgressBarContainer>
     )
   }

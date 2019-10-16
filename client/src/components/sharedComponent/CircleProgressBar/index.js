@@ -6,7 +6,8 @@ import {
   ProgressPage,
   Description,
   TrueIcon,
-  TreuIconBackground
+  TrueIconBackground,
+  Counter
 } from "./style.CircleProgressBar"
 import Button from "../Button"
 import BackButton from "../BackButton"
@@ -17,29 +18,52 @@ class CircleProgressBar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.state.percent < 50) {
+    if (this.state.percent < 100 && this.props.percentRate === parseInt(50)) {
       setInterval(() => {
         if (this.state.percent < 50) {
           this.setState({ percent: this.state.percent + 1 })
         }
       }, 20)
+    } else {
+      if (
+        this.state.percent < 100 &&
+        this.props.percentRate === parseInt(100)
+      ) {
+        setInterval(() => {
+          if (this.state.percent < 100) {
+            this.setState({ percent: this.state.percent + 1 })
+          }
+        }, 20)
+      }
     }
   }
+  // } else if (this.state.percent < 50) {
+  //   setInterval(() => {
+  //     if (this.state.percent < 50) {
+  //       this.setState({ percent: this.state.percent + 1 })
+  //     }
+  //   }, 20)
+  // }
 
   render() {
     return (
       <div>
-        <BackButton />
+        <BackButton
+          position="relative"
+          history={this.props.history}
+          onClick={this.props.onClickBackButton}
+        />
         <ProgressPage>
-          <TreuIconBackground>
+          <TrueIconBackground>
             <TrueIcon
               type="check-circle"
               theme="filled"
               twoToneColor="#70B1FA"
             />
-          </TreuIconBackground>
+          </TrueIconBackground>
           <ProgressBarDiv>
             <Percent>{this.props.percent}</Percent>
+            <Counter>{this.props.counter} of 18</Counter>
             <ProgressBarStyle
               type="circle"
               percent={this.state.percent}
@@ -51,7 +75,10 @@ class CircleProgressBar extends React.Component {
             <h3>{this.props.title}</h3>
             <p>{this.props.description}</p>
           </Description>
-          <Button width="245px">{this.props.button}</Button>
+          <Button width="245px" onClick={this.props.onClick} to={this.props.to}>
+            {/* name of button as a props {button} */}
+            {this.props.buttonName}
+          </Button>
         </ProgressPage>
       </div>
     )
