@@ -37,12 +37,6 @@ const Text = styled.p`
   opacity: 0.8;
 `
 
-const Type = styled.p`
-  text-align: center;
-  font-size: 15px;
-  color: silver;
-`
-
 const BasicImg = styled.img`
   align-items: center;
 `
@@ -56,4 +50,4 @@ const List = styled.div`
   }
 `
 
-export { PageWrapper, Basicdiv, Header, Text, TextDiv, Type, BasicImg, List }
+export { PageWrapper, Basicdiv, Header, Text, TextDiv, BasicImg, List }
