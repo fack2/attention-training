@@ -12,7 +12,6 @@ const PageWrapper = styled.div`
 `
 
 const Basicdiv = styled.div`
-  margin: 16px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
