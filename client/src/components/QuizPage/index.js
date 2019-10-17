@@ -129,7 +129,7 @@ class Quiz extends Component {
     return this.state.percent === 50 ? (
       <CircleProgressBar
         counter={counter - 1}
-        percentRate="50"
+        percentRate={50}
         percent="50%"
         title="Good job!"
         description=" you are half way there."
@@ -147,7 +147,7 @@ class Quiz extends Component {
     ) : this.state.percent === 100 ? (
       <CircleProgressBar
         counter={counter - 1}
-        percentRate="100"
+        percentRate={100}
         percent="100%"
         title="You are awesome!"
         description="We’re completing your profile now."
