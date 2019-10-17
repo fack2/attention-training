@@ -36,8 +36,6 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
-<<<<<<< Updated upstream
-=======
       let score1 = 0
       let score2 = 0
       let score3 = 0
@@ -50,7 +48,6 @@ class Quiz extends Component {
       localStorage.setItem("score3", score3)
       localStorage.setItem("score", this.state.score)
       localStorage.setItem("complete", true)
->>>>>>> Stashed changes
       this.setState({ percent: 100 })
     }
   }
