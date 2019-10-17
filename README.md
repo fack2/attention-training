@@ -12,9 +12,9 @@ Neurodiverse individuals traditionally struggle with focus, social interaction, 
 
 ### Figma Prototype: https://www.figma.com/file/g0RBgTGKjNm0TAIxJcHD5W/Attention-training-k2?node-id=0%3A1
 
-## Development:
+### Development:
 
-# How to use our website:
+- #### How to use our website:
 
 - Clone the project repo, and cd to it's directory.
 - Enter client directory.
@@ -24,12 +24,12 @@ Neurodiverse individuals traditionally struggle with focus, social interaction, 
 - Run npm start to start the website.
   `npm start`
 
-## Flow of the app:
+### Flow of the app:
 
 - Users answer a quiz questions and the answer is stored in `localStorage`.
 - when the users click on X the incomplete quiz state is stored in local storage, then it will be checked in the dashboard.
 
-## Debugging and Troubleshooting:
+### Debugging and Troubleshooting:
 
 run heroku command to see the heroku logs.
 `heroku logs --tail attention-training`
