@@ -25,7 +25,6 @@ class Quiz extends Component {
    */
   clicked = ({ target }) => {
     const { name } = target
-
     const { score } = this.state
     score[this.state.counter - 1] = parseInt(name)
     this.setState({
@@ -36,6 +35,7 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
+      localStorage.setItem("complete", true)
       this.setState({ percent: 100 })
     }
   }
@@ -49,80 +49,79 @@ class Quiz extends Component {
       confirmButtonText: "Yes!"
     }).then(result => {
       if (result.value) {
-        // this.props.close()
+        localStorage.setItem("complete", false)
         this.props.history.push("/dashboard")
       } else {
       }
     })
   }
-  componentDidMount() {
-    this.setState({
-      options: (
-        <div>
-          <Button
-            color="#344356"
-            colorhover="#fff"
-            text_align="left"
-            background="#fff"
-            box_shadow="unset"
-            border="3px solid #E8EEF4"
-            border_radius="20px"
-            fontSize="20px"
-            width="70%"
-            name={0}
-            value={"111111"}
-            onClick={this.clicked}
-          >
-            A&nbsp; Never
-          </Button>
-          <Button
-            color="#344356"
-            colorhover="#fff"
-            text_align="left"
-            background="#fff"
-            box_shadow="unset"
-            border="3px solid #E8EEF4"
-            border_radius="20px"
-            fontSize="20px"
-            width="70%"
-            name={1}
-            onClick={this.clicked}
-          >
-            B&nbsp; Rarely
-          </Button>
-          <Button
-            color="#344356"
-            colorhover="#fff"
-            text_align="left"
-            background="#fff"
-            box_shadow="unset"
-            border="3px solid #E8EEF4"
-            border_radius="20px"
-            fontSize="20px"
-            width="70%"
-            name={2}
-            onClick={this.clicked}
-          >
-            C&nbsp; Sometimes
-          </Button>
-          <Button
-            color="#344356"
-            colorhover="#fff"
-            text_align="left"
-            background="#fff"
-            box_shadow="unset"
-            border="3px solid #E8EEF4"
-            border_radius="20px"
-            fontSize="20px"
-            width="70%"
-            name={3}
-            onClick={this.clicked}
-          >
-            D&nbsp; Often
-          </Button>
-        </div>
-      )
-    })
+
+  options() {
+    return (
+      <div>
+        <Button
+          colorhover="#fff"
+          text_align="left"
+          background={this.state.score[this.state.counter - 1] === 0 ? "#ED6237" : "#fff"}
+          color={this.state.score[this.state.counter - 1] === 0 ? "#fff" : "#000"}
+          box_shadow="unset"
+          border="3px solid #E8EEF4"
+          border_radius="20px"
+          fontSize="20px"
+          width="70%"
+          name={0}
+          value={"111111"}
+          onClick={this.clicked}
+        >
+          A&nbsp; Never
+        </Button>
+        <Button
+          colorhover="#fff"
+          color={this.state.score[this.state.counter - 1] === 1 ? "#fff" : "#000"}
+          text_align="left"
+          background={this.state.score[this.state.counter - 1] === 1 ? "#ED6237" : "#fff"}
+          box_shadow="unset"
+          border="3px solid #E8EEF4"
+          border_radius="20px"
+          fontSize="20px"
+          width="70%"
+          name={1}
+          onClick={this.clicked}
+        >
+          B&nbsp; Rarely
+        </Button>
+        <Button
+          color={this.state.score[this.state.counter - 1] === 2 ? "#fff" : "#000"}
+          colorhover="#fff"
+          text_align="left"
+          background={this.state.score[this.state.counter - 1] === 2 ? "#ED6237" : "#fff"}
+          box_shadow="unset"
+          border="3px solid #E8EEF4"
+          border_radius="20px"
+          fontSize="20px"
+          width="70%"
+          name={2}
+          onClick={this.clicked}
+        >
+          C&nbsp; Sometimes
+        </Button>
+        <Button
+          color={this.state.score[this.state.counter - 1] === 3 ? "#fff" : "#000"}
+          text_align="left"
+          colorhover="#fff"
+          background={this.state.score[this.state.counter - 1] === 3 ? "#ED6237" : "#fff"}
+          box_shadow="unset"
+          border="3px solid #E8EEF4"
+          border_radius="20px"
+          fontSize="20px"
+          width="70%"
+          name={3}
+          onClick={this.clicked}
+        >
+          D&nbsp; Often
+        </Button>
+      </div>
+    )
   }
   render() {
     let { counter } = this.state
@@ -193,7 +192,7 @@ class Quiz extends Component {
                 {qustions[this.state.counter - 1]}
               </p>
               <br />
-              {this.state.options}
+              {this.options()}
             </div>
           }
         ></Card>
