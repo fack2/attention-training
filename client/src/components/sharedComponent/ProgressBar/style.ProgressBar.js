@@ -2,24 +2,22 @@ import styled from "styled-components"
 import { Progress } from "antd"
 
 const ProgressBarContainer = styled.div`
- margin: auto;
- width: 100% ;
- max-width:270px ; 
- min-width: 245px;
- display: flex;
- align-items: center;
- flex-direction: column;
- position: relative;
+  margin: auto;
+  width: 73%;
+  min-width: 235px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 `
 const Counter = styled.div`
- color:grey;
- text-align : center
+  color: grey;
+  text-align: center;
 `
 const ProgressBarStyle = styled(Progress)`
   border: grey 1px solid;
   border-radius:6px;
   width: 100% ;
-  max-width:260px ; 
   min-width: 230px;
   margin:5px;
   .ant-progress-bg{
