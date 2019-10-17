@@ -16,12 +16,11 @@ Neurodiverse individuals traditionally struggle with focus, social interaction, 
 
 - #### How to use our website:
 
-- Clone the project repo, and cd to it's directory.
-- Enter client directory.
-  `cd client`
-- Run npm i to install npm depends.
+  - Clone the project repo, and cd to it's directory.
+  - Enter client directory.``` cd client  ```
+  - Run npm i to install npm depends.
   `npm i`
-- Run npm start to start the website.
+  - Run npm start to start the website.
   `npm start`
 
 ### Flow of the app:
