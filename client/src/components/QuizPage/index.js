@@ -36,6 +36,21 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
+<<<<<<< Updated upstream
+=======
+      let score1 = 0
+      let score2 = 0
+      let score3 = 0
+      const { score } = this.state
+      for (let i = 0; i < 9; ++i) score1 += score[i]
+      for (let i = 9; i < 18; ++i) score2 += score[i]
+      score3 = score1 + score2
+      localStorage.setItem("score1", score1)
+      localStorage.setItem("score2", score2)
+      localStorage.setItem("score3", score3)
+      localStorage.setItem("score", this.state.score)
+      localStorage.setItem("complete", true)
+>>>>>>> Stashed changes
       this.setState({ percent: 100 })
     }
   }
@@ -140,7 +155,6 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 49 })
-          localStorage.setItem("scrore", this.state.score)
           this.setState({ counter: counter - 1 })
         }}
       />
@@ -151,7 +165,15 @@ class Quiz extends Component {
         percent="100%"
         title="You are awesome!"
         description="We’re completing your profile now."
-        to={`/results/${2}`}
+        to={`/results/${
+          localStorage.getItem("score1") > 12 && localStorage.getItem("score2") > 12
+            ? 3
+            : localStorage.getItem("score1") > 12
+            ? 1
+            : localStorage.getItem("score2") > 12
+            ? 2
+            : 4
+        }`}
         buttonName="See result"
         onClick={() => {
           this.setState({ percent: 101 })
@@ -159,7 +181,6 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 98 })
-          localStorage.setItem("scrore", this.state.score)
           this.setState({ counter: counter - 1 })
         }}
       />
@@ -171,7 +192,6 @@ class Quiz extends Component {
           <BackButton
             position="absolute"
             onClick={() => {
-              localStorage.setItem("scrore", this.state.score)
               if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
               else window.location.href = `/quiz-instructions`
             }}
