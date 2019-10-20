@@ -71,7 +71,13 @@ const Dashboard = ({ history }) => {
             <RestartImg src={restartVector} />
             RESTART TEST
           </StyledLink>
-          <StyledLink background="#ED6237" width="172px" fontSize="20px" desktopmargin="-20rem 27rem 26rem" to="/about">
+          <StyledLink
+            background="#ED6237"
+            width="172px"
+            fontSize="20px"
+            desktopmargin="-20rem 27rem 26rem"
+            to="/about-us"
+          >
             <AboutImg src={aboutUs} />
             ABOUT US
           </StyledLink>

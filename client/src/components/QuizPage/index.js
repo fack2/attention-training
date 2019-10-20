@@ -16,6 +16,7 @@ class Quiz extends Component {
     score: [],
     percent: 0
   }
+
   /**
    * @param string value of choice
    * get value of choise to calclate score from {event.target,name}
@@ -35,6 +36,17 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
+      let inattentionScore = 0
+      let hyperactivityScore = 0
+      let totalScore = 0
+      const { score } = this.state
+      for (let i = 0; i < 9; ++i) inattentionScore += score[i]
+      for (let i = 9; i < 18; ++i) hyperactivityScore += score[i]
+      totalScore = inattentionScore + hyperactivityScore
+      localStorage.setItem("inattentionScore", inattentionScore)
+      localStorage.setItem("hyperactivityScore", hyperactivityScore)
+      localStorage.setItem("totalScore", totalScore)
+      localStorage.setItem("score", this.state.score)
       localStorage.setItem("complete", true)
       this.setState({ percent: 100 })
     }
@@ -42,13 +54,15 @@ class Quiz extends Component {
   close = () => {
     Swal.fire({
       title: "Are you sure you want to exit?",
-      text: "your answers will be lost, you will not be able to know your ADHD type!",
+      text:
+        "your answers will be lost, you will not be able to know your ADHD type!",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes!"
     }).then(result => {
       if (result.value) {
+        localStorage.clear()
         localStorage.setItem("complete", false)
         this.props.history.push("/dashboard")
       } else {
@@ -56,14 +70,21 @@ class Quiz extends Component {
     })
   }
 
+  /**
+   * @private
+   */
   options() {
     return (
       <div>
         <Button
           colorhover="#fff"
           text_align="left"
-          background={this.state.score[this.state.counter - 1] === 0 ? "#ED6237" : "#fff"}
-          color={this.state.score[this.state.counter - 1] === 0 ? "#fff" : "#000"}
+          background={
+            this.state.score[this.state.counter - 1] === 0 ? "#ED6237" : "#fff"
+          }
+          color={
+            this.state.score[this.state.counter - 1] === 0 ? "#fff" : "#000"
+          }
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -77,9 +98,13 @@ class Quiz extends Component {
         </Button>
         <Button
           colorhover="#fff"
-          color={this.state.score[this.state.counter - 1] === 1 ? "#fff" : "#000"}
+          color={
+            this.state.score[this.state.counter - 1] === 1 ? "#fff" : "#000"
+          }
           text_align="left"
-          background={this.state.score[this.state.counter - 1] === 1 ? "#ED6237" : "#fff"}
+          background={
+            this.state.score[this.state.counter - 1] === 1 ? "#ED6237" : "#fff"
+          }
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -91,10 +116,14 @@ class Quiz extends Component {
           B&nbsp; Rarely
         </Button>
         <Button
-          color={this.state.score[this.state.counter - 1] === 2 ? "#fff" : "#000"}
+          color={
+            this.state.score[this.state.counter - 1] === 2 ? "#fff" : "#000"
+          }
           colorhover="#fff"
           text_align="left"
-          background={this.state.score[this.state.counter - 1] === 2 ? "#ED6237" : "#fff"}
+          background={
+            this.state.score[this.state.counter - 1] === 2 ? "#ED6237" : "#fff"
+          }
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -106,10 +135,14 @@ class Quiz extends Component {
           C&nbsp; Sometimes
         </Button>
         <Button
-          color={this.state.score[this.state.counter - 1] === 3 ? "#fff" : "#000"}
+          color={
+            this.state.score[this.state.counter - 1] === 3 ? "#fff" : "#000"
+          }
           text_align="left"
           colorhover="#fff"
-          background={this.state.score[this.state.counter - 1] === 3 ? "#ED6237" : "#fff"}
+          background={
+            this.state.score[this.state.counter - 1] === 3 ? "#ED6237" : "#fff"
+          }
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -123,12 +156,18 @@ class Quiz extends Component {
       </div>
     )
   }
+
+  setCounter = () => {
+    if (this.state.counter > 1)
+      this.setState({ counter: this.state.counter - 1 })
+    else this.props.history.push("/quiz-instructions")
+  }
   render() {
     let { counter } = this.state
     return this.state.percent === 50 ? (
       <CircleProgressBar
         counter={counter - 1}
-        percentRate="50"
+        percentRate={50}
         percent="50%"
         title="Good job!"
         description=" you are half way there."
@@ -139,18 +178,28 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 49 })
-          localStorage.setItem("scrore", this.state.score)
+          localStorage.setItem("score", this.state.score)
           this.setState({ counter: counter - 1 })
         }}
       />
     ) : this.state.percent === 100 ? (
       <CircleProgressBar
         counter={counter - 1}
-        percentRate="100"
+        percentRate={100}
         percent="100%"
         title="You are awesome!"
         description="We’re completing your profile now."
-        to={`/results/${2}`}
+        /* Link to '/result/id' */
+        to={`/results/${
+          localStorage.getItem("inattentionScore") > 12 &&
+          localStorage.getItem("hyperactivityScore") > 12
+            ? 3 /* id=3 --- '/result/3' */
+            : localStorage.getItem("inattentionScore") > 12
+            ? 1 /* id=1 --- '/result/1' */
+            : localStorage.getItem("hyperactivityScore") > 12
+            ? 2 /* id=2 --- '/result/2' */
+            : 4 /* id=4 --- '/result/4' */
+        }`}
         buttonName="See result"
         onClick={() => {
           this.setState({ percent: 101 })
@@ -158,7 +207,7 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 98 })
-          localStorage.setItem("scrore", this.state.score)
+          localStorage.setItem("score", this.state.score)
           this.setState({ counter: counter - 1 })
         }}
       />
@@ -169,11 +218,7 @@ class Quiz extends Component {
         <div>
           <BackButton
             position="absolute"
-            onClick={() => {
-              localStorage.setItem("scrore", this.state.score)
-              if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
-              else window.location.href = `/quiz-instructions`
-            }}
+            onClick={this.setCounter}
             history={this.props.history}
           ></BackButton>
           <ProgressBar counter={this.state.counter}></ProgressBar>
