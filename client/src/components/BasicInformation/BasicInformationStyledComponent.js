@@ -31,7 +31,7 @@ const TextDiv = styled.div`
   margin: 0 auto;
 `
 
-const Text = styled.p`
+const Text = styled.div`
   font-size: 19px;
   opacity: 0.8;
 `
