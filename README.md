@@ -27,9 +27,9 @@ Neurodiverse individuals traditionally struggle with focus, social interaction, 
 ### Flow of the app:
 
 - Users answer a quiz questions and the answer is stored in `localStorage`.
-- when the users click on X the incomplete quiz state is stored in local storage, then it will be checked in the dashboard.
+- when the users click on X button and  press OK it will firsltly clear the local storage then the incomplete quiz state is stored in local storage, After that it will be checked in the dashboard.
 
 ### Debugging and Troubleshooting:
 
 run heroku command to see the heroku logs.
-`heroku logs --tail attention-training`
+`heroku logs --tail --app attention-training`
