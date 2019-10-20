@@ -36,16 +36,16 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
-      let score1 = 0
-      let score2 = 0
-      let score3 = 0
+      let inattentionScore = 0
+      let hyperactivityScore = 0
+      let totalScore = 0
       const { score } = this.state
-      for (let i = 0; i < 9; ++i) score1 += score[i]
-      for (let i = 9; i < 18; ++i) score2 += score[i]
-      score3 = score1 + score2
-      localStorage.setItem("score1", score1)
-      localStorage.setItem("score2", score2)
-      localStorage.setItem("score3", score3)
+      for (let i = 0; i < 9; ++i) inattentionScore += score[i]
+      for (let i = 9; i < 18; ++i) hyperactivityScore += score[i]
+      totalScore = inattentionScore + hyperactivityScore
+      localStorage.setItem("inattentionScore", inattentionScore)
+      localStorage.setItem("hyperactivityScore", hyperactivityScore)
+      localStorage.setItem("totalScore", totalScore)
       localStorage.setItem("score", this.state.score)
       localStorage.setItem("complete", true)
       this.setState({ percent: 100 })
@@ -54,7 +54,8 @@ class Quiz extends Component {
   close = () => {
     Swal.fire({
       title: "Are you sure you want to exit?",
-      text: "your answers will be lost, you will not be able to know your ADHD type!",
+      text:
+        "your answers will be lost, you will not be able to know your ADHD type!",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -163,11 +164,12 @@ class Quiz extends Component {
         title="You are awesome!"
         description="We’re completing your profile now."
         to={`/results/${
-          localStorage.getItem("score1") > 12 && localStorage.getItem("score2") > 12
+          localStorage.getItem("inattentionScore") > 12 &&
+          localStorage.getItem("hyperactivityScore") > 12
             ? 3
-            : localStorage.getItem("score1") > 12
+            : localStorage.getItem("inattentionScore") > 12
             ? 1
-            : localStorage.getItem("score2") > 12
+            : localStorage.getItem("hyperactivityScore") > 12
             ? 2
             : 4
         }`}
@@ -189,7 +191,8 @@ class Quiz extends Component {
           <BackButton
             position="absolute"
             onClick={() => {
-              if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
+              if (this.state.counter > 1)
+                this.setState({ counter: this.state.counter - 1 })
               else window.location.href = `/quiz-instructions`
             }}
             history={this.props.history}
