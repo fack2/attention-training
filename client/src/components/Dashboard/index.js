@@ -91,7 +91,7 @@ const Dashboard = ({ history }) => {
             width="172px"
             fontSize="20px"
             desktopmargin="-20rem 27rem 26rem"
-            to="/about"
+            to="/about-us"
           >
             <AboutImg src={aboutUs} />
             ABOUT US
