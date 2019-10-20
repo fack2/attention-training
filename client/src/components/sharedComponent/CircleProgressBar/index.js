@@ -10,7 +10,6 @@ import {
   Counter
 } from "./style.CircleProgressBar"
 import Button from "../Button"
-import BackButton from "../BackButton"
 
 class CircleProgressBar extends React.Component {
   state = {
@@ -25,10 +24,7 @@ class CircleProgressBar extends React.Component {
         }
       }, 20)
     } else {
-      if (
-        this.state.percent < 100 &&
-        this.props.percentRate === parseInt(100)
-      ) {
+      if (this.state.percent < 100 && this.props.percentRate === parseInt(100)) {
         setInterval(() => {
           if (this.state.percent < 100) {
             this.setState({ percent: this.state.percent + 1 })
@@ -37,39 +33,18 @@ class CircleProgressBar extends React.Component {
       }
     }
   }
-  // } else if (this.state.percent < 50) {
-  //   setInterval(() => {
-  //     if (this.state.percent < 50) {
-  //       this.setState({ percent: this.state.percent + 1 })
-  //     }
-  //   }, 20)
-  // }
 
   render() {
     return (
       <div>
-        <BackButton
-          position="relative"
-          history={this.props.history}
-          onClick={this.props.onClickBackButton}
-        />
         <ProgressPage>
           <TrueIconBackground>
-            <TrueIcon
-              type="check-circle"
-              theme="filled"
-              twoToneColor="#70B1FA"
-            />
+            <TrueIcon type="check-circle" theme="filled" twoToneColor="#70B1FA" />
           </TrueIconBackground>
           <ProgressBarDiv>
             <Percent>{this.props.percent}</Percent>
             <Counter>{this.props.counter} of 18</Counter>
-            <ProgressBarStyle
-              type="circle"
-              percent={this.state.percent}
-              showInfo={false}
-              fill="green"
-            />
+            <ProgressBarStyle type="circle" percent={this.state.percent} showInfo={false} fill="green" />
           </ProgressBarDiv>
           <Description>
             <h3>{this.props.title}</h3>
