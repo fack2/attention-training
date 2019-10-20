@@ -16,6 +16,7 @@ class Quiz extends Component {
     score: [],
     percent: 0
   }
+
   /**
    * @param string value of choice
    * get value of choise to calclate score from {event.target,name}
@@ -35,7 +36,18 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
+      let inattentionScore = 0
+      let hyperactivityScore = 0
+      let totalScore = 0
+      const { score } = this.state
+      for (let i = 0; i < 9; ++i) inattentionScore += score[i]
+      for (let i = 9; i < 18; ++i) hyperactivityScore += score[i]
+      totalScore = inattentionScore + hyperactivityScore
+      localStorage.setItem("inattentionScore", inattentionScore)
+      localStorage.setItem("hyperactivityScore", hyperactivityScore)
+      localStorage.setItem("totalScore", totalScore)
       localStorage.setItem("score", this.state.score)
+      localStorage.setItem("complete", true)
       this.setState({ percent: 100 })
     }
   }
@@ -125,6 +137,12 @@ class Quiz extends Component {
       )
     })
   }
+
+  setCounter = () => {
+    if (this.state.counter > 1)
+      this.setState({ counter: this.state.counter - 1 })
+    else this.props.history.push("/quiz-instructions")
+  }
   render() {
     let { counter } = this.state
     return this.state.percent === 50 ? (
@@ -152,7 +170,17 @@ class Quiz extends Component {
         percent="100%"
         title="You are awesome!"
         description="We’re completing your profile now."
-        to={`/results/${2}`}
+        /* Link to '/result/id' */
+        to={`/results/${
+          localStorage.getItem("inattentionScore") > 12 &&
+          localStorage.getItem("hyperactivityScore") > 12
+            ? 3 /* id=3 --- '/result/3' */
+            : localStorage.getItem("inattentionScore") > 12
+            ? 1 /* id=1 --- '/result/1' */
+            : localStorage.getItem("hyperactivityScore") > 12
+            ? 2 /* id=2 --- '/result/2' */
+            : 4 /* id=4 --- '/result/4' */
+        }`}
         buttonName="See result"
         onClick={() => {
           this.setState({ percent: 101 })
@@ -171,11 +199,7 @@ class Quiz extends Component {
         <div>
           <BackButton
             position="absolute"
-            onClick={() => {
-              if (this.state.counter > 1)
-                this.setState({ counter: this.state.counter - 1 })
-              else this.props.history.push("/quiz-instructions")
-            }}
+            onClick={this.setCounter}
             history={this.props.history}
           ></BackButton>
           <ProgressBar counter={this.state.counter}></ProgressBar>
