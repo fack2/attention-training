@@ -25,7 +25,6 @@ class Quiz extends Component {
    */
   clicked = ({ target }) => {
     const { name } = target
-
     const { score } = this.state
     score[this.state.counter - 1] = parseInt(name)
     this.setState({
@@ -36,13 +35,15 @@ class Quiz extends Component {
       this.setState({ percent: 50 })
     }
     if (this.state.counter === 18) {
+      localStorage.setItem("score", this.state.score)
       this.setState({ percent: 100 })
     }
   }
   close = () => {
     Swal.fire({
       title: "Are you sure you want to exit?",
-      text: "your answers will be lost, you will not be able to know your ADHD type!",
+      text:
+        "your answers will be lost, you will not be able to know your ADHD type!",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -129,7 +130,7 @@ class Quiz extends Component {
     return this.state.percent === 50 ? (
       <CircleProgressBar
         counter={counter - 1}
-        percentRate="50"
+        percentRate={50}
         percent="50%"
         title="Good job!"
         description=" you are half way there."
@@ -140,14 +141,14 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 49 })
-          localStorage.setItem("scrore", this.state.score)
+          localStorage.setItem("score", this.state.score)
           this.setState({ counter: counter - 1 })
         }}
       />
     ) : this.state.percent === 100 ? (
       <CircleProgressBar
         counter={counter - 1}
-        percentRate="100"
+        percentRate={100}
         percent="100%"
         title="You are awesome!"
         description="We’re completing your profile now."
@@ -159,7 +160,7 @@ class Quiz extends Component {
         history={this.props.history}
         onClickBackButton={() => {
           this.setState({ percent: 98 })
-          localStorage.setItem("scrore", this.state.score)
+          localStorage.setItem("score", this.state.score)
           this.setState({ counter: counter - 1 })
         }}
       />
@@ -171,9 +172,9 @@ class Quiz extends Component {
           <BackButton
             position="absolute"
             onClick={() => {
-              localStorage.setItem("scrore", this.state.score)
-              if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
-              else window.location.href = `/quiz-instructions`
+              if (this.state.counter > 1)
+                this.setState({ counter: this.state.counter - 1 })
+              else this.props.history.push("/quiz-instructions")
             }}
             history={this.props.history}
           ></BackButton>
