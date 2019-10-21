@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components"
+import HKGrotesk from '../../assets/fonts/HKGrotesk-Regular.woff'
 
 const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: HKGrotesk;
+  src: url('${HKGrotesk}') format('woff');
+}
   body,html {
     font-family: HKGrotesk;
     margin:0;
