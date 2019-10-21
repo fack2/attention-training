@@ -5,7 +5,7 @@ import Card from "../Card"
 import ProgressBar from "../sharedComponent/ProgressBar"
 import CircleProgressBar from "../sharedComponent/CircleProgressBar/"
 import Close from "./closeButton"
-import qustions from "../../Questions"
+import questions from "../../Questions"
 import Swal from "sweetalert2"
 import StyleSwal from "./swalStyle"
 
@@ -214,7 +214,7 @@ class Quiz extends Component {
     else this.props.history.push("/quiz-instructions")
   }
   render() {
-    this.state.question = qustions[this.state.counter - 1]
+    const question = questions[this.state.counter - 1]
     let { counter } = this.state
     return this.state.flag ? (
       <div></div>
@@ -278,7 +278,7 @@ class Quiz extends Component {
           <ProgressBar counter={this.state.counter}></ProgressBar>
         </div>
         <Card
-          question={this.state.question}
+          question={question}
           options={this.options()}
           c="aaa"
           info={
@@ -291,7 +291,7 @@ class Quiz extends Component {
                   padding: "8px 20px"
                 }}
               >
-                {this.state.question}
+                {question}
               </p>
               <br />
               {this.options()}
