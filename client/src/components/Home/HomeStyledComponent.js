@@ -5,7 +5,11 @@ const Homediv = styled.div`
   flex-direction: column;
   max-width: 800px;
   text-align: center;
+  margin: auto;
   @media only screen and (min-width: 600px) {
+    margin: auto;
+  }
+  @media only screen and (min-width: 400px) {
     margin: auto;
   }
 `
@@ -21,23 +25,32 @@ const StyledImg = styled.img`
   margin: 0px;
   z-index: 1;
   width: 100%;
-  clip-path: ellipse(564px 200px at -34% 24%);
+
   @media only screen and (min-width: 800px) {
     width: 100%;
     height: 320px;
-    clip-path: none;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 242px;
   }
 `
 
 const StyledLogo = styled.img`
   z-index: 2;
   position: absolute;
-  margin-left: -273px;
-  margin-top: 94px;
+  left: calc(50vw - 101px);
+  top: calc(100% - 202px);
+  width: 202px;
+  height: 67px;
   @media only screen and (min-width: 800px) {
     z-index: 1;
     position: absolute;
-    margin: 100px 0px 0px -516px;
+    left: calc(50vw - 101px);
+    top: calc(100% - 202px);
+  }
+  @media only screen and (min-width: 600px) {
+    left: calc(50% - 101px);
+    top: calc(100% - 202px);
   }
 `
 
@@ -50,11 +63,10 @@ const TextStyled = styled.p`
   text-transform: none;
   font-style: normal;
   text-decoration: none;
-  margin: 1rem;
+  margin: 56px 17px 31px 18px;
   letter-spacing: normal;
   @media only screen and (min-width: 600px) {
-    line-height: 13.3;
-    margin: 1rem;
+    margin: 95px;
   }
 `
 
