@@ -147,11 +147,7 @@ class Quiz extends Component {
         >
           D&nbsp; Often
         </Button>
-        {this.state.counter > 1 ? (
-          <CardsAnimation direction={direction} />
-        ) : (
-          <></>
-        )}
+        {this.state.counter > 1 ? <CardsAnimation direction={direction} /> : null}
       </>
     )
   }

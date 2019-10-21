@@ -56,12 +56,12 @@ const CardsAnimation = ({ direction }) => {
         0% {
           ${direction}: 0px;
         } 
-        100% {
-          ${direction}: 2600px;
+        99% {
+          ${direction}: 2000px;
             visibility: hidden;
         }
         100% {
-          ${"right"}: 2600px;
+          ${"right"}: 2000px;
         }
       }
 `}
