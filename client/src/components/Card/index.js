@@ -7,7 +7,7 @@ const DivCard = ({ info, bg, color, onClick, c, ...props }) => {
       <Card
         className="card22"
         onClick={onClick}
-        bg="rgb(245,245,245)"
+        bg="#f0f0f"
         position="absolute"
         shadow_color="#f0f0f0"
       >

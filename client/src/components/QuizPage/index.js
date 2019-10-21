@@ -8,6 +8,7 @@ import Close from "./closeButton"
 import questions from "../../Questions"
 import Swal from "sweetalert2"
 import StyleSwal from "./swalStyle"
+import { CardsAnimation } from "../Card/style"
 
 class Quiz extends Component {
   state = {
@@ -15,9 +16,8 @@ class Quiz extends Component {
     options: "",
     score: [],
     percent: 0,
-    flag: 0,
-    question: "",
-    test: 0
+    flag: 0, // this state is defined to refresh the page
+    question: ""
   }
 
   /**
@@ -31,14 +31,16 @@ class Quiz extends Component {
     const { name } = target
     const { score } = this.state
     score[this.state.counter - 1] = parseInt(name)
-    this.setState({
-      score: score,
-      flag: 1,
-      counter: this.state.counter + 1
-    })
-    setTimeout(() => {
-      this.setState({ flag: 0 })
-    }, 0)
+    this.setState(
+      {
+        score: score,
+        flag: 1,
+        counter: this.state.counter + 1
+      },
+      () => {
+        this.setState({ flag: 0 })
+      }
+    )
 
     if (this.state.counter === 9) {
       this.setState({ percent: 50 })
@@ -84,7 +86,7 @@ class Quiz extends Component {
   options() {
     const direction = ["right", "left"][parseInt(Math.random() * 2)]
     return (
-      <div>
+      <>
         <Button
           colorhover="#fff"
           text_align="left"
@@ -163,48 +165,13 @@ class Quiz extends Component {
           D&nbsp; Often
         </Button>
         {this.state.counter > 1 ? (
-          <style>
-            {`
-
-      .card22 {
-        animation: mymove2 2s;
-        animation-fill-mode: forwards;
-      }
-
-      @keyframes mymove2 {
-        0% {
-          margin-top: 10px;
-          width: 80%;
-          background: #f0f0f;
-        }
-
-        100% {
-          margin-top: 30px;
-          width: 90%;
-          background: #fff;
-        }
-      }
-
-      .aaa {
-        animation: mymove 3s;
-        animation-fill-mode: forwards;
-      }
-
-      @keyframes mymove {
-        0% {
-          ${direction}: 0px;
-        }
-
-        100% {
-          ${direction}: 1000px;
-        }
-      }
-`}
-          </style>
+          <CardsAnimation direction={direction} />
         ) : (
-          <div></div>
+          // console.log(CardsAnimation.CardsAnimation)
+          // <CardsAnimation></CardsAnimation>
+          <div>00000000</div>
         )}
-      </div>
+      </>
     )
   }
 

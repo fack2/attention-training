@@ -1,6 +1,6 @@
 import { Card } from "antd"
 import styled from "styled-components"
-
+import React from "react"
 const StyledCard = styled(Card)`
   background-size: cover !important;
   background: ${({ bg }) => bg || "#fff"};
@@ -16,8 +16,6 @@ const StyledCard = styled(Card)`
   width: ${({ width }) => width || "80%"};
   height: 79vh;
   overflow-y: ${({ scroll }) => (scroll ? "scroll" : "unset")};
- 
-  }
 `
 const CardWrapper = styled.div`
   display: flex;
@@ -25,4 +23,47 @@ const CardWrapper = styled.div`
   margin-bottom: 20px;
 `
 
-export { StyledCard, CardWrapper }
+const CardsAnimation = ({ direction }) => {
+  return (
+    <style>
+      {`
+
+      .card22 {
+        animation: mymove2 2s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes mymove2 {
+        0% {
+          margin-top: 10px;
+          width: 80%;
+          background: #f0f0f;
+        }
+
+        100% {
+          margin-top: 30px;
+          width: 90%;
+          background: #fff;
+        }
+      }
+
+      .aaa {
+        animation: mymove 3s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes mymove {
+        0% {
+          ${direction}: 0px;
+        }
+
+        100% {
+          ${direction}: 1000px;
+        }
+      }
+`}
+    </style>
+  )
+}
+
+export { StyledCard, CardWrapper, CardsAnimation }
