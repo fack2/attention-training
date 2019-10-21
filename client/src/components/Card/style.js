@@ -55,10 +55,13 @@ const CardsAnimation = ({ direction }) => {
       @keyframes mymove {
         0% {
           ${direction}: 0px;
-        }
-
+        } 
         100% {
-          ${direction}: 1000px;
+          ${direction}: 2600px;
+            visibility: hidden;
+        }
+        100% {
+          ${"right"}: 2600px;
         }
       }
 `}

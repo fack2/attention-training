@@ -6,7 +6,7 @@ const NotFoundContainer = styled.div`
 `
 const Status = styled.h1`
   width: 100%;
-  color: rgb(337, 90, 0);
+  color: #ff5a00;
   display: flex;
   justify-content: center;
   /* top: 30%; */
