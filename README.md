@@ -1,6 +1,6 @@
 # Attention Training
 
-### Description
+## Description
 
 Attention Training is a project that helps you to know if you have an ADHD mental disorder and which type you may have. It gives you more information about the ADHD type you have and tips to help you improve your skills and overcome your challenges.
 
@@ -12,9 +12,11 @@ Neurodiverse individuals traditionally struggle with focus, social interaction, 
 
 ### Figma Prototype: https://www.figma.com/file/g0RBgTGKjNm0TAIxJcHD5W/Attention-training-k2?node-id=0%3A1
 
-### Development:
+## Development:
 
-- #### How to use our website:
+### Archeticture:
+
+#### How to use our website:
 
   - Clone the project repo, and cd to it's directory.
   - Enter client directory.`cd client`
