@@ -30,14 +30,16 @@ Neurodiverse individuals traditionally struggle with focus, social interaction, 
 
 ### Run the website locally in dev mode (React):
   - Clone the project repo, and cd to it's directory.
-  - change directory to client. `cd client`
+  - Change directory to client. `cd client`
   - Run `npm i` to install npm depends.
   - Run `npm start` to start the website.
 
 ### Flow of the app:
 - Users answer a quiz questions and the answer is stored in `localStorage`.
-- when the users click on X button and press OK it will firsltly clear the local storage then the incomplete quiz state is stored in local storage, After that it will be checked in the dashboard.
+- When the users click on X button and confirm they will lose all progress and be redirected to the ```dashboard```.
+- At the end of the quiz, scores are calculated and the user is redirected to their appropriate results.
+- Users can view their results, basic information about ADHD, and different skills their own type of ADHD gives them.
 
 ### Debugging and Troubleshooting:
-run heroku command to see the heroku logs.
+Run heroku command to see the heroku logs.
 `heroku logs --tail --app attention-training`
