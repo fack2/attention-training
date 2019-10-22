@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Progress, Icon } from "antd"
+import styled from 'styled-components'
+import { Progress, Icon } from 'antd'
 
 const ProgressPage = styled.div`
   margin-top: 125px;
@@ -70,8 +70,17 @@ const TrueIcon = styled(Icon)`
 const Counter = styled.p`
   position: absolute;
   margin-top: 70px;
-  left: 137px;
+  margin-left: 39px;
   color: #737373;
 `
 
-export { ProgressBarStyle, Percent, ProgressPage, Description, ProgressBarDiv, TrueIcon, TrueIconBackground, Counter }
+export {
+  ProgressBarStyle,
+  Percent,
+  ProgressPage,
+  Description,
+  ProgressBarDiv,
+  TrueIcon,
+  TrueIconBackground,
+  Counter
+}
