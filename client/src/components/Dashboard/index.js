@@ -33,7 +33,13 @@ const Dashboard = ({ history }) => {
                 <Title>Superpower subtype</Title>
               </Titlewrap>
               <Text>Revisit your ADHD subtype</Text>
-              <StyledLink background="#70B1FA" width="172px" fontSize="20px" to="/result">
+              <StyledLink
+                background="#70B1FA"
+                width="172px"
+                fontSize="20px"
+                desktoppadding="19px 15px"
+                to="/result"
+              >
                 SEE RESULT
               </StyledLink>
             </DashboardCard>
@@ -45,7 +51,13 @@ const Dashboard = ({ history }) => {
                 <Title>The Basics</Title>
               </Titlewrap>
               <Text>Find Basics information about ADHD</Text>
-              <StyledLink background="#70B1FA" width="172px" fontSize="20px" to="/basic-info">
+              <StyledLink
+                background="#70B1FA"
+                width="172px"
+                fontSize="20px"
+                desktoppadding="19px 15px"
+                to="/basic-info"
+              >
                 SEE BASICS
               </StyledLink>
             </DashboardCard>
@@ -61,13 +73,25 @@ const Dashboard = ({ history }) => {
             <Title>Superpower Skills</Title>
           </Titlewrap>
           <Text>Find and harness your own superpowers</Text>
-          <StyledLink width="172px" fontSize="19px" to="/skills" background="#70B1FA">
+          <StyledLink
+            width="172px"
+            fontSize="19px"
+            to="/skills"
+            background="#70B1FA"
+            desktoppadding="19px 15px"
+          >
             SEE SUPERPOWER
           </StyledLink>
         </DashboardCard>
         {/* buttons */}
         <Buttuns>
-          <StyledLink background="#AA27D6" width="173px" fontSize="20px" desktopmargin="5rem 27rem 26rem" to="/quiz">
+          <StyledLink
+            background="#AA27D6"
+            width="173px"
+            fontSize="20px"
+            desktopmargin="5rem 27rem 26rem"
+            to="/quiz"
+          >
             <RestartImg src={restartVector} />
             RESTART TEST
           </StyledLink>
