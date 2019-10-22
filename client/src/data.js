@@ -92,10 +92,13 @@ const data = [
     title: "Category Freedom",
     description: (
       <div>
-        <p>When we see a thing we see it as if seeing it for the first time.</p>
-        <p>No matter how many times we've seen it.</p>
-        <p>It's connected to low latent inhibition </p>
+        <p>
+          When we see a thing we see it as if seeing it for the first time. No
+          matter how many times we've seen it. It's connected to low latent
+          inhibition{" "}
+        </p>
         <iframe
+          style={{ margin: "auto", display: "flex" }}
           width="270"
           height="200"
           title="myFrame"

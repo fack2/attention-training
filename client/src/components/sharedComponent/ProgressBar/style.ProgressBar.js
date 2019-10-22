@@ -16,15 +16,20 @@ const Counter = styled.div`
 `
 const ProgressBarStyle = styled(Progress)`
   border: grey 1px solid;
-  border-radius:6px;
-  width: 100% ;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 500px;
   min-width: 230px;
-  margin:5px;
-  .ant-progress-bg{
-  border-radius:6px;
-  height: 15px !important
-  background-image: linear-gradient(to right, #70B1FA 0%, #70B1FA 100%) !important
-}         
+  margin: 5px;
+  .ant-progress-bg {
+    border-radius: 6px;
+    height: 15px !important;
+    background-image: linear-gradient(
+      to right,
+      #70b1fa 0%,
+      #70b1fa 100%
+    ) !important;
+  }
 `
 
 export { ProgressBarContainer, Counter, ProgressBarStyle }

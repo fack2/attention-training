@@ -53,7 +53,7 @@ class Skills extends React.Component {
           this.state.FilteredData.map(e => {
             return (
               <SkillsCard key={e.id}>
-                <Link to={`/skills/${e.id}`}>
+                <Link style={{ width: "100%" }} to={`/skills/${e.id}`}>
                   <SkillImg src={e.image} />
                   <Text>{e.name} </Text>
                 </Link>

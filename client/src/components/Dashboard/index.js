@@ -37,7 +37,7 @@ const Dashboard = ({ history }) => {
                 background="#70B1FA"
                 width="172px"
                 fontSize="20px"
-                desktoppadding="19px 15px"
+                desktoppadding="15px 15px"
                 to="/result"
               >
                 SEE RESULT
@@ -55,7 +55,7 @@ const Dashboard = ({ history }) => {
                 background="#70B1FA"
                 width="172px"
                 fontSize="20px"
-                desktoppadding="19px 15px"
+                desktoppadding="15px 15px"
                 to="/basic-info"
               >
                 SEE BASICS
@@ -78,7 +78,7 @@ const Dashboard = ({ history }) => {
             fontSize="19px"
             to="/skills"
             background="#70B1FA"
-            desktoppadding="19px 15px"
+            desktoppadding="15px 15px"
           >
             SEE SUPERPOWER
           </StyledLink>

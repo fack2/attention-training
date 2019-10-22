@@ -14,8 +14,13 @@ const StyledCard = styled(Card)`
   padding-top: 10px;
   text-align: center;
   width: ${({ width }) => width || "80%"};
+  max-width: 500px;
+  min-width: 230px;
   height: 79vh;
   overflow-y: ${({ scroll }) => (scroll ? "scroll" : "unset")};
+  /* @media only screen and (min-width: 800px) {
+    height: 100vh;
+  } */
 `
 const CardWrapper = styled.div`
   display: flex;
