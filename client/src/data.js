@@ -2,7 +2,6 @@ import React from "react"
 const img1 = "https://i.imgur.com/mPyngjW.png"
 const img2 = "https://i.imgur.com/KUbmMYm.png"
 const img3 = "https://i.imgur.com/KRnTQ1v.png"
-const img4 = "https://i.imgur.com/SRY2FzP.jpg"
 
 const data = [
   {
