@@ -16,11 +16,10 @@ const FilterStyled = styled.div`
 const FilterButton = styled.button`
   background: ${({ background }) => background || "#fff"};
   display: inline-block;
-  box-shadow: 0px 10px 25px rgba(84, 104, 255, 0.3);
+  box-shadow: 0px 10px 25px #5468ff4d;
   width: ${({ width }) => width || "111px"};
   height: ${({ height }) => height || "34px"};
-  border-radius: ${props =>
-    props.borderRaduis === "left" ? "15px 0px 0px 15px" : "0px 15px 15px 0px"};
+  border-radius: ${props => (props.borderRaduis === "left" ? "15px 0px 0px 15px" : "0px 15px 15px 0px")};
   outline: none;
   &:hover {
     color: ${({ hoverColor }) => hoverColor || "#2F4F4F"};

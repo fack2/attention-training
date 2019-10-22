@@ -56,7 +56,13 @@ class QuizInstructions extends Component {
             </p>
           }
         ></Card>
-        <p style={{ margin: "30px 0 0 0", display: "flex", "justify-content": "center" }}>
+        <p
+          style={{
+            margin: "30px 0 0 0",
+            display: "flex",
+            "justify-content": "center"
+          }}
+        >
           {this.state.counter < 3 ? "Tap the card to next" : "Tap the card to start"}
         </p>
       </>

@@ -23,7 +23,6 @@ class Skills extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <PageWrapper>
         <BackButton history={this.props.history}></BackButton>

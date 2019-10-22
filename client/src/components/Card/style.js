@@ -1,6 +1,6 @@
 import { Card } from "antd"
 import styled from "styled-components"
-
+import React from "react"
 const StyledCard = styled(Card)`
   background-size: cover !important;
   background: ${({ bg }) => bg || "#fff"};
@@ -23,4 +23,50 @@ const CardWrapper = styled.div`
   margin-bottom: 20px;
 `
 
-export { StyledCard, CardWrapper }
+const CardsAnimation = ({ direction }) => {
+  return (
+    <style>
+      {`
+
+      .expand-card {
+        animation: expandCard 2s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes expandCard {
+        0% {
+          margin-top: 10px;
+          width: 80%;
+          background: #f0f0f;
+        }
+
+        100% {
+          margin-top: 30px;
+          width: 90%;
+          background: #fff;
+        }
+      }
+
+      .slide-card {
+        animation: slideCard 3s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes slideCard {
+        0% {
+          ${direction}: 0px;
+        } 
+        99% {
+          ${direction}: 2000px;
+            visibility: hidden;
+        }
+        100% {
+          ${"right"}: 2000px;
+        }
+      }
+`}
+    </style>
+  )
+}
+
+export { StyledCard, CardWrapper, CardsAnimation }

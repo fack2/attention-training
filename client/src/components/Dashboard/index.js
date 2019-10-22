@@ -37,7 +37,6 @@ const Dashboard = ({ history }) => {
                 SEE RESULT
               </StyledLink>
             </DashboardCard>
-
             {/* card2 */}
             <DashboardCard>
               <Titlewrap>
@@ -48,11 +47,9 @@ const Dashboard = ({ history }) => {
               <StyledLink background="#70B1FA" width="172px" fontSize="20px" to="/basic-info">
                 SEE BASICS
               </StyledLink>
-            </DashboardCard>
+            </DashboardCard>{" "}
           </>
-        ) : (
-          <></>
-        )}
+        ) : null}
 
         {/* card3 */}
         <DashboardCard>
