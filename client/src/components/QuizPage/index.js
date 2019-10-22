@@ -5,16 +5,19 @@ import Card from "../Card"
 import ProgressBar from "../sharedComponent/ProgressBar"
 import CircleProgressBar from "../sharedComponent/CircleProgressBar/"
 import Close from "./closeButton"
-import qustions from "../../Questions"
+import questions from "../../Questions"
 import Swal from "sweetalert2"
 import StyleSwal from "./swalStyle"
+import { CardsAnimation } from "../Card/style"
 
 class Quiz extends Component {
   state = {
     counter: 1,
     options: "",
     score: [],
-    percent: 0
+    percent: 0,
+    flag: 0, // this state is defined to refresh the page
+    question: ""
   }
 
   /**
@@ -28,10 +31,17 @@ class Quiz extends Component {
     const { name } = target
     const { score } = this.state
     score[this.state.counter - 1] = parseInt(name)
-    this.setState({
-      score: score,
-      counter: this.state.counter + 1
-    })
+    this.setState(
+      {
+        score: score,
+        flag: 1,
+        counter: this.state.counter + 1
+      },
+      () => {
+        this.setState({ flag: 0 })
+      }
+    )
+
     if (this.state.counter === 9) {
       this.setState({ percent: 50 })
     }
@@ -54,8 +64,7 @@ class Quiz extends Component {
   close = () => {
     Swal.fire({
       title: "Are you sure you want to exit?",
-      text:
-        "your answers will be lost, you will not be able to know your ADHD type!",
+      text: "your answers will be lost, you will not be able to know your ADHD type!",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
@@ -74,17 +83,14 @@ class Quiz extends Component {
    * @private
    */
   options() {
+    const direction = ["right", "left"][parseInt(Math.random() * 2)]
     return (
-      <div>
+      <>
         <Button
           colorhover="#fff"
           text_align="left"
-          background={
-            this.state.score[this.state.counter - 1] === 0 ? "#ED6237" : "#fff"
-          }
-          color={
-            this.state.score[this.state.counter - 1] === 0 ? "#fff" : "#000"
-          }
+          background={this.state.score[this.state.counter - 1] === 0 ? "#ED6237" : "#fff"}
+          color={this.state.score[this.state.counter - 1] === 0 ? "#fff" : "#000"}
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -98,13 +104,9 @@ class Quiz extends Component {
         </Button>
         <Button
           colorhover="#fff"
-          color={
-            this.state.score[this.state.counter - 1] === 1 ? "#fff" : "#000"
-          }
+          color={this.state.score[this.state.counter - 1] === 1 ? "#fff" : "#000"}
           text_align="left"
-          background={
-            this.state.score[this.state.counter - 1] === 1 ? "#ED6237" : "#fff"
-          }
+          background={this.state.score[this.state.counter - 1] === 1 ? "#ED6237" : "#fff"}
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -116,14 +118,10 @@ class Quiz extends Component {
           B&nbsp; Rarely
         </Button>
         <Button
-          color={
-            this.state.score[this.state.counter - 1] === 2 ? "#fff" : "#000"
-          }
+          color={this.state.score[this.state.counter - 1] === 2 ? "#fff" : "#000"}
           colorhover="#fff"
           text_align="left"
-          background={
-            this.state.score[this.state.counter - 1] === 2 ? "#ED6237" : "#fff"
-          }
+          background={this.state.score[this.state.counter - 1] === 2 ? "#ED6237" : "#fff"}
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -135,14 +133,10 @@ class Quiz extends Component {
           C&nbsp; Sometimes
         </Button>
         <Button
-          color={
-            this.state.score[this.state.counter - 1] === 3 ? "#fff" : "#000"
-          }
+          color={this.state.score[this.state.counter - 1] === 3 ? "#fff" : "#000"}
           text_align="left"
           colorhover="#fff"
-          background={
-            this.state.score[this.state.counter - 1] === 3 ? "#ED6237" : "#fff"
-          }
+          background={this.state.score[this.state.counter - 1] === 3 ? "#ED6237" : "#fff"}
           box_shadow="unset"
           border="3px solid #E8EEF4"
           border_radius="20px"
@@ -153,18 +147,21 @@ class Quiz extends Component {
         >
           D&nbsp; Often
         </Button>
-      </div>
+        {this.state.counter > 1 ? <CardsAnimation direction={direction} /> : null}
+      </>
     )
   }
 
   setCounter = () => {
-    if (this.state.counter > 1)
-      this.setState({ counter: this.state.counter - 1 })
+    if (this.state.counter > 1) this.setState({ counter: this.state.counter - 1 })
     else this.props.history.push("/quiz-instructions")
   }
   render() {
+    const question = questions[this.state.counter - 1]
     let { counter } = this.state
-    return this.state.percent === 50 ? (
+    return this.state.flag ? (
+      <div></div>
+    ) : this.state.percent === 50 ? (
       <CircleProgressBar
         counter={counter - 1}
         percentRate={50}
@@ -191,8 +188,7 @@ class Quiz extends Component {
         description="We’re completing your profile now."
         /* Link to '/result/id' */
         to={`/results/${
-          localStorage.getItem("inattentionScore") > 12 &&
-          localStorage.getItem("hyperactivityScore") > 12
+          localStorage.getItem("inattentionScore") > 12 && localStorage.getItem("hyperactivityScore") > 12
             ? 3 /* id=3 --- '/result/3' */
             : localStorage.getItem("inattentionScore") > 12
             ? 1 /* id=1 --- '/result/1' */
@@ -216,14 +212,13 @@ class Quiz extends Component {
         <Close type="close" onClick={this.close} />
         <StyleSwal />
         <div>
-          <BackButton
-            position="absolute"
-            onClick={this.setCounter}
-            history={this.props.history}
-          ></BackButton>
+          <BackButton position="absolute" onClick={this.setCounter} history={this.props.history}></BackButton>
           <ProgressBar counter={this.state.counter}></ProgressBar>
         </div>
         <Card
+          question={question}
+          options={this.options()}
+          className="slide-card"
           info={
             <div>
               <p
@@ -234,7 +229,7 @@ class Quiz extends Component {
                   padding: "8px 20px"
                 }}
               >
-                {qustions[this.state.counter - 1]}
+                {question}
               </p>
               <br />
               {this.options()}

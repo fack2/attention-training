@@ -29,7 +29,7 @@ const Img = styled.img`
 
 const Type = styled.h4`
   font-size: 21px;
-  text-shadow: 0px 4px 13px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 13px #00000040;
 `
 
 const Description = styled.p`

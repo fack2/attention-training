@@ -7,7 +7,13 @@ const NotFound = () => {
     <NotFoundContainer>
       <Status>404</Status>
       <StatusMessage>Oops! Page not found</StatusMessage>
-      <StyledLink width="111px" font-size="" margin="30px auto" to="/dashboard">
+      <StyledLink
+        width="111px"
+        font-size=""
+        desktopmargin="auto"
+        margin="30px auto"
+        to="/dashboard"
+      >
         Dashboard
       </StyledLink>
     </NotFoundContainer>

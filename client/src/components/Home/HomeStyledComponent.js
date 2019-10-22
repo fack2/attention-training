@@ -56,7 +56,7 @@ const StyledLogo = styled.img`
 
 const TextStyled = styled.p`
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #000;
   font-size: 20px;
   line-height: 1.3;
   font-weight: bold;

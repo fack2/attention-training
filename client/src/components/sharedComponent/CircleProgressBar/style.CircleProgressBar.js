@@ -14,7 +14,7 @@ const ProgressBarDiv = styled.div`
 `
 const ProgressBarStyle = styled(Progress)`
   .ant-progress-circle-path {
-    stroke: rgb(0, 212, 150) !important;
+    stroke: #00d496 !important;
     stroke-width: 7 !important;
   }
 `
