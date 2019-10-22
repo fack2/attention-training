@@ -1,6 +1,6 @@
 # Attention Training
 
-## Description
+## About Attention Training
 
 Attention Training is a project that helps you to know if you have an ADHD mental disorder and which type you may have. It gives you more information about the ADHD type you have and tips to help you improve your skills and overcome your challenges.
 
