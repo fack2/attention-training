@@ -18,7 +18,7 @@ const StyledLink = styled(Link)`
   border:${({ border }) => border || ""}; 
   position:${({ position }) => position || "unset"}; 
 
-  width:${({ width }) => width || "40px"}
+  width:${({ width }) => width || "40px"};
   border-style: ${({ border_style }) => border_style || ""};
 &:hover{
     background:${({ hoverColor }) => hoverColor || "#ED6237"};
