@@ -16,6 +16,9 @@ const StyledCard = styled(Card)`
   width: ${({ width }) => width || "80%"};
   max-width: 500px;
   min-width: 230px;
+  height: 79vh;
+ 
+  }
 `
 const CardWrapper = styled.div`
   display: flex;

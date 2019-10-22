@@ -51,8 +51,10 @@ const data = [
     title: "Procrastination",
     description: (
       <div>
-        <p>We can day dream like no ones business.</p>
-        <p>This is actually the dual side of the learning process.</p>{" "}
+        <p>
+          We can day dream like no ones business. This is actually the dual side
+          of the learning process.
+        </p>
         <p>
           Learning is the act of creating new neural connections. Connections
           also used in creativity.

@@ -5,7 +5,6 @@ const PageWrapper = styled.div`
   flex-direction: column;
   max-width: 800px;
   list-style-type: none;
-
   @media only screen and (min-width: 800px) {
     margin: auto;
   }
@@ -45,6 +44,9 @@ const Type = styled.p`
 
 const SkillImg = styled.img`
   align-items: center;
+  min-width: 288px;
+  max-width: 500px;
+  width: 75%;
 `
 
 const List = styled.div`

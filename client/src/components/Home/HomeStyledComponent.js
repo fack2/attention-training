@@ -6,6 +6,7 @@ const Homediv = styled.div`
   max-width: 800px;
   text-align: center;
   margin: auto;
+
   @media only screen and (min-width: 600px) {
     margin: auto;
   }

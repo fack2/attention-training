@@ -14,17 +14,16 @@ const Header = styled.h3`
 
 const TypeContainer = styled.div`
   width: 90%;
-  max-width: 800px;
+  max-width: 600px;
   min-width: 275px;
   hyphens: auto;
   margin: 0 auto;
 `
 
 const Img = styled.img`
-  width: 328px;
-  @media only screen and (min-width: 600px) {
-    width: 450px;
-  }
+  min-width: 319px;
+  max-width: 500px;
+  width: 75%;
 `
 
 const Type = styled.h4`
