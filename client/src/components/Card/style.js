@@ -28,12 +28,12 @@ const CardsAnimation = ({ direction }) => {
     <style>
       {`
 
-      .card22 {
-        animation: mymove2 2s;
+      .expand-card {
+        animation: expandCard 2s;
         animation-fill-mode: forwards;
       }
 
-      @keyframes mymove2 {
+      @keyframes expandCard {
         0% {
           margin-top: 10px;
           width: 80%;
@@ -47,12 +47,12 @@ const CardsAnimation = ({ direction }) => {
         }
       }
 
-      .aaa {
-        animation: mymove 3s;
+      .slide-card {
+        animation: slideCard 3s;
         animation-fill-mode: forwards;
       }
 
-      @keyframes mymove {
+      @keyframes slideCard {
         0% {
           ${direction}: 0px;
         } 

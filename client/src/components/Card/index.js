@@ -1,16 +1,10 @@
 import React from "react"
 import { StyledCard as Card, CardWrapper } from "./style"
 
-const DivCard = ({ info, bg, color, onClick, c, ...props }) => {
+const DivCard = ({ info, bg, color, onClick, className, ...props }) => {
   return (
     <CardWrapper>
-      <Card
-        className="card22"
-        onClick={onClick}
-        bg="#f0f0f"
-        position="absolute"
-        shadow_color="#f0f0f0"
-      >
+      <Card className="expand-card" onClick={onClick} bg="#f0f0f" position="absolute" shadow_color="#f0f0f0">
         <p
           style={{
             textAlign: "justify",
@@ -25,7 +19,7 @@ const DivCard = ({ info, bg, color, onClick, c, ...props }) => {
         {props.options}
       </Card>
       <Card
-        className={c}
+        className={className}
         color={color}
         bg={bg}
         position="absolute"

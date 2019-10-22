@@ -218,7 +218,7 @@ class Quiz extends Component {
         <Card
           question={question}
           options={this.options()}
-          c="aaa"
+          className="slide-card"
           info={
             <div>
               <p
