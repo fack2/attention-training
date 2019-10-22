@@ -26,7 +26,7 @@ const Header = styled.h1`
 
 const TextDiv = styled.div`
   width: 90%;
-  max-width: 332px;
+  max-width: 800px;
   min-width: 275px;
   hyphens: auto;
   margin: 0 auto;

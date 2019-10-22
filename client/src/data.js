@@ -2,6 +2,7 @@ import React from "react"
 const img1 = "https://i.imgur.com/mPyngjW.png"
 const img2 = "https://i.imgur.com/KUbmMYm.png"
 const img3 = "https://i.imgur.com/KRnTQ1v.png"
+const img4 = "https://i.imgur.com/SRY2FzP.jpg"
 
 const data = [
   {
@@ -220,7 +221,11 @@ const data = [
   {
     id: 6,
     image: img1,
-    name: "A place for everything and everything in its place",
+    name: (
+      <p>
+        A place for everything <br /> and everything in its place
+      </p>
+    ),
     type: "everyday",
     title: "A place for everything and everything in its place",
     description: (
