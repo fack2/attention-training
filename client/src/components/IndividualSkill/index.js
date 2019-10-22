@@ -24,7 +24,7 @@ const IndividualSkill = props => {
           data.map(e =>
             e.id === parseInt(id) ? (
               <Skilldiv key={e.id}>
-                <Header>{e.name}</Header>
+                <Header>{e.title}</Header>
                 <Type>{e.type}</Type>
                 <List>
                   <SkillImg alt="skill" src={e.image} />
