@@ -1,12 +1,12 @@
 import React from "react"
-const img1 = "https://i.imgur.com/mPyngjW.png"
-const img2 = "https://i.imgur.com/KUbmMYm.png"
-const img3 = "https://i.imgur.com/KRnTQ1v.png"
+const SkillImg1 = "https://i.imgur.com/mPyngjW.png"
+const SkillImg2 = "https://i.imgur.com/KUbmMYm.png"
+const SkillImg3 = "https://i.imgur.com/KRnTQ1v.png"
 
 const data = [
   {
     id: 1,
-    image: img1,
+    image: SkillImg1,
     name: "What is Hyper focus?",
     type: "superpower",
     title: "What is Hyper focus?",
@@ -45,14 +45,16 @@ const data = [
   },
   {
     id: 2,
-    image: img2,
+    image: SkillImg2,
     name: "Procrastination",
     type: "superpower",
     title: "Procrastination",
     description: (
       <div>
-        <p>We can day dream like no ones business.</p>
-        <p>This is actually the dual side of the learning process.</p>{" "}
+        <p>
+          We can day dream like no ones business. This is actually the dual side
+          of the learning process.
+        </p>
         <p>
           Learning is the act of creating new neural connections. Connections
           also used in creativity.
@@ -86,16 +88,19 @@ const data = [
   },
   {
     id: 3,
-    image: img3,
+    image: SkillImg3,
     name: "Category Freedom",
     type: "superpower",
     title: "Category Freedom",
     description: (
       <div>
-        <p>When we see a thing we see it as if seeing it for the first time.</p>
-        <p>No matter how many times we've seen it.</p>
-        <p>It's connected to low latent inhibition </p>
+        <p>
+          When we see a thing we see it as if seeing it for the first time. No
+          matter how many times we've seen it. It's connected to low latent
+          inhibition
+        </p>
         <iframe
+          style={{ margin: "auto", display: "flex" }}
           width="270"
           height="200"
           title="myFrame"
@@ -128,7 +133,7 @@ const data = [
   },
   {
     id: 4,
-    image: img2,
+    image: SkillImg2,
     name: "What are pomodoros?",
     type: "everyday",
     title: "What are pomodoros?",
@@ -183,7 +188,7 @@ const data = [
   },
   {
     id: 5,
-    image: img3,
+    image: SkillImg3,
     name: "Morning Routine ",
     type: "everyday",
     title: "Morning Routine ",
@@ -219,8 +224,12 @@ const data = [
   },
   {
     id: 6,
-    image: img1,
-    name: "A place for everything and everything in its place",
+    image: SkillImg1,
+    name: (
+      <p>
+        A place for everything <br /> and everything in its place
+      </p>
+    ),
     type: "everyday",
     title: "A place for everything and everything in its place",
     description: (

@@ -17,36 +17,34 @@ const IndividualSkill = props => {
   const { id } = props.match.params
 
   return (
-    <>
+    <PageWrapper>
       <BackButton history={props.history}></BackButton>
-      <PageWrapper>
-        {data &&
-          data.map(e =>
-            e.id === parseInt(id) ? (
-              <Skilldiv key={e.id}>
-                <Header>{e.name}</Header>
-                <Type>{e.type}</Type>
-                <List>
-                  <SkillImg alt="skill" src={e.image} />
-                </List>
-                <TextDiv>
-                  <Text>{e.description}</Text>
-                </TextDiv>
-              </Skilldiv>
-            ) : null
-          )}
+      {data &&
+        data.map(e =>
+          e.id === parseInt(id) ? (
+            <Skilldiv key={e.id}>
+              <Header>{e.title}</Header>
+              <Type>{e.type}</Type>
+              <List>
+                <SkillImg alt="skill" src={e.image} />
+              </List>
+              <TextDiv>
+                <Text>{e.description}</Text>
+              </TextDiv>
+            </Skilldiv>
+          ) : null
+        )}
 
-        <StyledLink
-          margin="30px auto"
-          width="100px"
-          fontSize="20px"
-          desktopmargin="auto"
-          to="/dashboard"
-        >
-          Dashboard
-        </StyledLink>
-      </PageWrapper>
-    </>
+      <StyledLink
+        margin="30px auto"
+        width="100px"
+        fontSize="20px"
+        desktopmargin="auto"
+        to="/dashboard"
+      >
+        Dashboard
+      </StyledLink>
+    </PageWrapper>
   )
 }
 

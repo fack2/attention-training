@@ -26,6 +26,7 @@ class QuizInstructions extends Component {
       <>
         <div style={{ height: "42px", display: "flex" }}>
           <Button
+            position="absolute"
             margin="18px 0px 4px 8px"
             hoverColor="#70B1FA"
             background="#70B1FA"
@@ -33,6 +34,7 @@ class QuizInstructions extends Component {
             border_radius="6px"
             width="30px"
             padding="3px 10px 0px 10px"
+            desktoppadding="10px 15px"
             to="/dashboard"
           >
             skip

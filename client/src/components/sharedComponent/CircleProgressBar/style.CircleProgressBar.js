@@ -70,8 +70,17 @@ const TrueIcon = styled(Icon)`
 const Counter = styled.p`
   position: absolute;
   margin-top: 70px;
-  left: 137px;
   color: #737373;
+  margin-left: 39px;
 `
 
-export { ProgressBarStyle, Percent, ProgressPage, Description, ProgressBarDiv, TrueIcon, TrueIconBackground, Counter }
+export {
+  ProgressBarStyle,
+  Percent,
+  ProgressPage,
+  Description,
+  ProgressBarDiv,
+  TrueIcon,
+  TrueIconBackground,
+  Counter
+}

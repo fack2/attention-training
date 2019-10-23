@@ -3,11 +3,8 @@ import styled from "styled-components"
 const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-
-  @media only screen and (min-width: 800px) {
-    margin: auto;
-  }
+  max-width: 500px;
+  margin: auto;
 `
 
 const DashboardCard = styled.div`
@@ -18,10 +15,6 @@ const DashboardCard = styled.div`
   flex-direction: column;
   align-items: center;
   list-style-type: none;
-
-  @media only screen and (min-width: 800px) {
-    max-height: 281px;
-  }
 `
 
 const Titlewrap = styled.div`
