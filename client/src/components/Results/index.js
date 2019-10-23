@@ -5,19 +5,19 @@ import Button from "../sharedComponent/Button"
 import { Container, Header, TypeContainer, Img, Type, Description } from "./style.Results"
 
 class Results extends Component {
-  calID () {
+  calId() {
     return localStorage.getItem("inattentionScore") > 12 && localStorage.getItem("hyperactivityScore") > 12
       ? 3 /* id=3 --- '/result/3' */
       : localStorage.getItem("inattentionScore") > 12
-        ? 1 /* id=1 --- '/result/1' */
-        : localStorage.getItem("hyperactivityScore") > 12
-          ? 2 /* id=2 --- '/result/2' */
-          : 4 /* id=4 --- '/result/4' */
+      ? 1 /* id=1 --- '/result/1' */
+      : localStorage.getItem("hyperactivityScore") > 12
+      ? 2 /* id=2 --- '/result/2' */
+      : 4 /* id=4 --- '/result/4' */
   }
 
-  render () {
+  render() {
     // const { id } = this.props.match.params
-    const id = this.calID()
+    const id = this.calId()
     return (
       <Container>
         <Header>Results</Header>
