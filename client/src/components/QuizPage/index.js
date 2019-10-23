@@ -186,16 +186,7 @@ class Quiz extends Component {
         percent="100%"
         title="You are awesome!"
         description="We’re completing your profile now."
-        /* Link to '/result/id' */
-        to={`/results/${
-          localStorage.getItem("inattentionScore") > 12 && localStorage.getItem("hyperactivityScore") > 12
-            ? 3 /* id=3 --- '/result/3' */
-            : localStorage.getItem("inattentionScore") > 12
-            ? 1 /* id=1 --- '/result/1' */
-            : localStorage.getItem("hyperactivityScore") > 12
-            ? 2 /* id=2 --- '/result/2' */
-            : 4 /* id=4 --- '/result/4' */
-        }`}
+        to="result"
         buttonName="See result"
         onClick={() => {
           this.setState({ percent: 101 })

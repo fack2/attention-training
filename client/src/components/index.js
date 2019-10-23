@@ -4,7 +4,7 @@ import Home from "./Home"
 import QuizInstructions from "./QuizInstructions"
 import Quiz from "./QuizPage"
 import Dashboard from "./Dashboard"
-import Results from "./Results"
+import Result from "./Results"
 import Skills from "./Skills"
 import IndividualSkill from "./IndividualSkill"
 import AboutUs from "./AboutUs"
@@ -21,7 +21,7 @@ const Routes = () => {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/skills" component={Skills} />
         <Route exact path="/about-us" component={AboutUs} />
-        <Route exact path="/results/:id" component={Results} />
+        <Route exact path="/result" component={Result} />
         <Route exact path="/skills/:id" component={IndividualSkill} />
         <Route exact path="/basic-info" component={BasicInformation} />
         <Route component={NotFound} />
