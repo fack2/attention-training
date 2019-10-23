@@ -16,7 +16,8 @@
   "scripts": {
     "eslint": "./node_modules/.bin/eslint src/*.js --fix",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-sw": "node ./src/serviceWorker.js",
+    "build": "react-scripts build && npm run build-sw",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
