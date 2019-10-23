@@ -33,13 +33,7 @@ const Dashboard = ({ history }) => {
                 <Title>Superpower subtype</Title>
               </Titlewrap>
               <Text>Revisit your ADHD subtype</Text>
-              <StyledLink
-                background="#70B1FA"
-                width="172px"
-                fontSize="20px"
-                desktoppadding="15px 15px"
-                to="/result"
-              >
+              <StyledLink background="#70B1FA" width="172px" fontSize="20px" desktoppadding="15px 15px" to="/result">
                 SEE RESULT
               </StyledLink>
             </DashboardCard>
@@ -70,13 +64,7 @@ const Dashboard = ({ history }) => {
             <Title>Superpower Skills</Title>
           </Titlewrap>
           <Text>Find and harness your own superpowers</Text>
-          <StyledLink
-            width="172px"
-            fontSize="19px"
-            to="/skills"
-            background="#70B1FA"
-            desktoppadding="15px 15px"
-          >
+          <StyledLink width="172px" fontSize="19px" to="/skills" background="#70B1FA" desktoppadding="15px 15px">
             SEE SUPERPOWER
           </StyledLink>
         </DashboardCard>
@@ -86,7 +74,7 @@ const Dashboard = ({ history }) => {
             background="#AA27D6"
             width="173px"
             fontSize="20px"
-            desktopmargin="5rem 27rem 26rem"
+            // desktopmargin="5rem 27rem 26rem"
             to="/quiz"
           >
             <RestartImg src={restartVector} />
@@ -96,7 +84,7 @@ const Dashboard = ({ history }) => {
             background="#ED6237"
             width="172px"
             fontSize="20px"
-            desktopmargin="-20rem 27rem 26rem"
+            // desktopmargin="-20rem 27rem 26rem"
             to="/about-us"
           >
             <AboutImg src={aboutUs} />

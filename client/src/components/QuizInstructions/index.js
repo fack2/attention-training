@@ -34,6 +34,7 @@ class QuizInstructions extends Component {
             border_radius="6px"
             width="30px"
             padding="3px 10px 0px 10px"
+            desktoppadding="10px 15px"
             to="/dashboard"
           >
             skip
@@ -64,9 +65,7 @@ class QuizInstructions extends Component {
             "justify-content": "center"
           }}
         >
-          {this.state.counter < 3
-            ? "Tap the card to next"
-            : "Tap the card to start"}
+          {this.state.counter < 3 ? "Tap the card to next" : "Tap the card to start"}
         </p>
       </>
     )
