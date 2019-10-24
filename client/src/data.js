@@ -2,6 +2,9 @@ import React from "react"
 const SkillImg1 = "https://i.imgur.com/mPyngjW.png"
 const SkillImg2 = "https://i.imgur.com/KUbmMYm.png"
 const SkillImg3 = "https://i.imgur.com/KRnTQ1v.png"
+const SkillImg4 = "https://i.imgur.com/hI4vDvh.png"
+const SkillImg5 = "https://i.imgur.com/dtvul8O.jpg?1"
+const SkillImg6 = "https://i.imgur.com/IOeFlx6.jpg?1"
 
 const data = [
   {
@@ -133,7 +136,7 @@ const data = [
   },
   {
     id: 4,
-    image: SkillImg2,
+    image: SkillImg5,
     name: "What are pomodoros?",
     type: "everyday",
     title: "What are pomodoros?",
@@ -188,7 +191,7 @@ const data = [
   },
   {
     id: 5,
-    image: SkillImg3,
+    image: SkillImg6,
     name: "Morning Routine ",
     type: "everyday",
     title: "Morning Routine ",
@@ -224,7 +227,7 @@ const data = [
   },
   {
     id: 6,
-    image: SkillImg1,
+    image: SkillImg4,
     name: (
       <p>
         A place for everything <br /> and everything in its place
