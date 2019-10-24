@@ -1,5 +1,5 @@
 var parse = require("html-react-parser")
-const basicImg = "https://i.imgur.com/KRnTQ1v.png"
+const basicImg = "https://i.imgur.com/vTknGl5.jpg?1"
 
 const Basic = [
   {

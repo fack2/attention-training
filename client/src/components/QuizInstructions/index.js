@@ -27,13 +27,14 @@ class QuizInstructions extends Component {
         <div style={{ height: "42px", display: "flex" }}>
           <Button
             position="absolute"
-            margin="18px 0px 4px 8px"
+            margin="22px 0px 0px 4px"
             hoverColor="#70B1FA"
             background="#70B1FA"
             color="#000"
             border_radius="6px"
             width="30px"
-            padding="3px 10px 0px 10px"
+            fontSize="14px"
+            padding="2px 2px 0px 4px"
             desktoppadding="10px 15px"
             to="/dashboard"
           >
@@ -65,7 +66,9 @@ class QuizInstructions extends Component {
             "justify-content": "center"
           }}
         >
-          {this.state.counter < 3 ? "Tap the card to next" : "Tap the card to start"}
+          {this.state.counter < 3
+            ? "Tap the card to next"
+            : "Tap the card to start"}
         </p>
       </>
     )
