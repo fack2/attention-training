@@ -87,7 +87,7 @@ class Quiz extends Component {
   options() {
     const direction = ["right", "left"][parseInt(Math.random() * 2)]
     return (
-      <div>
+      <>
         <Button
           colorhover="#fff"
           text_align="left"
@@ -150,7 +150,7 @@ class Quiz extends Component {
           D&nbsp; Often
         </Button>
         {this.state.counter > 1 ? <CardsAnimation direction={direction} /> : null}
-      </div>
+      </>
     )
   }
 
