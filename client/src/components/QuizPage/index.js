@@ -9,7 +9,7 @@ import questions from "../../Questions"
 import Swal from "sweetalert2"
 import StyleSwal from "./swalStyle"
 import { CardsAnimation } from "../Card/style"
-import confetti from "../../assets/confetti.gif"
+import Confetti from 'react-confetti'
 
 
 class Quiz extends Component {
@@ -87,7 +87,7 @@ class Quiz extends Component {
   options() {
     const direction = ["right", "left"][parseInt(Math.random() * 2)]
     return (
-      <>
+      <div>
         <Button
           colorhover="#fff"
           text_align="left"
@@ -150,7 +150,7 @@ class Quiz extends Component {
           D&nbsp; Often
         </Button>
         {this.state.counter > 1 ? <CardsAnimation direction={direction} /> : null}
-      </>
+      </div>
     )
   }
 
@@ -182,26 +182,33 @@ class Quiz extends Component {
         }}
       />
     ) : this.state.percent === 100 ? (
-      <CircleProgressBar
-        link={confetti}
+      <div>
+        <Confetti
+          style={{
+            width: "100%",
 
-        counter={counter - 1}
-        percentRate={100}
-        percent="100%"
-        title="You are awesome!"
-        description="We’re completing your profile now."
-        to="result"
-        buttonName="See result"
-        onClick={() => {
-          this.setState({ percent: 101 })
-        }}
-        history={this.props.history}
-        onClickBackButton={() => {
-          this.setState({ percent: 98 })
-          localStorage.setItem("score", this.state.score)
-          this.setState({ counter: counter - 1 })
-        }}
-      />
+          }}
+
+        />
+        <CircleProgressBar
+          counter={counter - 1}
+          percentRate={100}
+          percent="100%"
+          title="You are awesome!"
+          description="We’re completing your profile now."
+          to="result"
+          buttonName="See result"
+          onClick={() => {
+            this.setState({ percent: 101 })
+          }}
+          history={this.props.history}
+          onClickBackButton={() => {
+            this.setState({ percent: 98 })
+            localStorage.setItem("score", this.state.score)
+            this.setState({ counter: counter - 1 })
+          }}
+        />
+      </div>
     ) : (
             <div style={{ textAlign: "center" }}>
               <Close type="close" onClick={this.close} />
