@@ -23,6 +23,7 @@ class Skills extends React.Component {
     const FilteredData = data.filter(e => e.type === value)
     this.setState({ FilteredData })
   }
+
   render() {
     return (
       <PageWrapper>
@@ -55,7 +56,8 @@ class Skills extends React.Component {
 
         {this.state.flag === 0
           ? data.map(e => {
-              if (e.type === "everyday") {
+              if (e.type === "everyday") return null
+              {
                 return (
                   <SkillsCard key={e.id}>
                     <Link
