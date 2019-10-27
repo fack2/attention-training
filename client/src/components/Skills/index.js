@@ -55,7 +55,7 @@ class Skills extends React.Component {
           </FilterStyled>
         </DivStyled>
 
-        {this.state.flag == 0
+        {this.state.flag === 0
           ? data.map(e => {
               if (e.type === "everyday") {
                 return (
