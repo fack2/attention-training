@@ -13,6 +13,7 @@ const ProgressBarContainer = styled.div`
 const Counter = styled.div`
   color: grey;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 `
 const ProgressBarStyle = styled(Progress)`
   border: grey 1px solid;

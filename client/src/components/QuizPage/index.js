@@ -9,6 +9,8 @@ import questions from "../../Questions"
 import Swal from "sweetalert2"
 import StyleSwal from "./swalStyle"
 import { CardsAnimation } from "../Card/style"
+import confetti from "../../assets/confetti.gif"
+
 
 class Quiz extends Component {
   state = {
@@ -85,7 +87,7 @@ class Quiz extends Component {
   options() {
     const direction = ["right", "left"][parseInt(Math.random() * 2)]
     return (
-      <>
+      <div>
         <Button
           colorhover="#fff"
           text_align="left"
@@ -148,7 +150,7 @@ class Quiz extends Component {
           D&nbsp; Often
         </Button>
         {this.state.counter > 1 ? <CardsAnimation direction={direction} /> : null}
-      </>
+      </div>
     )
   }
 
@@ -181,6 +183,8 @@ class Quiz extends Component {
       />
     ) : this.state.percent === 100 ? (
       <CircleProgressBar
+        link={confetti}
+
         counter={counter - 1}
         percentRate={100}
         percent="100%"
@@ -199,36 +203,36 @@ class Quiz extends Component {
         }}
       />
     ) : (
-      <div style={{ textAlign: "center" }}>
-        <Close type="close" onClick={this.close} />
-        <StyleSwal />
-        <div>
-          <BackButton position="absolute" onClick={this.setCounter} history={this.props.history}></BackButton>
-          <ProgressBar counter={this.state.counter}></ProgressBar>
-        </div>
-        <Card
-          question={question}
-          options={this.options()}
-          className="slide-card"
-          info={
-            <div>
-              <p
-                style={{
-                  textAlign: "justify",
-                  marginTop: "10px",
-                  height: "90px",
-                  padding: "8px 20px"
-                }}
-              >
-                {question}
-              </p>
-              <br />
-              {this.options()}
+            <div style={{ textAlign: "center" }}>
+              <Close type="close" onClick={this.close} />
+              <StyleSwal />
+              <div>
+                <BackButton position="absolute" onClick={this.setCounter} history={this.props.history}></BackButton>
+                <ProgressBar counter={this.state.counter}></ProgressBar>
+              </div>
+              <Card
+                question={question}
+                options={this.options()}
+                className="slide-card"
+                info={
+                  <div>
+                    <p
+                      style={{
+                        textAlign: "justify",
+                        marginTop: "10px",
+                        height: "90px",
+                        padding: "8px 20px"
+                      }}
+                    >
+                      {question}
+                    </p>
+                    <br />
+                    {this.options()}
+                  </div>
+                }
+              ></Card>
             </div>
-          }
-        ></Card>
-      </div>
-    )
+          )
   }
 }
 export default Quiz
