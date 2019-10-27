@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { BackTop } from "antd"
 
 export default () => (
