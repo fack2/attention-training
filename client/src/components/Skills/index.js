@@ -9,26 +9,33 @@ import {
   PageWrapper
 } from "../Dashboard/DashboardStyledComponent"
 import { FilterButton, DivStyled, FilterStyled } from "./FilterStyledComponent"
-import SkillImg from "./SkillsStyledComponent"
+import { SkillImg, Paragraph } from "./SkillsStyledComponent"
 
 class Skills extends React.Component {
   state = {
-    FilteredData: data
+    FilteredData: "",
+    flag: 0
   }
 
   onClick = ({ target }) => {
-    const { value } = target
-    const FilteredData = data.filter(e => e.type === value)
-    this.setState({ FilteredData })
+    {
+      this.setState({ flag: 1 })
+      const { value } = target
+      const FilteredData = data.filter(e => e.type === value)
+      this.setState({ FilteredData })
+    }
   }
-
   render() {
     return (
       <PageWrapper>
         <BackButton history={this.props.history}></BackButton>
-        <Header>Trainning Skills</Header>
+        <Header>Upskill yourself</Header>
+        <Paragraph>
+          Learn how to make life better with one of our proven coping skills
+        </Paragraph>
 
         {/*filter*/}
+
         <DivStyled>
           <FilterStyled>
             <FilterButton
@@ -48,17 +55,36 @@ class Skills extends React.Component {
           </FilterStyled>
         </DivStyled>
 
-        {this.state.FilteredData &&
-          this.state.FilteredData.map(e => {
-            return (
-              <SkillsCard key={e.id}>
-                <Link style={{ width: "100%" }} to={`/skills/${e.id}`}>
-                  <SkillImg src={e.image} />
-                  <Text>{e.name} </Text>
-                </Link>
-              </SkillsCard>
-            )
-          })}
+        {this.state.flag == 0
+          ? data.map(e => {
+              if (e.type === "everyday") {
+                return (
+                  <SkillsCard key={e.id}>
+                    <Link
+                      style={{ width: "100%", "text-decoration": "none " }}
+                      to={`/skills/${e.id}`}
+                    >
+                      <SkillImg src={e.image} />
+                      <Text>{e.name} </Text>
+                    </Link>
+                  </SkillsCard>
+                )
+              }
+            })
+          : this.state.FilteredData &&
+            this.state.FilteredData.map(e => {
+              return (
+                <SkillsCard key={e.id}>
+                  <Link
+                    style={{ width: "100%", "text-decoration": "none " }}
+                    to={`/skills/${e.id}`}
+                  >
+                    <SkillImg src={e.image} />
+                    <Text>{e.name} </Text>
+                  </Link>
+                </SkillsCard>
+              )
+            })}
       </PageWrapper>
     )
   }
