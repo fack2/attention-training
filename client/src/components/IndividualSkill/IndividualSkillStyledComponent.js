@@ -21,6 +21,7 @@ const Header = styled.h1`
   font-size: 25px;
   color: black;
   text-align: center;
+  margin-top: auto;
 `
 
 const TextDiv = styled.div`
@@ -40,6 +41,7 @@ const Type = styled.p`
   text-align: center;
   font-size: 15px;
   color: silver;
+  margin-top: auto;
 `
 
 const SkillImg = styled.img`
