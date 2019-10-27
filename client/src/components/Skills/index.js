@@ -18,12 +18,10 @@ class Skills extends React.Component {
   }
 
   onClick = ({ target }) => {
-    {
-      this.setState({ flag: 1 })
-      const { value } = target
-      const FilteredData = data.filter(e => e.type === value)
-      this.setState({ FilteredData })
-    }
+    this.setState({ flag: 1 })
+    const { value } = target
+    const FilteredData = data.filter(e => e.type === value)
+    this.setState({ FilteredData })
   }
   render() {
     return (
