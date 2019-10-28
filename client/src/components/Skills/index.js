@@ -14,15 +14,17 @@ import { SkillImg, Paragraph } from "./SkillsStyledComponent"
 class Skills extends React.Component {
   state = {
     FilteredData: "",
-    flag: 0,
     leftClicked: 1
   }
 
-  onClick = ({ target }) => {
-    const { value } = target
-    this.setState({ flag: 1, leftClicked: value === "everyday" })
+  onClick = ({ target: { value } }) => {
+    this.setState({ leftClicked: value === "everyday" })
     const FilteredData = data.filter(e => e.type === value)
     this.setState({ FilteredData })
+  }
+
+  componentDidMount() {
+    this.onClick({ target: { value: "everyday" } })
   }
 
   render() {
@@ -56,36 +58,20 @@ class Skills extends React.Component {
           </FilterStyled>
         </DivStyled>
 
-        {this.state.flag === 0
-          ? data.map(e => {
-              if (e.type === "everyday") {
-                return (
-                  <SkillsCard key={e.id}>
-                    <Link
-                      style={{ width: "100%", "text-decoration": "none " }}
-                      to={`/skills/${e.id}`}
-                    >
-                      <SkillImg src={e.image} />
-                      <Text>{e.name} </Text>
-                    </Link>
-                  </SkillsCard>
-                )
-              } else return null
-            })
-          : this.state.FilteredData &&
-            this.state.FilteredData.map(e => {
-              return (
-                <SkillsCard key={e.id}>
-                  <Link
-                    style={{ width: "100%", "text-decoration": "none " }}
-                    to={`/skills/${e.id}`}
-                  >
-                    <SkillImg src={e.image} />
-                    <Text>{e.name} </Text>
-                  </Link>
-                </SkillsCard>
-              )
-            })}
+        {this.state.FilteredData &&
+          this.state.FilteredData.map(e => {
+            return (
+              <SkillsCard key={e.id}>
+                <Link
+                  style={{ width: "100%", "text-decoration": "none " }}
+                  to={`/skills/${e.id}`}
+                >
+                  <SkillImg src={e.image} />
+                  <Text>{e.name} </Text>
+                </Link>
+              </SkillsCard>
+            )
+          })}
       </PageWrapper>
     )
   }
