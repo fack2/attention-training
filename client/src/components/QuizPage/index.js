@@ -172,12 +172,6 @@ class Quiz extends Component {
         onClick={() => {
           this.setState({ percent: 51 })
         }}
-        history={this.props.history}
-        onClickBackButton={() => {
-          this.setState({ percent: 49 })
-          localStorage.setItem("score", this.state.score)
-          this.setState({ counter: counter - 1 })
-        }}
       />
     ) : this.state.percent === 100 ? (
       <CircleProgressBar
@@ -191,12 +185,6 @@ class Quiz extends Component {
         onClick={() => {
           this.setState({ percent: 101 })
         }}
-        history={this.props.history}
-        onClickBackButton={() => {
-          this.setState({ percent: 98 })
-          localStorage.setItem("score", this.state.score)
-          this.setState({ counter: counter - 1 })
-        }}
       />
     ) : (
       <div style={{ textAlign: "center" }}>
@@ -209,14 +197,17 @@ class Quiz extends Component {
         <Card
           question={question}
           options={this.options()}
-          className="slide-card"
+          className={this.state.counter !== 10 ? "slide-card" : null}
           info={
             <div>
               <p
                 style={{
-                  textAlign: "justify",
+                  textAlign: "center",
+                  margin: "auto",
+                  width: window.innerWidth * 0.75,
+                  maxWidth: "400px",
                   marginTop: "10px",
-                  height: "90px",
+                  height: "105px",
                   padding: "8px 20px"
                 }}
               >

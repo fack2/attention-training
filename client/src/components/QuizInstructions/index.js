@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Button from "../sharedComponent/Button"
+import BackButton from "../sharedComponent/BackButton"
 import Card from "../Card"
 import ProgressBar from "../sharedComponent/ProgressBar"
 import image from "../../assets/quizInst.png"
@@ -25,9 +26,17 @@ class QuizInstructions extends Component {
     return (
       <>
         <div style={{ height: "42px", display: "flex" }}>
+          <BackButton
+            onClick={() => {
+              this.setState({ counter: this.state.counter - 1 }, () => {
+                if (this.state.counter === -1) this.props.history.push("/")
+              })
+            }}
+            margin="22px 0px 20px 20px"
+          />
+          <ProgressBar counter={this.state.counter + 1} maxCounter={4}></ProgressBar>
           <Button
-            position="absolute"
-            margin="22px 0px 0px 4px"
+            margin="22px 20px 0px 0px"
             hoverColor="#70B1FA"
             background="#70B1FA"
             color="#000"
@@ -35,28 +44,34 @@ class QuizInstructions extends Component {
             width="30px"
             fontSize="14px"
             padding="2px 2px 0px 4px"
-            desktoppadding="10px 15px"
-            to="/dashboard"
+            desktoppadding="2px 2px 0px 4px"
+            to="/quiz"
           >
             skip
           </Button>
-          <ProgressBar></ProgressBar>
         </div>
         <Card
+          display="flex"
           onClick={this.onClick}
           bg={`url(${image}) space center whitesmoke`}
           color="#fff"
           info={
-            <p
-              style={{
-                height: "300px",
-                margin: "28px 0px",
-                "font-size": `${this.state.counter === 3 ? "48px" : "28px"}`,
-                "font-weight": "bold"
-              }}
-            >
-              {this.state.instructions[this.state.counter]}
-            </p>
+            <>
+              <style>{`.ant-card-body{ margin:auto }`}</style>
+              <p
+                style={{
+                  // height: "300px",
+                  background: "#ffffffcc",
+                  padding: "20px 10px",
+                  margin: "28px 0px",
+                  color: "#000",
+                  "font-size": `${this.state.counter === 3 ? "35px" : "24px"}`,
+                  "font-weight": "bold"
+                }}
+              >
+                {this.state.instructions[this.state.counter]}
+              </p>
+            </>
           }
         ></Card>
         <p
@@ -66,9 +81,7 @@ class QuizInstructions extends Component {
             "justify-content": "center"
           }}
         >
-          {this.state.counter < 3
-            ? "Tap the card to next"
-            : "Tap the card to start"}
+          {this.state.counter < 3 ? "Tap the card to next" : "Tap the card to start"}
         </p>
       </>
     )

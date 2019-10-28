@@ -14,6 +14,7 @@ const StyledCard = styled(Card)`
   padding-top: 10px;
   text-align: center;
   width: ${({ width }) => width || "80%"};
+  display: ${({ display }) => display};
   max-width: 500px;
   min-width: 230px;
   height: 79vh;

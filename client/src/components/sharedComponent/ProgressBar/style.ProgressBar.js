@@ -3,8 +3,8 @@ import { Progress } from "antd"
 
 const ProgressBarContainer = styled.div`
   margin: auto;
-  width: 73%;
-  min-width: 235px;
+  width: 80%;
+  min-width: 200px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -17,18 +17,14 @@ const Counter = styled.div`
 const ProgressBarStyle = styled(Progress)`
   border: grey 1px solid;
   border-radius: 6px;
-  width: 100%;
-  max-width: 500px;
-  min-width: 230px;
-  margin: 5px;
+  width: 80%;
+  max-width: 400px;
+  min-width: 188px;
+  margin: 5px auto;
   .ant-progress-bg {
     border-radius: 6px;
     height: 15px !important;
-    background-image: linear-gradient(
-      to right,
-      #70b1fa 0%,
-      #70b1fa 100%
-    ) !important;
+    background-image: linear-gradient(to right, #70b1fa 0%, #70b1fa 100%) !important;
   }
 `
 
