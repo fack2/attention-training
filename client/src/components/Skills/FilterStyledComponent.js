@@ -11,6 +11,12 @@ const FilterStyled = styled.div`
   flex-direction: row;
   align-items: center;
   border: black;
+  .isClicked {
+    color: #2f4f4f;
+    text-shadow: 1px 1px #c0c0c0;
+    box-shadow: inset 1px 1px 14px #c1c1c1;
+    outline: none;
+  }
 `
 
 const FilterButton = styled.button`

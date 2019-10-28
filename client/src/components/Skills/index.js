@@ -14,12 +14,13 @@ import { SkillImg, Paragraph } from "./SkillsStyledComponent"
 class Skills extends React.Component {
   state = {
     FilteredData: "",
-    flag: 0
+    flag: 0,
+    leftClicked: 1
   }
 
   onClick = ({ target }) => {
-    this.setState({ flag: 1 })
     const { value } = target
+    this.setState({ flag: 1, leftClicked: value === "everyday" })
     const FilteredData = data.filter(e => e.type === value)
     this.setState({ FilteredData })
   }
@@ -34,10 +35,10 @@ class Skills extends React.Component {
         </Paragraph>
 
         {/*filter*/}
-
         <DivStyled>
           <FilterStyled>
             <FilterButton
+              className={this.state.leftClicked ? "isClicked" : null}
               borderRaduis="left"
               value="everyday"
               onClick={this.onClick}
@@ -45,6 +46,7 @@ class Skills extends React.Component {
               Everyday
             </FilterButton>
             <FilterButton
+              className={this.state.leftClicked ? null : "isClicked"}
               borderRaduis="right"
               value="superpower"
               onClick={this.onClick}
@@ -56,8 +58,7 @@ class Skills extends React.Component {
 
         {this.state.flag === 0
           ? data.map(e => {
-              if (e.type === "everyday") return null
-              {
+              if (e.type === "everyday") {
                 return (
                   <SkillsCard key={e.id}>
                     <Link
@@ -69,7 +70,7 @@ class Skills extends React.Component {
                     </Link>
                   </SkillsCard>
                 )
-              }
+              } else return null
             })
           : this.state.FilteredData &&
             this.state.FilteredData.map(e => {
