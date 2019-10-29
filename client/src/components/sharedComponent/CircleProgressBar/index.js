@@ -1,5 +1,6 @@
 import React from "react"
 import {
+  Container,
   ProgressBarDiv,
   ProgressBarStyle,
   Percent,
@@ -36,7 +37,7 @@ class CircleProgressBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container link={this.props.link}>
         <ProgressPage>
           <TrueIconBackground>
             <TrueIcon type="check-circle" theme="filled" twoToneColor="#70B1FA" />
@@ -55,7 +56,7 @@ class CircleProgressBar extends React.Component {
             {this.props.buttonName}
           </Button>
         </ProgressPage>
-      </div>
+      </Container >
     )
   }
 }
