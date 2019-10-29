@@ -26,6 +26,7 @@ const Header = styled.h1`
   font-size: 25px;
   color: grey;
   text-align: center;
+  margin-top: auto;
 `
 
 const Icon = styled.img`
@@ -42,6 +43,7 @@ const Title = styled.h3`
 const Text = styled.p`
   font-size: 20px;
   text-align: center;
+
   @media only screen and (min-width: 800px) {
     padding: 20px;
   }
