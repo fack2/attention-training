@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react"
-import { Link } from "react-router-dom"
 import resultsImg from "../../assets/results.png"
 import resutlsData from "../resultsData"
 import Button from "../sharedComponent/Button"
