@@ -19,7 +19,7 @@ const Home = () => {
       </BackgroundDiv>
       <TextStyled>
         The key to thriving is knowledge. Learn to make use of your ADHD
-        superpowers
+        superpowers.
       </TextStyled>
 
       <StyledLink
