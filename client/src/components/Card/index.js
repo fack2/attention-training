@@ -1,15 +1,18 @@
 import React from "react"
 import { StyledCard as Card, CardWrapper } from "./style"
 
-const DivCard = ({ info, bg, color, onClick, className, ...props }) => {
+const DivCard = ({ info, bg, color, onClick, className, display, ...props }) => {
   return (
     <CardWrapper>
       <Card className="expand-card" onClick={onClick} bg="#f0f0f" shadow_color="#f0f0f0">
         <p
           style={{
-            textAlign: "justify",
+            margin: "auto",
+            width: window.innerWidth * 0.75,
+            maxWidth: "400px",
+            textAlign: "center",
             marginTop: "10px",
-            height: "90px",
+            height: "105px",
             padding: "8px 20px"
           }}
         >
@@ -27,6 +30,7 @@ const DivCard = ({ info, bg, color, onClick, className, ...props }) => {
         scroll="true"
         width="90%"
         onClick={onClick}
+        display={display}
       >
         {info}
       </Card>

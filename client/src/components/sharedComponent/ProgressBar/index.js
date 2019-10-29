@@ -20,13 +20,15 @@ class ProgressBar extends Component {
   render() {
     return (
       <ProgressBarContainer>
-        <Counter>{this.props.counter || 0} of 18</Counter>
+        <Counter>
+          {this.props.counter || 0} of {this.props.maxCounter || 18}
+        </Counter>
         <ProgressBarStyle
           strokeColor={{
             "0%": "#108ee9",
             "100%": "#87d068"
           }}
-          percent={(this.props.counter / 18.0) * 100}
+          percent={(this.props.counter / (this.props.maxCounter || 18.0)) * 100}
           showInfo={false}
         />
       </ProgressBarContainer>
