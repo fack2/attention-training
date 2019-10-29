@@ -38,6 +38,9 @@ const Text = styled.div`
 
 const BasicImg = styled.img`
   align-items: center;
+  min-width: 288px;
+  max-width: 500px;
+  width: 75%;
 `
 
 const List = styled.div`
