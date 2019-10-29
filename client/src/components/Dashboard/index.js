@@ -22,7 +22,7 @@ const Dashboard = ({ history }) => {
   return (
     <>
       <PageWrapper>
-        <BackButton margin="9px 14px 3px -150px" history={history}></BackButton>
+        <BackButton history={history}></BackButton>
         <Header>Dashboard</Header>
         {localStorage.getItem("complete") === "true" ? (
           <>

@@ -1,13 +1,16 @@
 import React from "react"
 import BackIcon from "./BackIcon"
 
-const BackButton = ({ history, onClick, position }) => {
+const BackButton = ({ history, onClick, position, margin }) => {
   return (
     <BackIcon
+      margin={margin}
       position={position}
       type="arrow-left"
       onClick={() => {
-        history.goBack()
+        try {
+          history.goBack()
+        } catch (e) {}
         if (onClick) onClick()
       }}
     />

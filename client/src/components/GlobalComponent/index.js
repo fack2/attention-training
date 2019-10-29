@@ -23,15 +23,13 @@ p{
 }
 
 body,html {  
-margin: 0;
+max-width:600px;
+margin: auto;
 padding: 0;
 background: #f3f5f9;
- @media only screen and (min-width: 600px) {
-       width:600px;
-    border-left:#DCDCDC solid 1px;
-    border-right:#DCDCDC solid 1px; 
-    margin: auto;
-  }
+border-left: #DCDCDC solid 1px;
+border-right: #DCDCDC solid 1px;
+
   }
 `
 export default GlobalStyle
