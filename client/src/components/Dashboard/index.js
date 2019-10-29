@@ -33,7 +33,16 @@ const Dashboard = ({ history }) => {
                 <Title>Superpower subtype</Title>
               </Titlewrap>
               <Text>Revisit your ADHD subtype</Text>
-              <StyledLink background="#70B1FA" width="172px" fontSize="20px" desktoppadding="15px 15px" to="/result">
+              <StyledLink
+                background="#70B1FA"
+                width="172px"
+                fontSize="20px"
+                desktoppadding="15px 15px"
+                to={{
+                  pathname: "/result",
+                  state: { flag: false }
+                }}
+              >
                 SEE RESULT
               </StyledLink>
             </DashboardCard>
