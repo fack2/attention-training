@@ -14,7 +14,7 @@ import BackButton from "../sharedComponent/BackButton"
 const BasicInformation = ({ history }) => {
   return (
     <PageWrapper>
-      <BackButton margin="9px 14px 3px -150px" history={history}></BackButton>
+      <BackButton history={history}></BackButton>
       {Basic.map(e => {
         return (
           <Basicdiv key={e.id}>

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const Container = styled.div`
   display: flex;
@@ -36,4 +37,11 @@ const Description = styled.p`
   opacity: 0.8;
 `
 
-export { Container, Header, TypeContainer, Img, Type, Description }
+const SkillsLink = styled(Link)`
+  text-decoration: none; 
+  font-size: 22px; 
+  color: #ED6237;
+  margin: 23px
+`
+
+export { Container, Header, TypeContainer, Img, Type, Description, SkillsLink }
