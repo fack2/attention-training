@@ -1,10 +1,10 @@
 import React from "react"
 const SkillImg1 = "https://i.imgur.com/mPyngjW.png"
 const SkillImg2 = "https://i.imgur.com/KUbmMYm.png"
-const SkillImg3 = "https://i.imgur.com/KRnTQ1v.png"
+const SkillImg3 = "https://i.imgur.com/Bhm5NJN.jpg"
 const SkillImg4 = "https://i.imgur.com/hI4vDvh.png"
-const SkillImg5 = "https://i.imgur.com/dtvul8O.jpg?1"
-const SkillImg6 = "https://i.imgur.com/IOeFlx6.jpg?1"
+const SkillImg5 = "https://i.imgur.com/7a43cDf.jpg"
+const SkillImg6 = "https://i.imgur.com/kbN4nEE.jpg"
 
 const data = [
   {

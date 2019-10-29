@@ -1,6 +1,5 @@
 import React from "react"
 import data from "../../data"
-import StyledLink from "../sharedComponent/Button"
 import BackButton from "../sharedComponent/BackButton"
 import {
   PageWrapper,
@@ -34,16 +33,6 @@ const IndividualSkill = props => {
             </Skilldiv>
           ) : null
         )}
-
-      <StyledLink
-        margin="30px auto"
-        width="100px"
-        fontSize="20px"
-        desktopmargin="auto"
-        to="/dashboard"
-      >
-        Dashboard
-      </StyledLink>
     </PageWrapper>
   )
 }

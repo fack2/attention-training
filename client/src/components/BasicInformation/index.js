@@ -10,7 +10,6 @@ import {
   TextDiv
 } from "./BasicInformationStyledComponent"
 import BackButton from "../sharedComponent/BackButton"
-import StyledLink from "../sharedComponent/Button"
 
 const BasicInformation = ({ history }) => {
   return (
@@ -29,15 +28,6 @@ const BasicInformation = ({ history }) => {
           </Basicdiv>
         )
       })}
-      <StyledLink
-        margin="30px auto"
-        width="100px"
-        fontSize="20px"
-        desktopmargin="auto"
-        to="/dashboard"
-      >
-        Dashboard
-      </StyledLink>
     </PageWrapper>
   )
 }

@@ -36,7 +36,7 @@ class QuizInstructions extends Component {
             fontSize="14px"
             padding="2px 2px 0px 4px"
             desktoppadding="10px 15px"
-            to="/dashboard"
+            to="/quiz"
           >
             skip
           </Button>
