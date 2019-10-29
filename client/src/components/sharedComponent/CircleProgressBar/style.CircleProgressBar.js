@@ -1,6 +1,16 @@
 import styled from "styled-components"
 import { Progress, Icon } from "antd"
 
+const Container = styled.div`
+  display:flex;
+  flex-direction:column;
+  margin: 0 auto;
+  align-items:center;
+  font-size: ${({ fontSize }) => fontSize || "16px"};
+  background-image:url(${({ link }) => link});
+  width: 90%;
+  height:100vh;
+`
 const ProgressPage = styled.div`
   margin-top: 125px;
   display: flex;
@@ -82,5 +92,6 @@ export {
   ProgressBarDiv,
   TrueIcon,
   TrueIconBackground,
-  Counter
+  Counter,
+  Container
 }

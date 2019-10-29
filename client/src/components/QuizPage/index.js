@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import Button from "../sharedComponent/Button"
 import BackButton from "../sharedComponent/BackButton"
 import Card from "../Card"
@@ -9,6 +9,8 @@ import questions from "../../Questions"
 import Swal from "sweetalert2"
 import StyleSwal from "./swalStyle"
 import { CardsAnimation } from "../Card/style"
+import Confetti from 'react-confetti'
+
 
 class Quiz extends Component {
   state = {
@@ -85,7 +87,7 @@ class Quiz extends Component {
   options() {
     const direction = ["right", "left"][parseInt(Math.random() * 2)]
     return (
-      <>
+      <Fragment>
         <Button
           colorhover="#fff"
           text_align="left"
@@ -148,7 +150,7 @@ class Quiz extends Component {
           D&nbsp; Often
         </Button>
         {this.state.counter > 1 ? <CardsAnimation direction={direction} /> : null}
-      </>
+      </Fragment>
     )
   }
 
@@ -160,7 +162,7 @@ class Quiz extends Component {
     const question = questions[this.state.counter - 1]
     let { counter } = this.state
     return this.state.flag ? (
-      <div></div>
+      null
     ) : this.state.percent === 50 ? (
       <CircleProgressBar
         counter={counter - 1}
@@ -180,55 +182,64 @@ class Quiz extends Component {
         }}
       />
     ) : this.state.percent === 100 ? (
-      <CircleProgressBar
-        counter={counter - 1}
-        percentRate={100}
-        percent="100%"
-        title="You are awesome!"
-        description="We’re completing your profile now."
-        to="result"
-        buttonName="See result"
-        onClick={() => {
-          this.setState({ percent: 101 })
-        }}
-        history={this.props.history}
-        onClickBackButton={() => {
-          this.setState({ percent: 98 })
-          localStorage.setItem("score", this.state.score)
-          this.setState({ counter: counter - 1 })
-        }}
-      />
+      <Fragment>
+        <Confetti
+          style={{
+            width: "100%",
+
+          }}
+
+        />
+        <CircleProgressBar
+          counter={counter - 1}
+          percentRate={100}
+          percent="100%"
+          title="You are awesome!"
+          description="We’re completing your profile now."
+          to="result"
+          buttonName="See result"
+          onClick={() => {
+            this.setState({ percent: 101 })
+          }}
+          history={this.props.history}
+          onClickBackButton={() => {
+            this.setState({ percent: 98 })
+            localStorage.setItem("score", this.state.score)
+            this.setState({ counter: counter - 1 })
+          }}
+        />
+      </Fragment>
     ) : (
-      <div style={{ textAlign: "center" }}>
-        <Close type="close" onClick={this.close} />
-        <StyleSwal />
-        <div>
-          <BackButton position="absolute" onClick={this.setCounter} history={this.props.history}></BackButton>
-          <ProgressBar counter={this.state.counter}></ProgressBar>
-        </div>
-        <Card
-          question={question}
-          options={this.options()}
-          className="slide-card"
-          info={
-            <div>
-              <p
-                style={{
-                  textAlign: "justify",
-                  marginTop: "10px",
-                  height: "90px",
-                  padding: "8px 20px"
-                }}
-              >
-                {question}
-              </p>
-              <br />
-              {this.options()}
+            <div style={{ textAlign: "center" }}>
+              <Close type="close" onClick={this.close} />
+              <StyleSwal />
+              <div>
+                <BackButton position="absolute" onClick={this.setCounter} history={this.props.history}></BackButton>
+                <ProgressBar counter={this.state.counter}></ProgressBar>
+              </div>
+              <Card
+                question={question}
+                options={this.options()}
+                className="slide-card"
+                info={
+                  <div>
+                    <p
+                      style={{
+                        textAlign: "justify",
+                        marginTop: "10px",
+                        height: "90px",
+                        padding: "8px 20px"
+                      }}
+                    >
+                      {question}
+                    </p>
+                    <br />
+                    {this.options()}
+                  </div>
+                }
+              ></Card>
             </div>
-          }
-        ></Card>
-      </div>
-    )
+          )
   }
 }
 export default Quiz
