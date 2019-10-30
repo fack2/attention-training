@@ -1,5 +1,6 @@
 import React from "react"
 import { BackTop } from "antd"
+import topUp from "./../../../assets/topUp.png"
 
 export default () => (
   <div background="white">
@@ -10,7 +11,7 @@ export default () => (
         bottom: "30px",
         width: "40px",
         height: "40px",
-        background: 'url("https://5.top4top.net/p_1398biscm1.png") 100%/100% no-repeat'
+        background: `url(${topUp}) 100%/100% no-repeat`
       }}
     ></BackTop>
   </div>
