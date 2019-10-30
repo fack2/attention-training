@@ -2,7 +2,8 @@ import styled from "styled-components"
 import { Progress } from "antd"
 
 const ProgressBarContainer = styled.div`
-  margin: auto;
+  margin: ${({ margin }) => margin || "auto"};
+
   width: 80%;
   min-width: 200px;
   display: flex;

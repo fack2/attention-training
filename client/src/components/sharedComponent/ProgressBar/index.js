@@ -19,7 +19,7 @@ class ProgressBar extends Component {
 
   render() {
     return (
-      <ProgressBarContainer>
+      <ProgressBarContainer margin={this.props.margin}>
         <Counter>
           {this.props.counter || 0} of {this.props.maxCounter || 18}
         </Counter>
