@@ -23,7 +23,12 @@
   },
   "homepage": "https://github.com/fack2/attention-training#readme",
   "dependencies": {
+    "env2": "^2.2.2",
     "express": "^4.17.1",
-    "nodemon": "^1.19.3"
+    "knex": "^0.20.0",
+    "knex-migrate": "^1.7.4",
+    "nodemon": "^1.19.4",
+    "pg": "^7.12.1",
+    "sqlite3": "^4.1.0"
   }
 }
