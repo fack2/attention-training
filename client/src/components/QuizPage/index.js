@@ -185,7 +185,10 @@ class Quiz extends Component {
           percent="100%"
           title="You are awesome!"
           description="We’re completing your profile now."
-          to="result"
+          to={{
+            pathname: "/result",
+            state: { flag: true }
+          }}
           buttonName="See result"
           onClick={() => {
             this.setState({ percent: 101 })
