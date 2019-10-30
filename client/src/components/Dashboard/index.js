@@ -21,8 +21,8 @@ import aboutUs from "../../assets/AboutUs.png"
 const Dashboard = ({ history }) => {
   return (
     <>
+      <BackButton history={history}></BackButton>
       <PageWrapper>
-        <BackButton history={history}></BackButton>
         <Header>Dashboard</Header>
         {localStorage.getItem("complete") === "true" ? (
           <>
