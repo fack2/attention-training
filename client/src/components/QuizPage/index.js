@@ -197,11 +197,16 @@ class Quiz extends Component {
       </Fragment>
     ) : (
       <div style={{ textAlign: "center" }}>
-        <Close type="close" onClick={this.close} />
         <StyleSwal />
         <div>
-          <BackButton position="absolute" onClick={this.setCounter} history={this.props.history}></BackButton>
-          <ProgressBar counter={this.state.counter}></ProgressBar>
+          <BackButton
+            margin="22px 29px 0px 11px"
+            position="absolute"
+            onClick={this.setCounter}
+            history={this.props.history}
+          ></BackButton>
+          <Close type="close" onClick={this.close} />
+          <ProgressBar margin="auto 10%" counter={this.state.counter}></ProgressBar>
         </div>
         <Card
           question={question}
