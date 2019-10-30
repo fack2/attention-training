@@ -39,7 +39,7 @@ const Description = styled.p`
 
 const SkillsLink = styled(Link)`
   text-decoration: none; 
-  font-size: 22px; 
+  font-size: 20px; 
   color: #ED6237;
   margin: 23px
 `
