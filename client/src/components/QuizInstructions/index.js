@@ -45,6 +45,7 @@ class QuizInstructions extends Component {
             fontSize="14px"
             padding="2px 2px 0px 4px"
             desktoppadding="2px 2px 0px 4px"
+            desktopmargin="22px 20px 0px 0px"
             to="/quiz"
           >
             skip
