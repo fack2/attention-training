@@ -24,7 +24,9 @@ class Results extends Component {
     const id = this.calId()
     return (
       <Fragment>
-        <BackButton position="absolute" margin="22px" history={this.props.history}></BackButton>
+        {this.props.location.state && !this.props.location.state.flag ? (
+          <BackButton position="absolute" margin="22px" history={this.props.history}></BackButton>
+        ) : null}
         <Container>
           <Header>Result</Header>
           <backTop />
@@ -39,11 +41,11 @@ class Results extends Component {
               ) : null
             )}
           <SkillsLink to={`/skills/${this.random()}`}>See what might work for you</SkillsLink>
-          {this.props.location.state && this.props.location.state.flag ? (
+          {this.props.location.state && !this.props.location.state.flag ? null : (
             <Button to="/dashboard" width="180px">
               Dashboard
             </Button>
-          ) : null}
+          )}
         </Container>
       </Fragment>
     )
