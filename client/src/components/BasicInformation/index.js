@@ -12,6 +12,8 @@ import {
 import BackButton from "../sharedComponent/BackButton"
 
 const BasicInformation = ({ history }) => {
+    window.scrollTo(0, 0);
+
   return (
     <PageWrapper>
       <BackButton history={history}></BackButton>

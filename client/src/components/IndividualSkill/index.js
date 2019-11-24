@@ -14,7 +14,7 @@ import {
 
 const IndividualSkill = props => {
   const { id } = props.match.params
-
+  window.scrollTo(0, 0);
   return (
     <PageWrapper>
       <BackButton history={props.history}></BackButton>

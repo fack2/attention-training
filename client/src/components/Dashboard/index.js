@@ -19,6 +19,7 @@ import restartVector from "../../assets/restart.png"
 import aboutUs from "../../assets/AboutUs.png"
 
 const Dashboard = ({ history }) => {
+  window.scrollTo(0, 0);
   return (
     <>
       <BackButton history={history}></BackButton>

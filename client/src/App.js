@@ -5,6 +5,8 @@ import GlobalStyle from "./components/GlobalComponent"
 import BackTop from "./components/sharedComponent/BackTop/"
 
 function App() {
+  window.scrollTo(0, 0);
+
   return (
     <Fragment>
       <GlobalStyle />
