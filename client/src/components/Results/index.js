@@ -64,6 +64,7 @@ class Results extends Component {
                 position: "fixed",
                 bottom: 0,
                 width: "70%",
+                height: "25px",
                 margin: "auto"
               }}
               to='/dashboard'
